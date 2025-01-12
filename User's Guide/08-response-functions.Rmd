@@ -1,0 +1,326 @@
+# System Response Functions
+
+System response functions specify how a system responds to a given hazard. In RMC-TotalRisk, a system response function defines the conditional probability of failure for various hazard levels, such as WSEs. 
+
+In dam and levee safety risk analyses, analysts develop system response functions for multiple potential failure modes (PFMs). Common PFMs include seepage and piping, erosion and bank caving, and overtopping. Each PFM may result in different consequence outcomes, so analysts should keep PFMs distinct in a risk analysis.
+
+RMC-TotalRisk allows users to define system response functions using an event tree, parametric function, tabular function, bivariate tabular function, or a composite of multiple functions. The following subsections describe each input option in detail.
+
+## Event Tree Response Function
+
+Event tree analyses (ETAs) represent the logic of how an initiating event, like a flood or earthquake, can lead to various types of damage and failure [@cite-BestPractices]. An event tree consists of a sequence of interconnected nodes and branches [@cite-HartfordBaecher]. Each node corresponds to an uncertain event (e.g., a crack forming in an embankment) or an uncertain state of nature (e.g., the existence of adversely oriented joint planes). Branches originating from a node represent the possible events or states of nature that could occur. Probabilities are assigned to each node to quantify the likelihood of each event or condition, conditional on the occurrence of all preceding events in the tree. For more details on event tree calculations in RMC-TotalRisk, refer to [@cite-TechRef]. 
+
+To create an event tree response function, right-click on the **System Responses** folder in the Project Explorer (Figure \@ref(fig:figure-84)) or navigate to **Project Menu > System Responses** and select **Add Event Tree Response…**. A dialog will appear, prompting you to enter the dataset name and select an event tree template to import. This example uses the Basic template to demonstrate how to build an event tree from scratch, but you can also choose from a variety of default or user-defined templates.
+
+```{r figure-84, echo=FALSE, fig.cap="Create new event tree response function.", fig.align="center"}
+knitr::include_graphics("images/figure84.png")
+```
+
+After creating the new event tree response function, the Tabbed Documents area automatically opens, and the Properties window displays the event tree properties (Figure \@ref(fig:figure-85)). In the Properties window, you can configure the name, description, hazard type, hazard units, hazard interpolation, probability interpolation, and selected event tree node properties. The interpolation transforms define how the data is interpolated when sampling values between hazard levels.
+
+```{r figure-85, echo=FALSE, fig.cap="Event tree response function properties.", fig.align="center"}
+knitr::include_graphics("images/figure85.png")
+```
+
+### Terminology
+
+This section defines RMC-TotalRisk’s event tree terminology [@cite-TechRef].
+
+-	**Node**: Represents a branching point in the event tree, signifying a random event or state. Event trees include four types of nodes:
+
+    - **Initiating Hazard Node**: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.
+ 	
+    - **Chance Node**: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see "reference node").
+ 	
+    - **Reference Node**: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.
+    
+    - **Remainder Node**: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.
+
+-	**Branch**: The line connecting two nodes in the event tree. 
+
+-	**End Node**: A node with no downstream branches, representing the final state in a sequence of events. This is also called a leaf node or terminal node.. 
+
+-	**Pathway**: A unique sequence of events representing a potential failure progression. The probability of a pathway equals the joint probability of all nodes in the series from the initiating hazard node to the end node. This is also referred to as a path, sequence, connection, or root-to-node. 
+
+-	**Upstream Nodes**: Nodes located to the left of a selected node in the tree. These nodes must occur before the selected node’s event. Upstream nodes are also called parent nodes, conditional events, or preceding nodes. 
+
+-	**Downstream Nodes**: Nodes located to the right of a selected node in the tree. These nodes occur after the selected node’s event. Downstream nodes are also called child nodes, conditional events, proceeding nodes, or subsequent nodes.
+
+-	**Node Probability**: Represents the probability of the selected node event occurring, conditioned on the occurrence of all upstream nodes.
+
+-	**Event Likelihood**: Represents the probability of a node event occurring at a given hazard level. This is the joint probability of the selected node event and all its upstream nodes. 
+
+### Navigating an Event Tree
+
+You can move the event tree around the workspace by clicking and dragging the background canvas with any mouse button. Use the mouse wheel to zoom in and out. When you hover over a node or branch, it highlights. Left-click to select nodes or branches, and right-click to display context menu options.
+
+When you hover over a node, a toolbar appears above it, as shown in Figure \@ref(fig:figure-86). You can also access these toolbar options by right-clicking on a node.
+
+```{r figure-86, echo=FALSE, fig.cap="Event tree node toolbar icons.", fig.align="center"}
+knitr::include_graphics("images/figure86.png")
+```
+
+- **Delete Branches**: Click this icon to remove all child branches from the selected node.
+
+- **Copy Branches**: Click to copy the child branches into memory for pasting elsewhere.
+
+- **Paste Branches**: Click to paste previously copied branches onto the current node.
+
+- **Add New Branch**: Click to create a new branch from the selected node.
+
+When you hover over a branch, a toolbar appears above its name, as shown in Figure \@ref(fig:figure-87). These options are also available by right-clicking on the branch. To rename a branch, double-click on it or use the branch properties.
+ 
+```{r figure-87, echo=FALSE, fig.cap="Event tree branch toolbar icons.", fig.align="center"}
+knitr::include_graphics("images/figure87.png")
+```
+
+- **Delete Branch**: Click to remove the selected branch and all its child branches from the event tree.
+
+- **Branch Properties**: Click to edit branch properties such as name, description, and probabilities directly in the workspace.
+
+- **Save Template**: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.
+
+### Customizing an Event Tree
+
+The **Options** tab in the event tree Properties window provides tools to customize your event tree’s appearance and layout (Figure \@ref(fig:figure-88)). 
+
+-	**Height**: Adjusts the height of each node in pixels. Increasing the height beyond 70 pixels allows node names to span multiple lines.
+
+-	**Width**: Sets the horizontal spacing, in pixels, between nodes.
+
+-	**Smooth**: Controls the smoothness of the connector lines between nodes.
+
+-	**Extend**: If selected, extends the terminal (leaf) nodes to align with the right-most column in the event tree.
+
+-	**Background Color**: Changes the background color of the event tree workspace.
+
+-	**Gridline Color**: Sets the color of the background gridlines in the workspace.
+
+-	**Node Fill**: Specifies the fill color for the selected node.
+
+-	**Node Stroke**: Defines the outline color for the selected node.
+
+-	**Reset**: Restores all options to their default settings when clicked.
+
+-	**Zoom Scale**: Adjusts the zoom scale factor for the event tree workspace. A value of 1 represents the base zoom level. 
+
+```{r figure-88, echo=FALSE, fig.cap="Event tree style options.", fig.align="center"}
+knitr::include_graphics("images/figure88.png")
+```
+
+### Building an Event Tree
+
+The following example represents an event tree developed for spillway erosion. The sequence of events is as follows: Pool elevation rises, producing spillway flow; grass in spillway is removed; headcut initiates; headcut advances to control section; control structure fails; intervention is unsuccessful; breach.
+
+1. Define the hazard. Click on the initiating hazard node branch, Hazard, to select it. Once selected, edit in the Properties window under the Selected Branch Properties subsection (Figure \@ref(fig:figure-89)). Alternatively, edit the branch by clicking the branch properties button,  , in the event tree node toolbar. Change the name to “Pool Elevation.”
+
+```{r figure-89, echo=FALSE, fig.cap="Edit the node properties from either the node toolbar or Properties window.", fig.align="center"}
+knitr::include_graphics("images/figure89.png")
+```
+
+2.	Use the table editing tools to enter the desired Hazard Levels.
+
+3.	Delete the chance node that was added by default by either clicking the delete button in the toolbar or in the sub-branches properties of the initiating hazard node. A message appears requiring confirmation of the deletion. Click Yes to confirm deleting the unwanted node.
+
+4.	Add the next node in the event tree by clicking the Add Branch button in the node toolbar, right click node context menu, or in the sub-branches properties section. Using the node properties editor, change the name of the new node, add a description, and define the probability of the event for each hazard level defined in step 1, as shown in Figure \@ref(fig:figure-90). 
+
+```{r figure-90, echo=FALSE, fig.cap="Properties for the Grass Removal probability event tree node.", fig.align="center"}
+knitr::include_graphics("images/figure90.png")
+```
+
+5.	Continue adding nodes and defining the properties until the event tree is complete, as shown in Figure \@ref(fig:figure-91).
+
+```{r figure-91, echo=FALSE, fig.cap="Completed spillway erosion event tree.", fig.align="center"}
+knitr::include_graphics("images/figure91.png")
+```
+
+### Event Tree Results
+
+The Tabbed Document contains three tabs: Event Tree, Response, and Diagnostics. RMC-TotalRisk provides several tools for exploring the results of the event tree analysis. 
+The event tree is built and edited in the Event Tree tab as discussed in the preceding sections. The Response tab contains a graphical representation of the system response function for each hazard level (Figure \@ref(fig:figure-92)). This is commonly referred to as a fragility curve and represents the probability of failure for each defined hazard level. Export the function data as tabular data using the Export Plot Data button.
+
+```{r figure-92, echo=FALSE, fig.cap="System response probability function result from event tree.", fig.align="center"}
+knitr::include_graphics("images/figure92.png")
+```
+
+The Diagnostics tab contains several tools for reviewing and validating the event tree calculations. Options for reviewing the event tree results are on the left side of the Diagnostics tab. Options include Node Filters, Model Parameters, and Plot Options (Figure \@ref(fig:figure-93)). Each viewing option is detailed below.
+
+```{r figure-93, echo=FALSE, fig.cap="Event tree diagnostic viewing options.", fig.align="center"}
+knitr::include_graphics("images/figure93.png")
+```
+
+-	Node Filters filters the visible plot data. 
+
+    -	Show Remainder Nodes turns on or off displaying remainder nodes in the results.
+    
+    -	Combine Remainder Leaves, if checked, combines the terminal remainder nodes in the results. This is often akin to the probability of non-failure, as each remainder node often represents non fail conditions.
+    
+    -	Leaf Nodes Only, if checked, displays only the terminal leaf nodes (any node that doesn’t have any child nodes).
+    
+-	Model Parameters defines how the event tree is analyzed for review.
+
+    -	Monte Carlo Iterations defines the number of Monte Carlo iterations used to sample the event tree for diagnostic analysis. If no uncertainty is present, this option is disabled.
+    
+    -	Hazard Level defines the hazard level that calculates the diagnostic results. 
+    
+-	Plot Options provides various plots and tables to analyze the event tree results.
+
+    -	Event Likelihood displays the likelihood of each node occurring in the event tree for the given hazard level (defined in the Model Parameters) as a box-and-whisker plot (Figure \@ref(fig:figure-94)). 
+    
+```{r figure-94, echo=FALSE, fig.cap="Event tree diagnostics event likelihood plot option.", fig.align="center"}
+knitr::include_graphics("images/figure94.png")
+```
+
+<ul class="hidden-level-1">
+  <ul>
+    <li>Correlation to SRP displays the Pearson’s correlation coefficient for how each node’s sampled probabilities correlate to the overall SRP. Chance nodes have a positive correlation with the SRP, whereas remainder nodes have a negative correlation. The absolute size of the correlation coefficient indicates the strength of the association with SRP (USACE 2022). The nodal correlations to SRP display as a ranked tornado plot (Figure \@ref(fig:figure-95)).</li>
+  </ul>
+</ul>
+
+  
+```{r figure-95, echo=FALSE, fig.cap="Event tree diagnostics tree node correlation to SRP plot.", fig.align="center"}
+knitr::include_graphics("images/figure95.png")
+```
+
+<ul class="hidden-level-1">
+  <ul>
+    <li>Sensitivity Index displays each node’s first-order sensitivity index or main effect index (Figure \@ref(fig:figure-96)). This is the contribution to the output variance. It measures the effect of varying a single node averaged over variations in other input parameters. It is standardized by the total variance to provide a fractional contribution. A node with a high sensitivity index is a good indicator that reducing the node’s uncertainty can significantly impact the overall SRP (Sobol 2001; USACE 2022).</li>
+  </ul>
+</ul>
+
+	
+```{r figure-96, echo=FALSE, fig.cap="Event tree diagnostics tree node sensitivity indices.", fig.align="center"}
+knitr::include_graphics("images/figure96.png")
+```
+
+<ul class="hidden-level-1">
+  <ul>
+    <li>Node SRP Scatter plots the sampled values for a given node against the overall SRP for each Monte Carlo iteration. A node with a strong correlation to SRP shows a clear trend between the sampled node probability and overall SRP (Figure \@ref(fig:figure-97)).</li>
+  </ul>
+</ul>
+
+```{r figure-97, echo=FALSE, fig.cap="Event tree diagnostics tree node probability to SRP scatter plot.", fig.align="center"}
+knitr::include_graphics("images/figure97.png")
+```
+
+<!-- ## Update figure to not say sampled SRP. Either computed or overall SRP -->
+
+
+<ul class="hidden-level-1">
+  <ul>
+    <li>Tabular shows the individual node’s sampled probabilities and overall SRP for each Monte Carlo iteration in the model in table form (Figure \@ref(fig:figure-98)). Use the table features to verify node distribution sampling through the column statistics (Figure \@ref(fig:figure-99)).</li>
+  </ul>
+</ul>
+
+    
+```{r figure-98, echo=FALSE, fig.cap="Event tree diagnostics tabular output.", fig.align="center"}
+knitr::include_graphics("images/figure98.png")
+```
+
+```{r figure-99, echo=FALSE, fig.cap="Column statistics for the Unsuccessful Interventions node’s sampled probabilities, confirming that the node distribution (triangular) is being sampled correctly.", fig.align="center"}
+knitr::include_graphics("images/figure99.png")
+```
+
+## Parametric Response Function
+
+This option enables you to define a system response function using a parametric distribution. 
+
+To create a parametric response function, right-click on the **System Responses** folder in the Project Explorer (Figure \@ref(fig:figure-100)) or go to **Project Menu > System Responses** and select **Add Parametric Response…**. Enter a name for the parametric response function and click **OK**. 
+
+```{r figure-100, echo=FALSE, fig.cap="Create new parametric response function.", fig.align="center"}
+knitr::include_graphics("images/figure100.png")
+```
+
+After creating the parametric response function, the system automatically opens it in the Tabbed Documents area, and the Properties window displays its properties (Figure \@ref(fig:figure-101)). In the Properties window, you can set the name, description, hazard type, and hazard units. Define the parametric distribution by setting the ERL, type of distribution, and parameters for the distribution. Once the parameters have been set, click the **Compute** button to generate and view the parametric response function. 
+
+```{r figure-101, echo=FALSE, fig.cap="Parametric response function properties.", fig.align="center"}
+knitr::include_graphics("images/figure101.png")
+```
+
+Additional options for computing the parametric function are available in the Options tab on the Properties window. These include bootstrap sampling, confidence intervals, the number of realizations, a pseudo random number generator (PRNG) seed for random number generation, and output probability ordinates.
+
+Similar to RMC-BestFit, RMC-RFA, and parametric hazard functions, you can view frequency results in graphical or tabular form. For more information on these viewing options, refer to section \@ref(bestfit).
+
+## Tabular Response Function
+
+This option allows you to define a system response function using tabular data. The most common use case involves copying and pasting data from another application, such as Microsoft Excel. 
+
+To create a tabular response function, right-click on the **System Responses folder** in the Project Explorer (Figure \@ref(fig:figure-102)) or go to **Project Menu > System Responses** and select **Add Tabular Response…**. Enter a name for the tabular response function and click **OK**. 
+
+```{r figure-102, echo=FALSE, fig.cap="Create new tabular response function.", fig.align="center"}
+knitr::include_graphics("images/figure102.png")
+```
+
+Once you create the tabular response function, the system automatically opens it in the Tabbed Documents area, and the Properties window displays the tabular function's properties (Figure \@ref(fig:figure-103)). In the Properties window, you can configure the name, description, hazard type, hazard units, and hazard and probability interpolation transforms. The interpolation transforms define how the data is interpolated when sampling values between the specified tabular ordinates. 
+
+```{r figure-103, echo=FALSE, fig.cap="Tabular response function properties.", fig.align="center"}
+knitr::include_graphics("images/figure103.png")
+```
+
+The Tabbed Document for a tabular response function includes a table for data entry and a graphical representation of the data (Figure \@ref(fig:figure-104)). Select a distribution to define uncertainty and enter the parameters for the selected distribution at each ordinate in the tabular data. You can input data manually into the table or paste it from an external source, such as Microsoft Excel.
+
+```{r figure-104, echo=FALSE, fig.cap="Tabular response function example.", fig.align="center"}
+knitr::include_graphics("images/figure104.png")
+```
+
+### Data Validation
+
+The input data table has built-in validation. Tabular data must meet the following requirements:
+
+-	The hazard values must be in ascending order.
+
+-	The probability values must be between 0 and 1.
+
+-	If uncertainty is defined, the uncertain ordinates must contain valid distribution parameters.
+
+If you enter invalid data, the corresponding table cell turns red, and a tooltip explains the error, as shown in Figure \@ref(fig:figure-105). In addition, an error message appears in the Message window prompting you to resolve all errors in the data table. 
+
+```{r figure-105, echo=FALSE, fig.cap="Tabular response function input data validation.", fig.align="center"}
+knitr::include_graphics("images/figure105.png")
+```
+
+## Bivariate Response Function
+
+This option enables you to define a system response function that depends on two hazards using tabular data.
+
+To create a bivariate response function, right-click on the **System Responses** folder in the Project Explorer (Figure \@ref(fig:figure-106)) or go to **Project Menu > System Responses** and select **Add Bivariate Response…**. Enter a name for the bivariate response function and click **OK**. 
+
+```{r figure-106, echo=FALSE, fig.cap="Create new bivariate response function.", fig.align="center"}
+knitr::include_graphics("images/figure106.png")
+```
+
+When you create the bivariate response function, it automatically opens in the Tabbed Documents area, and the Properties window displays its properties (Figure \@ref(fig:figure-107)). From the Properties window, you can configure the name, description, primary hazard, primary hazard units, and the interpolation transforms for the primary hazard and probabilities.
+
+Use the table tools to add the desired hazard levels for both the primary and secondary hazards, ensuring that all hazard levels are in ascending order. Assign a weight to each secondary hazard level. These weights are used during the risk computation to estimate the total system response probability for each primary hazard level. The weights must sum to 1. You can enter the weights manually or calculate them using a specified hazard function. For more details on bivariate hazard properties, refer to [@cite-TechRef].
+
+```{r figure-107, echo=FALSE, fig.cap="Bivariate response function properties.", fig.align="center"}
+knitr::include_graphics("images/figure107.png")
+```
+
+As you input primary and secondary hazard levels in the Properties window, the table at the top of the Tabbed Document automatically updates, with each row representing a primary hazard level and each column representing a secondary hazard level (Figure \@ref(fig:figure-108)). To complete the bivariate response function, enter the probability of failure in each cell based on the combination of the primary hazard (row) and secondary hazard (column). A graphical representation of the system response functions for each secondary hazard level appears below the table.
+
+```{r figure-108, echo=FALSE, fig.cap="Bivariate response function graphical display.", fig.align="center"}
+knitr::include_graphics("images/figure108.png")
+```
+
+## Composite Response Function
+
+This option allows you to combine multiple response functions into a single function by assigning weights to the individual input functions.
+
+To create a composite response function, right-click on the **System Responses** folder in the Project Explorer (Figure \@ref(fig:figure-109)) or navigate to **Project Menu > Hazards** and **select Add Composite Response…**. Enter a name for the composite response function and click **OK**. 
+
+```{r figure-109, echo=FALSE, fig.cap="Create new composite response function.", fig.align="center"}
+knitr::include_graphics("images/figure109.png")
+```
+
+After creating the composite response function, it automatically opens in the Tabbed Documents area, and the Properties window displays its properties (Figure \@ref(fig:figure-110)). In the Properties window, you can configure the name, description, hazard type, hazard units, and input response functions. Use the Response Functions table to define the input functions. Click the Add Row(s) button in the table toolbar to add rows for the input functions. Ensure that the response function weights sum to 1. If the system response functions are competing, uncheck the **Is Mixture** checkbox and select a **Dependency** type: Independent, Perfectly Positive, or Perfectly Negative.
+
+```{r figure-110, echo=FALSE, fig.cap="Composite response function properties.", fig.align="center"}
+knitr::include_graphics("images/figure110.png")
+```
+
+The Tabbed Document for a composite function includes a graphical representation of the composite function (Figure \@ref(fig:figure-111)).
+
+```{r figure-111, echo=FALSE, fig.cap="Composite response function graphical display.", fig.align="center"}
+knitr::include_graphics("images/figure111.png")
+```
