@@ -48,6 +48,5 @@ User's Guide/po/*~
 # RStudio Connect folder
 User's Guide/rsconnect/
 
-/docs/users-guide
 .Rproj.user
 /.vs

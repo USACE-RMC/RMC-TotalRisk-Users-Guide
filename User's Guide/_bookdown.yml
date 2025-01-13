@@ -1,4 +1,4 @@
 book_filename: "totalrisk-users-guide"
-output_dir: "../docs/users-guide"
+output_dir: "../docs"
 delete_merged_file: true
 
