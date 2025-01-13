@@ -28,13 +28,13 @@ This section defines RMC-TotalRisk’s event tree terminology [@cite-TechRef].
 
 -	**Node**: Represents a branching point in the event tree, signifying a random event or state. Event trees include four types of nodes:
 
-    - **Initiating Hazard Node**: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.
+    - ![Image](images/hazardnode.png) **Initiating Hazard Node**: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.
  	
-    - **Chance Node**: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see "reference node").
+    - ![Image](images/chancenode.png) **Chance Node**: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see "reference node").
  	
-    - **Reference Node**: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.
+    - ![Image](images/referencenode.png) **Reference Node**: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.
     
-    - **Remainder Node**: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.
+    - ![Image](images/remaindernode.png) **Remainder Node**: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.
 
 -	**Branch**: The line connecting two nodes in the event tree. 
 
@@ -60,13 +60,13 @@ When you hover over a node, a toolbar appears above it, as shown in Figure \@ref
 knitr::include_graphics("images/figure86.png")
 ```
 
-- **Delete Branches**: Click this icon to remove all child branches from the selected node.
+- ![Image](images/deletebranches.png) **Delete Branches**: Click this icon to remove all child branches from the selected node.
 
-- **Copy Branches**: Click to copy the child branches into memory for pasting elsewhere.
+- ![Image](images/copybranches.png) **Copy Branches**: Click to copy the child branches into memory for pasting elsewhere.
 
-- **Paste Branches**: Click to paste previously copied branches onto the current node.
+- ![Image](images/pastebranches.png) **Paste Branches**: Click to paste previously copied branches onto the current node.
 
-- **Add New Branch**: Click to create a new branch from the selected node.
+- ![Image](images/newbranch.png) **Add New Branch**: Click to create a new branch from the selected node.
 
 When you hover over a branch, a toolbar appears above its name, as shown in Figure \@ref(fig:figure-87). These options are also available by right-clicking on the branch. To rename a branch, double-click on it or use the branch properties.
  
@@ -74,11 +74,11 @@ When you hover over a branch, a toolbar appears above its name, as shown in Figu
 knitr::include_graphics("images/figure87.png")
 ```
 
-- **Delete Branch**: Click to remove the selected branch and all its child branches from the event tree.
+- ![Image](images/deletebranch.png) **Delete Branch**: Click to remove the selected branch and all its child branches from the event tree.
 
-- **Branch Properties**: Click to edit branch properties such as name, description, and probabilities directly in the workspace.
+- ![Image](images/branchproperties.png) **Branch Properties**: Click to edit branch properties such as name, description, and probabilities directly in the workspace.
 
-- **Save Template**: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.
+- ![Image](images/savetemplate.png) **Save Template**: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.
 
 ### Customizing an Event Tree
 
@@ -110,94 +110,84 @@ knitr::include_graphics("images/figure88.png")
 
 ### Building an Event Tree
 
-The following example represents an event tree developed for spillway erosion. The sequence of events is as follows: Pool elevation rises, producing spillway flow; grass in spillway is removed; headcut initiates; headcut advances to control section; control structure fails; intervention is unsuccessful; breach.
+This example demonstrates how to build an event tree for spillway erosion. The sequence of events includes: Pool elevation results in spillway flow, grass removal from the spillway, headcut initiation, headcut advancement to the control section, control structure failure, unsuccessful intervention, and breach.
 
-1. Define the hazard. Click on the initiating hazard node branch, Hazard, to select it. Once selected, edit in the Properties window under the Selected Branch Properties subsection (Figure \@ref(fig:figure-89)). Alternatively, edit the branch by clicking the branch properties button,  , in the event tree node toolbar. Change the name to “Pool Elevation.”
+1. **Define the hazard**. Select the initiating hazard node branch, **Hazard**, by clicking on it. Once selected, edit its properties in the Properties window under the Selected Branch Properties subsection (Figure \@ref(fig:figure-89)). Alternatively, click the **Branch Properties** button ![Image](images/branchproperties.png) in the event tree node toolbar to edit the branch. Rename the branch to “Pool Elevation.”
 
 ```{r figure-89, echo=FALSE, fig.cap="Edit the node properties from either the node toolbar or Properties window.", fig.align="center"}
 knitr::include_graphics("images/figure89.png")
 ```
 
-2.	Use the table editing tools to enter the desired Hazard Levels.
+2.  **Enter hazard levels**. Use the table editing tools to input the desired hazard levels.
 
-3.	Delete the chance node that was added by default by either clicking the delete button in the toolbar or in the sub-branches properties of the initiating hazard node. A message appears requiring confirmation of the deletion. Click Yes to confirm deleting the unwanted node.
+3.	**Delete the default chance node**. Remove the chance node added by default by clicking the delete button ![Image](images/deletebranch.png) in the toolbar, or by using the **Sub-Branches Properties** section of the initiating hazard node. Confirm the deletion when prompted by clicking **Yes**.
 
-4.	Add the next node in the event tree by clicking the Add Branch button in the node toolbar, right click node context menu, or in the sub-branches properties section. Using the node properties editor, change the name of the new node, add a description, and define the probability of the event for each hazard level defined in step 1, as shown in Figure \@ref(fig:figure-90). 
+4.	**Add a new node**. Add the next node in the event tree using one of the following methods: Click the **Add New Branch** button ![Image](images/newbranch.png) in the node toolbar, use the right-click node context menu on the node, or navigate to the **Sub-Branches Properties** section in the Properties window. After adding the node, use the **Node Properties Editor** to rename it, add a description, and define the event's probability for each hazard level specified in step 1 (Figure \@ref(fig:figure-90)). 
 
 ```{r figure-90, echo=FALSE, fig.cap="Properties for the Grass Removal probability event tree node.", fig.align="center"}
 knitr::include_graphics("images/figure90.png")
 ```
 
-5.	Continue adding nodes and defining the properties until the event tree is complete, as shown in Figure \@ref(fig:figure-91).
+5.	**Complete the event tree**. Continue adding nodes and defining their properties until the event tree is fully developed (Figure \@ref(fig:figure-91)).
 
 ```{r figure-91, echo=FALSE, fig.cap="Completed spillway erosion event tree.", fig.align="center"}
 knitr::include_graphics("images/figure91.png")
 ```
 
-### Event Tree Results
+### Explorting Event Tree Results
 
-The Tabbed Document contains three tabs: Event Tree, Response, and Diagnostics. RMC-TotalRisk provides several tools for exploring the results of the event tree analysis. 
-The event tree is built and edited in the Event Tree tab as discussed in the preceding sections. The Response tab contains a graphical representation of the system response function for each hazard level (Figure \@ref(fig:figure-92)). This is commonly referred to as a fragility curve and represents the probability of failure for each defined hazard level. Export the function data as tabular data using the Export Plot Data button.
+The Tabbed Document contains three tabs: **Event Tree**, **Response**, and **Diagnostics**, each offering tools to explore the event tree analysis results. 
+
+- The **Event Tree** is used to build and edit the event tree, as described in earlier sections.
+
+- The **Response** tab displays a graphical representation of the system response function for each hazard level (Figure \@ref(fig:figure-92)). This function, commonly referred to as a fragility curve, represents the probability of failure for each defined hazard level. You can export the function data as tabular data using the **Export Plot Data** button.
 
 ```{r figure-92, echo=FALSE, fig.cap="System response probability function result from event tree.", fig.align="center"}
 knitr::include_graphics("images/figure92.png")
 ```
 
-The Diagnostics tab contains several tools for reviewing and validating the event tree calculations. Options for reviewing the event tree results are on the left side of the Diagnostics tab. Options include Node Filters, Model Parameters, and Plot Options (Figure \@ref(fig:figure-93)). Each viewing option is detailed below.
+- The **Diagnostics** tab provides tools for reviewing and validating the event tree calculations. The left side of the Diagnostics tab offers options for **Node Filters**, **Model Parameters**, and **Plot Options** (Figure \@ref(fig:figure-93)). Details for each option are provided below.
 
 ```{r figure-93, echo=FALSE, fig.cap="Event tree diagnostic viewing options.", fig.align="center"}
 knitr::include_graphics("images/figure93.png")
 ```
 
--	Node Filters filters the visible plot data. 
+#### Node Filters {-}
 
-    -	Show Remainder Nodes turns on or off displaying remainder nodes in the results.
+-	**Show Remainder Nodes**: Toggles the display of remainder nodes in the results.
     
-    -	Combine Remainder Leaves, if checked, combines the terminal remainder nodes in the results. This is often akin to the probability of non-failure, as each remainder node often represents non fail conditions.
+-	**Combine Remainder Leaves**: Combines terminal remainder nodes, which often represent non-failure conditions, into a single result.
     
-    -	Leaf Nodes Only, if checked, displays only the terminal leaf nodes (any node that doesn’t have any child nodes).
+-	**Leaf Nodes Only**: Displays only terminal leaf nodes (nodes without child branches).
+ 
+#### Model Parameters {-}
+   
+-	**Monte Carlo Iterations**: Specifies the number of Monte Carlo iterations used to sample the event tree for diagnostic analysis. This option is disabled if no uncertainty is present.
     
--	Model Parameters defines how the event tree is analyzed for review.
+-	**Hazard Level**: Defines the hazard level used to calculate diagnostic results. 
+    
+#### Plot Options {-}
 
-    -	Monte Carlo Iterations defines the number of Monte Carlo iterations used to sample the event tree for diagnostic analysis. If no uncertainty is present, this option is disabled.
-    
-    -	Hazard Level defines the hazard level that calculates the diagnostic results. 
-    
--	Plot Options provides various plots and tables to analyze the event tree results.
-
-    -	Event Likelihood displays the likelihood of each node occurring in the event tree for the given hazard level (defined in the Model Parameters) as a box-and-whisker plot (Figure \@ref(fig:figure-94)). 
+-	**Event Likelihood**: Displays a box-and-whisker plot of the likelihood for each node occurring at the selected hazard level (Figure \@ref(fig:figure-94)). 
     
 ```{r figure-94, echo=FALSE, fig.cap="Event tree diagnostics event likelihood plot option.", fig.align="center"}
 knitr::include_graphics("images/figure94.png")
 ```
 
-<ul class="hidden-level-1">
-  <ul>
-    <li>Correlation to SRP displays the Pearson’s correlation coefficient for how each node’s sampled probabilities correlate to the overall SRP. Chance nodes have a positive correlation with the SRP, whereas remainder nodes have a negative correlation. The absolute size of the correlation coefficient indicates the strength of the association with SRP (USACE 2022). The nodal correlations to SRP display as a ranked tornado plot (Figure \@ref(fig:figure-95)).</li>
-  </ul>
-</ul>
+- **Correlation to SRP**: Shows the Pearson correlation coefficients for how node probabilities correlate with the overall SRP. Chance nodes have a positive correlation with the SRP, whereas remainder nodes have a negative correlation. The absolute size of the correlation coefficient indicates the strength of the association with SRP. The nodal correlations to SRP display as a ranked tornado plot (Figure \@ref(fig:figure-95)).
 
-  
 ```{r figure-95, echo=FALSE, fig.cap="Event tree diagnostics tree node correlation to SRP plot.", fig.align="center"}
 knitr::include_graphics("images/figure95.png")
 ```
 
-<ul class="hidden-level-1">
-  <ul>
-    <li>Sensitivity Index displays each node’s first-order sensitivity index or main effect index (Figure \@ref(fig:figure-96)). This is the contribution to the output variance. It measures the effect of varying a single node averaged over variations in other input parameters. It is standardized by the total variance to provide a fractional contribution. A node with a high sensitivity index is a good indicator that reducing the node’s uncertainty can significantly impact the overall SRP (Sobol 2001; USACE 2022).</li>
-  </ul>
-</ul>
+- **Sensitivity Index**: Displays each node’s first-order sensitivity index, indicating its contribution to the variance in the SRP (Figure \@ref(fig:figure-96)). A high sensitivity index suggests that reducing uncertainty for that node could significantly affect the overall SRP.
 
 	
 ```{r figure-96, echo=FALSE, fig.cap="Event tree diagnostics tree node sensitivity indices.", fig.align="center"}
 knitr::include_graphics("images/figure96.png")
 ```
 
-<ul class="hidden-level-1">
-  <ul>
-    <li>Node SRP Scatter plots the sampled values for a given node against the overall SRP for each Monte Carlo iteration. A node with a strong correlation to SRP shows a clear trend between the sampled node probability and overall SRP (Figure \@ref(fig:figure-97)).</li>
-  </ul>
-</ul>
+- **Node SRP Scatter**: Plots the sampled probabilities of a node against the overall SRP for each Monte Carlo iteration. Nodes with strong correlations to the SRP show clear trends in this scatter plot (Figure \@ref(fig:figure-97)).
 
 ```{r figure-97, echo=FALSE, fig.cap="Event tree diagnostics tree node probability to SRP scatter plot.", fig.align="center"}
 knitr::include_graphics("images/figure97.png")
@@ -205,14 +195,8 @@ knitr::include_graphics("images/figure97.png")
 
 <!-- ## Update figure to not say sampled SRP. Either computed or overall SRP -->
 
+- **Tabular**: Displays a table of node probabilities and the overall SRP for each Monte Carlo iteration (Figure \@ref(fig:figure-98)). Use the table's column statistics feature to verify sampling distributions (Figure \@ref(fig:figure-99)).
 
-<ul class="hidden-level-1">
-  <ul>
-    <li>Tabular shows the individual node’s sampled probabilities and overall SRP for each Monte Carlo iteration in the model in table form (Figure \@ref(fig:figure-98)). Use the table features to verify node distribution sampling through the column statistics (Figure \@ref(fig:figure-99)).</li>
-  </ul>
-</ul>
-
-    
 ```{r figure-98, echo=FALSE, fig.cap="Event tree diagnostics tabular output.", fig.align="center"}
 knitr::include_graphics("images/figure98.png")
 ```

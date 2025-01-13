@@ -162,64 +162,109 @@ For more details about the additional risk measures in RMC-TotalRisk, refer to t
 
 ## Risk Diagram
 
-RMC-TotalRisk defines a risk analysis through a diagram, as shown in Figure \@ref(fig:figure-131). The diagram provides an intuitive way to create and connect the various components of the modeled system. 
+RMC-TotalRisk defines a risk analysis using an intuitive diagram, as shown in Figure \@ref(fig:figure-131). This diagram provides a clear way to create and connect the components of the modeled system. 
 
-A risk analysis computes the risk associated with a collection of potential failure modes for each component in the system. A failure mode is composed of a hazard, the system response to the hazard, and the consequences given the response to the hazard. A non-failure mode is composed of a hazard and the non-failure consequences given the hazard.
+A risk analysis computes the risk associated with multiple potential failure modes for each system component. Each failure mode combines a hazard, the system's response to that hazard, and the consequences of the response. Non-failure modes consist of a hazard and the non-failure consequences associated with it.
 
-Figure 131 shows a single system component for a dam safety risk analysis. A non-failure mode, shown at the top of the diagram with the purple line, connects the hazard function to the non-failure consequences, without any system response. Many dams often have consequences even if the structure does not fail. For example, during a major flood event, a dam could activate the emergency spillway, preventing the dam from reducing downstream flooding. The non-failure mode models the risk of non failure (USACE 2022). 
+Figure \@ref(fig:figure-131) illustrates a single system component for a dam safety risk analysis. The diagram includes a non-failure mode, represented by the purple line at the top, connecting the hazard function directly to the non-failure consequences without involving a system response. Many dams experience non-failure consequences. For example, during a major flood event, a dam might activate its emergency spillway to prevent overtopping. While this action protects the dam, it can still result in downstream impacts. The non-failure mode in the diagram represents the risk associated with these non-failure scenarios. 
 
-The two failure modes are:
+The diagram also includes two failure modes:
 
-1.	A spillway erosion failure mode, labelled PFM 1, shown in the center of the diagram, connects the hazard function at Dam A to the PFM 1 response function and consequence function.
+1.	**Spillway erosion failure mode (PFM 1)**: This mode, shown in the center of the diagram, connects the hazard function at Dam A to the PFM 1 response function and consequence function.
 
-2.	A concentrated leak erosion failure mode, labelled PFM 2, shown in the bottom of the diagram with the same respective connections. 
+2.	**Concentrated leak erosion failure mode (PFM 2)**: This mode, shown at the bottom of the diagram, follows the same structure as PFM 1. 
 
-In the risk diagram, the input functions connect from left to right and link together based on each function’s hazard type (e.g., stage, flow) and units (e.g., ft, cfs). There cannot be any circular or redundant connections. As such, the risk diagram is a type of directed acyclic graph (DAG). 
+```{r figure-131, echo=FALSE, fig.cap="RMC-TotalRisk risk diagram.", fig.align="center"}
+knitr::include_graphics("images/figure131.png")
+```
 
-The system components are identified and labeled by the selected hazard function. You can rename system components by right-clicking the name in the risk diagram or editing the name in the Properties window. The failure modes within a component are identified and labeled by the selected response functions. 
+The risk diagram connects input functions from left to right, linking them based on their hazard type (e.g., stage, flow) and units (e.g., ft, cfs). Circular or redundant connections are not allowed, making the risk diagram a type of directed acyclic graph (DAG).
 
-RMC-TotalRisk permits an unlimited number of failure modes per component, depending on the selected failure mode method. However, a single system is limited to 20 components due to virtual memory and computer runtime limitations. For example, you can assess the system risk of a watershed comprising up to 20 dams, each with multiple failure modes. 
+System components in the diagram are labeled by their selected hazard functions. You can rename system components by right-clicking their names in the diagram or editing their names in the Properties window. Failure modes within each component are labeled by their corresponding response functions.
 
+RMC-TotalRisk supports an unlimited number of failure modes per component, depending on the selected failure mode method. However, a single system is limited to 20 components due to virtual memory and runtime constraints. For example, you can evaluate the system risk for a watershed with up to 20 dams, each containing multiple failure modes.
 
-### Creating a Diagram
+### Working with the Risk Diagram
 
-First, get a feel for working with the diagram. Use your mouse to left-click and drag any open area in the diagram to pan the diagram surface. Zoom in and out on the diagram using the mouse wheel.
+First, familiarize yourself with the diagram interface. Pan the diagram surface by left-clicking and dragging on any open area. Zoom in and out using the mouse wheel.
 
-Inputs to the risk analysis are designated using nodes in the diagram. Select the desired input function for a node using the selection box. Left-click and drag on any node to move the node around the diagram. A blue circle at the bottom left of the node shows the required inputs for each node (Figure 132). An orange circle at the lower right of the node shows the node output.
+Nodes in the diagram represent inputs to the risk analysis. Select a node's input function using the selection box. Move a node by left-clicking and dragging it. A blue circle at the bottom left of a node indicates required inputs, while an orange circle at the lower right shows the node output (Figure \@ref(fig:figure-132)). 
+```{r figure-132, echo=FALSE, fig.cap="Risk diagram node inputs and outputs.", fig.align="center"}
+knitr::include_graphics("images/figure132.png")
+```
+#### Adding Nodes {-}
+You can add nodes to the risk diagram in three ways (Figure \@ref(fig:figure-133)): 
 
-You can add a node to the risk diagram in three ways, as shown in Figure 133: 
+1. Hover over the large plus symbol in the upper-left corner of the diagram, then left-click and drag the node to the desired location.
 
--	Place the mouse cursor over the large plus symbol in the upper left corner of the diagram to open a selection box, then left-click and drag to move the node to the desired location. 
+2. Right-click on any empty space in the diagram to open a selection box and add a node at that location.
 
--	Right-click on any empty space in the diagram to open a selection box to add a node at that location.
+3. Left-click on a node output to open a selection box. This option automatically connects the new node to the clicked node output.
 
--	Left-click on a node output to open a selection box. This third option has the added benefit of automatically connecting the new node to the clicked node output.
+```{r figure-133, echo=FALSE, fig.cap="Options to add a new input node to the risk diagram: a) Place the cursor over the plus symbol in the upper left corner of the diagram then move the node to the desired location; b) Right-click on any empty space in the diagram to add at that location; and c) left-click on a node output (this option also connects the nodes).", fig.align="center", out.width="90%"}
+knitr::include_graphics("images/figure133.png")
+```
 
-To connect two nodes, left-click and hold on a node output and drag toward the node you’re connecting to. A line appears from the node output to the mouse cursor. Move the mouse cursor over the input of the desired node and release the mouse button to connect. See Figure 134.
+#### Connecting Nodes {-}
+To connect two nodes, left-click and hold on a node output, then drag the cursor toward the desired node input. Release the mouse button to create the connection (Figure \@ref(fig:figure-134)).
 
-To delete a node, either right-click on the node and select Delete or click the X that appears in the top right corner of the node when the cursor is over the node. To disconnect two nodes, left-click and hold the input to the connected node and move the cursor to either another node’s input or remove the connection by clicking in any open space of the diagram.
+```{r figure-134, echo=FALSE, fig.cap="To connect a node to another node, left-click and hold on a node output, drag toward the desired node input, and release the mouse button to finish the connection.", fig.align="center"}
+knitr::include_graphics("images/figure134.png")
+```
+
+#### Deleting and Disconnecting Nodes {-}
+
+To delete a node, right-click on it and select **Delete**, or click the **X** that appears in the top-right corner when you hover over the node. To disconnect two nodes, left-click and hold the input of the connected node, then drag the cursor to another node’s input or click any open space in the diagram.
+
+#### Node Types {-}
 
 The diagram has four fundamental node types:
 
- 	Hazard. A hazard function describes the exceedance probabilities of various hazard levels. Examples include annual maximum peak flow-frequency, peak reservoir pool stage frequency, and peak ground acceleration. The system component is identified and labeled by the selected hazard function. You can make multiple connections to a selected hazard function.
- 	
- 	Transform. A transform function transforms (or converts) the hazard levels from one type of function to another. The required input to this node is the hazard type being transformed. The node output is the hazard type that the function is transforming into. You can make multiple connections from a transform function, unless it is transforming a response function, and you can connect multiple transforms sequentially. For example, an unregulated flow-frequency may need to be transformed into a regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.
- 	
- 	Response. A system response function describes the conditional probability of failure for various hazard levels, such as WSEs. The failure modes within a system component are identified and labeled by the selected response function. A system component can have multiple failure modes, each with different consequences. The required input is the hazard type defined by the selected response function. The output type is the same as the input. The output can only have one connection.
- 	
- 	Consequence. A consequence function describes the consequences of failure or non-failure for various hazard levels, such as annual maximum peak WSEs. Note that each response node can have a different consequence node, and a consequence function connected to the hazard node without a response function is considered the non-failure component of the element. A consequence node has one required input, the hazard defined by the selected consequence function
+<!-- <ul class="hidden-level-1"> -->
+<!--     <li><img src="images/hazardIcon.png"> <b>Hazard Node</b>: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.</li> -->
+<!-- </ul> -->
 
-The risk diagram provides the following visual feedback on input data validation:
+- ![Image](images/hazardIcon.png) **Hazard Node**: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.
+ 	
+- ![Image](images/transformIcon.png) **Transform Node**: Converts hazard levels from one type to another (e.g., flow to stage). Transform nodes can connect sequentially and have multiple outputs unless linked to a response function. For example, an unregulated flow-frequency function may need to be transformed into regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.
+ 	
+- ![Image](images/responseIcon.png) **Response Node**: Represents the system’s conditional probability of failure at various hazard levels. Response nodes define failure modes and allow one output connection.
+ 	
+- ![Image](images/consequenceIcon.png) **Consequence Node**: Defines the consequences of failure or non-failure. Non-failure consequences connect directly to the hazard node without a response function.
 
- 	No Input Selected. A node with no input selected is highlighted with a red outline.
- 	
- 	Incomplete Connection. A black connection indicates nothing is wrong with the connection, and the units match, but it lacks a completely connected failure or non-failure mode. The risk calculations will not include this connection.
- 	
- 	Invalid Connection. A red connection means the connection is not valid. Either the hazard units do not match or an input hasn’t been defined for one of the nodes. The risk analysis cannot be computed if a connection is invalid.
- 	
- 	Valid Non-Failure Mode Connection. A purple connection is for valid non-failure modes. It indicates that every connection in a system component is valid and the non-failure mode is complete. A system component with purple connections for the non-failure mode indicates that the risk calculations include the component.
+#### Visual Feedback {-}
 
-Figure 135 shows the risk diagram for a levee risk analysis. The hazard function is a river peak flow frequency curve. Peak flow is transformed to a peak river stage using a flow-to-stage rating curve derived from a hydraulic routing model. PFMs include a prior-to-overtopping failure mode (Prior OT) from backward erosion piping and an overtopping (OT) failure mode. The two failure modes have green connectors. The non-failure mode is at the top with the purple connectors. Non-fail consequences connect directly to the hazard transform function with no response function in between. 
+The diagram provides visual feedback for data validation:
+
+- <img src="images/noInputSelected.png" style="width: 32px; height: 12px"> **No Input Selected**: Red outlines indicate a node with no input defined.
+
+- <img src="images/incompleteConnection.png" style="width: 32px; height: 4px"> **Incomplete Connection**: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection.
+ 	
+- <img src="images/invalidConnection.png" style="width: 32px; height: 4px"> **Invalid Connection**: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis.
+ 	
+- <img src="images/validNFModeConnection.png" style="width: 32px; height: 4px"> **Valid Non-Failure Mode Connection**: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations.
+
+<!-- - ![Image](images/noInputSelected.png) **No Input Selected**: Red outlines indicate a node with no input defined. -->
+
+<!-- - ![Image](images/incompleteConnection.png) **Incomplete Connection**: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection. -->
+
+<!-- - ![Image](images/invalidConnection.png) **Invalid Connection**: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis. -->
+
+<!-- - ![Image](images/validNFModeConnection.png) **Valid Non-Failure Mode Connection**: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations. -->
+
+#### Example Levee Risk Diagram {-}
+
+Figure \@ref(fig:figure-134) illustrates a levee risk analysis. The hazard function is a river peak flow frequency curve, transformed into a peak river stage using a flow-to-stage rating curve from a hydraulic routing model. The diagram includes two failure modes:
+
+- **Prior OT (Backward Erosion Piping)**: Represents failure before overtopping.
+
+- **OT (Overtopping)**: Represents overtopping-related failure.
+
+The non-failure mode is represented at the top with purple connectors, where non-failure consequences connect directly to the hazard transform function.
+
+```{r figure-135, echo=FALSE, fig.cap="Example levee risk diagram.", fig.align="center"}
+knitr::include_graphics("images/figure135.png")
+```
 
 ## Risk Simulation
 

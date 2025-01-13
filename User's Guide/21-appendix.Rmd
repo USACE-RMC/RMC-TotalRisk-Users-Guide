@@ -1,0 +1,44 @@
+# Appendix A - Acronyms
+
+| Acronym     | Full Form                                           |
+|-------------|-----------------------------------------------------|
+| AALL        | Average Annual Life Loss                            |
+| AEP         | Annual Exceedance Probability                       |
+| ANCOLD      | Australian National Committee on Large Dams         |
+| API         | Annual Probability of Inundation                    |
+| ASR	        | Adaptive Simpson’s Rule                             |
+| CCA	        | Common Cause Adjustment                             |
+| CHL	        | Coastal and Hydraulics Laboratory                   |
+| CI	        | Confidence Interval                                 |
+| CPD	        | Computer Program Document                           |
+| CPU	        | Central Processing Unit                             |
+| DAG	        | Directed Acyclic Graph                              |
+| EAD	        | Expected Annual Damage                              |
+| ECB	        | Engineering and Construction Bulletin               |
+| EM	        | Engineer Manual                                     |
+| ER	        | Engineer Regulation                                 |
+| EqAC	      | Equivalent Annual Consequences                      |
+| ERDC	      | Engineer Research and Development Center            |
+| ERL	        | Effective Record Length                             |
+| FWOP	      | Future Without Project                              |
+| HEC	        | Hydrologic Engineering Center                       |
+| HEC-FDA	    | Flood Damage Reduction Analysis Software            |
+| HEC-RAS	    | River Analysis System Software                      |
+| HEC-SSP	    | Statistical Software Package Software               |
+| LEC	        | Loss Exceedance Curve                               |
+| NED	        | National Economic Development                       |
+| NFIP	      | National Flood Insurance Program                    |
+| OT	        | Overtopping                                         |
+| PFM	        | Potential Failure Mode                              |
+| PRNG	      | Pseudo Random Number Generator                      |
+| RMC	        | Risk Management Center                              |
+| RMC-BestFit	| Bayesian Estimation and Fitting Software            |
+| RMC-RFA	    | Reservoir Frequency Analysis Software               |
+| SRP	        | System Response Probability                         |
+| TD	        | Technical Document                                  |
+| TR	        | Technical Report                                    |
+| TRL	        | Tolerable Risk Limit                                |
+| U.S.	      | United States                                       |
+| USACE	      | U.S. Army Corps of Engineers                        |
+| USBR	      | U.S. Bureau of Reclamation                          |
+| WSE         |	Water Surface Elevation                             |

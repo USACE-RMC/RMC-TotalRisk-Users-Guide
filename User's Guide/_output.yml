@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: style.css
   split_by: section
+  number_appendix: yes
   config:
     toc:
       collapse: section
