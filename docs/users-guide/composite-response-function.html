@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8.5 Composite Response Function | RMC-TotalRisk User’s Guide</title>
+  <meta name="description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
+  <meta name="generator" content="bookdown 0.41.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8.5 Composite Response Function | RMC-TotalRisk User’s Guide" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
+  <meta name="github-repo" content="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8.5 Composite Response Function | RMC-TotalRisk User’s Guide" />
+  
+  <meta name="twitter:description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
+  
+
+<meta name="author" content="C. Haden Smith and Woodrow L. Fields" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="TotalRiskIcon.ico" type="image/x-icon" />
+<link rel="prev" href="bivariate-response-function.html"/>
+<link rel="next" href="consequence-functions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li>
+  <a href="./">
+    <img src="images/TotalRiskIcon.png" alt="RMC-TotalRisk icon." style="height:20px; margin-right:5px; vertical-align:middle;">
+    RMC-TotalRisk User's Guide
+  </a>
+</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-cite-this-guide"><i class="fa fa-check"></i>How to Cite This Guide</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>1</b> Welcome to RMC-TotalRisk</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="why-you-should-use-rmc-totalrisk.html"><a href="why-you-should-use-rmc-totalrisk.html"><i class="fa fa-check"></i><b>1.1</b> Why You Should Use RMC-TotalRisk</a></li>
+<li class="chapter" data-level="1.2" data-path="when-you-should-use-rmc-totalrisk.html"><a href="when-you-should-use-rmc-totalrisk.html"><i class="fa fa-check"></i><b>1.2</b> When You Should Use RMC-TotalRisk</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="risk-analysis-framework.html"><a href="risk-analysis-framework.html"><i class="fa fa-check"></i><b>2</b> Risk Analysis Framework</a></li>
+<li class="chapter" data-level="3" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3</b> Installing RMC-TotalRisk</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="setting-the-file-association-in-windows.html"><a href="setting-the-file-association-in-windows.html"><i class="fa fa-check"></i><b>3.1</b> Setting the File Association in Windows</a></li>
+<li class="chapter" data-level="3.2" data-path="system-requirements.html"><a href="system-requirements.html"><i class="fa fa-check"></i><b>3.2</b> System Requirements</a></li>
+<li class="chapter" data-level="3.3" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html"><i class="fa fa-check"></i><b>3.3</b> Terms and Conditions for Use</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#waiver-of-warranty"><i class="fa fa-check"></i><b>3.3.1</b> Waiver of Warranty</a></li>
+<li class="chapter" data-level="3.3.2" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#limitation-of-liability"><i class="fa fa-check"></i><b>3.3.2</b> Limitation of Liability</a></li>
+<li class="chapter" data-level="3.3.3" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#indemnity"><i class="fa fa-check"></i><b>3.3.3</b> Indemnity</a></li>
+<li class="chapter" data-level="3.3.4" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#assent"><i class="fa fa-check"></i><b>3.3.4</b> Assent</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="gui.html"><a href="gui.html"><i class="fa fa-check"></i><b>4</b> Graphical User Interface</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html"><i class="fa fa-check"></i><b>4.1</b> Menu Bar</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-file"><i class="fa fa-check"></i><b>4.1.1</b> File</a></li>
+<li class="chapter" data-level="4.1.2" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-view"><i class="fa fa-check"></i><b>4.1.2</b> View</a></li>
+<li class="chapter" data-level="4.1.3" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-project"><i class="fa fa-check"></i><b>4.1.3</b> Project</a></li>
+<li class="chapter" data-level="4.1.4" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-tools"><i class="fa fa-check"></i><b>4.1.4</b> Tools</a></li>
+<li class="chapter" data-level="4.1.5" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-window"><i class="fa fa-check"></i><b>4.1.5</b> Window</a></li>
+<li class="chapter" data-level="4.1.6" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-help"><i class="fa fa-check"></i><b>4.1.6</b> Help</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="gui-tool-bar.html"><a href="gui-tool-bar.html"><i class="fa fa-check"></i><b>4.2</b> Tool Bar</a></li>
+<li class="chapter" data-level="4.3" data-path="gui-window-layout.html"><a href="gui-window-layout.html"><i class="fa fa-check"></i><b>4.3</b> Window Layout</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="gui-window-layout.html"><a href="gui-window-layout.html#types-of-windows"><i class="fa fa-check"></i><b>4.3.1</b> Types of Windows</a></li>
+<li class="chapter" data-level="4.3.2" data-path="gui-window-layout.html"><a href="gui-window-layout.html#tab-groups"><i class="fa fa-check"></i><b>4.3.2</b> Tab Groups</a></li>
+<li class="chapter" data-level="4.3.3" data-path="gui-window-layout.html"><a href="gui-window-layout.html#move-and-dock-windows"><i class="fa fa-check"></i><b>4.3.3</b> Move and Dock Windows</a></li>
+<li class="chapter" data-level="4.3.4" data-path="gui-window-layout.html"><a href="gui-window-layout.html#close-and-auto-hide-tool-windows"><i class="fa fa-check"></i><b>4.3.4</b> Close and Auto-Hide Tool Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="project-explorer.html"><a href="project-explorer.html"><i class="fa fa-check"></i><b>4.4</b> Project Explorer</a></li>
+<li class="chapter" data-level="4.5" data-path="tabbed-documents.html"><a href="tabbed-documents.html"><i class="fa fa-check"></i><b>4.5</b> Tabbed Documents</a></li>
+<li class="chapter" data-level="4.6" data-path="properties-window.html"><a href="properties-window.html"><i class="fa fa-check"></i><b>4.6</b> Properties Window</a></li>
+<li class="chapter" data-level="4.7" data-path="message-window.html"><a href="message-window.html"><i class="fa fa-check"></i><b>4.7</b> Message Window</a></li>
+<li class="chapter" data-level="4.8" data-path="options.html"><a href="options.html"><i class="fa fa-check"></i><b>4.8</b> Personalize RMC-TotalRisk</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="options.html"><a href="options.html#application-options"><i class="fa fa-check"></i><b>4.8.1</b> Application Options</a></li>
+<li class="chapter" data-level="4.8.2" data-path="options.html"><a href="options.html#file-management-options"><i class="fa fa-check"></i><b>4.8.2</b> File Management Options</a></li>
+<li class="chapter" data-level="4.8.3" data-path="options.html"><a href="options.html#message-window-options"><i class="fa fa-check"></i><b>4.8.3</b> Message Window Options</a></li>
+<li class="chapter" data-level="4.8.4" data-path="options.html"><a href="options.html#default-options"><i class="fa fa-check"></i><b>4.8.4</b> Default Options</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="plot-features.html"><a href="plot-features.html"><i class="fa fa-check"></i><b>4.9</b> Plot Features</a></li>
+<li class="chapter" data-level="4.10" data-path="table-features.html"><a href="table-features.html"><i class="fa fa-check"></i><b>4.10</b> Table Features</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="table-features.html"><a href="table-features.html#add-and-remove-row-tools"><i class="fa fa-check"></i><b>4.10.1</b> Add and Remove Row Tools</a></li>
+<li class="chapter" data-level="4.10.2" data-path="table-features.html"><a href="table-features.html#export-and-copy-tools"><i class="fa fa-check"></i><b>4.10.2</b> Export and Copy Tools</a></li>
+<li class="chapter" data-level="4.10.3" data-path="table-features.html"><a href="table-features.html#table-row-selection-tools"><i class="fa fa-check"></i><b>4.10.3</b> Table Row Selection Tools</a></li>
+<li class="chapter" data-level="4.10.4" data-path="table-features.html"><a href="table-features.html#table-column-features"><i class="fa fa-check"></i><b>4.10.4</b> Table Column Features</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="create-a-project.html"><a href="create-a-project.html"><i class="fa fa-check"></i><b>5</b> Create a Project</a></li>
+<li class="chapter" data-level="6" data-path="hazard-functions.html"><a href="hazard-functions.html"><i class="fa fa-check"></i><b>6</b> Hazard Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="bestfit.html"><a href="bestfit.html"><i class="fa fa-check"></i><b>6.1</b> Import from RMC-BestFit</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="bestfit.html"><a href="bestfit.html#graphical-results"><i class="fa fa-check"></i><b>6.1.1</b> Graphical Results</a></li>
+<li class="chapter" data-level="6.1.2" data-path="bestfit.html"><a href="bestfit.html#tabular-results"><i class="fa fa-check"></i><b>6.1.2</b> Tabular Results</a></li>
+<li class="chapter" data-level="6.1.3" data-path="bestfit.html"><a href="bestfit.html#parameter-sets"><i class="fa fa-check"></i><b>6.1.3</b> Parameter Sets</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="import-from-rmc-rfa.html"><a href="import-from-rmc-rfa.html"><i class="fa fa-check"></i><b>6.2</b> Import from RMC-RFA</a></li>
+<li class="chapter" data-level="6.3" data-path="parametric-hazard-function.html"><a href="parametric-hazard-function.html"><i class="fa fa-check"></i><b>6.3</b> Parametric Hazard Function</a></li>
+<li class="chapter" data-level="6.4" data-path="nonparametric-hazard-function.html"><a href="nonparametric-hazard-function.html"><i class="fa fa-check"></i><b>6.4</b> Nonparametric Hazard Function</a></li>
+<li class="chapter" data-level="6.5" data-path="tabular-hazard-function.html"><a href="tabular-hazard-function.html"><i class="fa fa-check"></i><b>6.5</b> Tabular Hazard Function</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tabular-hazard-function.html"><a href="tabular-hazard-function.html#data-validation"><i class="fa fa-check"></i><b>6.5.1</b> Data Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="composite-hazard-function.html"><a href="composite-hazard-function.html"><i class="fa fa-check"></i><b>6.6</b> Composite Hazard Function</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="transform-functions.html"><a href="transform-functions.html"><i class="fa fa-check"></i><b>7</b> Transform Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="linear-transform-function.html"><a href="linear-transform-function.html"><i class="fa fa-check"></i><b>7.1</b> Linear Transform Function</a></li>
+<li class="chapter" data-level="7.2" data-path="power-transform-function.html"><a href="power-transform-function.html"><i class="fa fa-check"></i><b>7.2</b> Power Transform Function</a></li>
+<li class="chapter" data-level="7.3" data-path="tabular-transform-function.html"><a href="tabular-transform-function.html"><i class="fa fa-check"></i><b>7.3</b> Tabular Transform Function</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="tabular-transform-function.html"><a href="tabular-transform-function.html#data-validation-1"><i class="fa fa-check"></i><b>7.3.1</b> Data Validation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="system-response-functions.html"><a href="system-response-functions.html"><i class="fa fa-check"></i><b>8</b> System Response Functions</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html"><i class="fa fa-check"></i><b>8.1</b> Event Tree Response Function</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
+<li class="chapter" data-level="8.1.2" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#navigating-an-event-tree"><i class="fa fa-check"></i><b>8.1.2</b> Navigating an Event Tree</a></li>
+<li class="chapter" data-level="8.1.3" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#customizing-an-event-tree"><i class="fa fa-check"></i><b>8.1.3</b> Customizing an Event Tree</a></li>
+<li class="chapter" data-level="8.1.4" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#building-an-event-tree"><i class="fa fa-check"></i><b>8.1.4</b> Building an Event Tree</a></li>
+<li class="chapter" data-level="8.1.5" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#explorting-event-tree-results"><i class="fa fa-check"></i><b>8.1.5</b> Explorting Event Tree Results</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="parametric-response-function.html"><a href="parametric-response-function.html"><i class="fa fa-check"></i><b>8.2</b> Parametric Response Function</a></li>
+<li class="chapter" data-level="8.3" data-path="tabular-response-function.html"><a href="tabular-response-function.html"><i class="fa fa-check"></i><b>8.3</b> Tabular Response Function</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="tabular-response-function.html"><a href="tabular-response-function.html#data-validation-2"><i class="fa fa-check"></i><b>8.3.1</b> Data Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="bivariate-response-function.html"><a href="bivariate-response-function.html"><i class="fa fa-check"></i><b>8.4</b> Bivariate Response Function</a></li>
+<li class="chapter" data-level="8.5" data-path="composite-response-function.html"><a href="composite-response-function.html"><i class="fa fa-check"></i><b>8.5</b> Composite Response Function</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="consequence-functions.html"><a href="consequence-functions.html"><i class="fa fa-check"></i><b>9</b> Consequence Functions</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="import-from-lifesim.html"><a href="import-from-lifesim.html"><i class="fa fa-check"></i><b>9.1</b> Import from LifeSim</a></li>
+<li class="chapter" data-level="9.2" data-path="tabular-consequence-function.html"><a href="tabular-consequence-function.html"><i class="fa fa-check"></i><b>9.2</b> Tabular Consequence Function</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="tabular-consequence-function.html"><a href="tabular-consequence-function.html#data-validation-3"><i class="fa fa-check"></i><b>9.2.1</b> Data Validation</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="composite-consequence-function.html"><a href="composite-consequence-function.html"><i class="fa fa-check"></i><b>9.3</b> Composite Consequence Function</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="risk-analyses.html"><a href="risk-analyses.html"><i class="fa fa-check"></i><b>10</b> Risk Analyses</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="create-new-risk-analysis.html"><a href="create-new-risk-analysis.html"><i class="fa fa-check"></i><b>10.1</b> Create New Risk Analysis</a></li>
+<li class="chapter" data-level="10.2" data-path="simulation-options.html"><a href="simulation-options.html"><i class="fa fa-check"></i><b>10.2</b> Simulation Options</a></li>
+<li class="chapter" data-level="10.3" data-path="integration-options.html"><a href="integration-options.html"><i class="fa fa-check"></i><b>10.3</b> Integration Options</a></li>
+<li class="chapter" data-level="10.4" data-path="system-component-options.html"><a href="system-component-options.html"><i class="fa fa-check"></i><b>10.4</b> System Component Options</a></li>
+<li class="chapter" data-level="10.5" data-path="system-options.html"><a href="system-options.html"><i class="fa fa-check"></i><b>10.5</b> System Options</a></li>
+<li class="chapter" data-level="10.6" data-path="risk-measure-options.html"><a href="risk-measure-options.html"><i class="fa fa-check"></i><b>10.6</b> Risk Measure Options</a></li>
+<li class="chapter" data-level="10.7" data-path="risk-diagram.html"><a href="risk-diagram.html"><i class="fa fa-check"></i><b>10.7</b> Risk Diagram</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="risk-diagram.html"><a href="risk-diagram.html#working-with-the-risk-diagram"><i class="fa fa-check"></i><b>10.7.1</b> Working with the Risk Diagram</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="risk-simulation.html"><a href="risk-simulation.html"><i class="fa fa-check"></i><b>10.8</b> Risk Simulation</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="risk-analysis-results.html"><a href="risk-analysis-results.html"><i class="fa fa-check"></i><b>11</b> Risk Analysis Results</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="loss-exceedance-plot.html"><a href="loss-exceedance-plot.html"><i class="fa fa-check"></i><b>11.1</b> Loss Exceedance Plot</a></li>
+<li class="chapter" data-level="11.2" data-path="conditional-loss-plot.html"><a href="conditional-loss-plot.html"><i class="fa fa-check"></i><b>11.2</b> Conditional Loss Plot</a></li>
+<li class="chapter" data-level="11.3" data-path="summary-statistics.html"><a href="summary-statistics.html"><i class="fa fa-check"></i><b>11.3</b> Summary Statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="risk-analysis-diagnostics.html"><a href="risk-analysis-diagnostics.html"><i class="fa fa-check"></i><b>12</b> Risk Analysis Diagnostics</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="integration.html"><a href="integration.html"><i class="fa fa-check"></i><b>12.1</b> Integration</a></li>
+<li class="chapter" data-level="12.2" data-path="risk-measures.html"><a href="risk-measures.html"><i class="fa fa-check"></i><b>12.2</b> Risk Measures</a></li>
+<li class="chapter" data-level="12.3" data-path="risk-profile.html"><a href="risk-profile.html"><i class="fa fa-check"></i><b>12.3</b> Risk Profile</a></li>
+<li class="chapter" data-level="12.4" data-path="assurance.html"><a href="assurance.html"><i class="fa fa-check"></i><b>12.4</b> Assurance</a></li>
+<li class="chapter" data-level="12.5" data-path="tornado-plot.html"><a href="tornado-plot.html"><i class="fa fa-check"></i><b>12.5</b> Tornado Plot</a></li>
+<li class="chapter" data-level="12.6" data-path="x-y-plot.html"><a href="x-y-plot.html"><i class="fa fa-check"></i><b>12.6</b> X-Y Plot</a></li>
+<li class="chapter" data-level="12.7" data-path="tabular.html"><a href="tabular.html"><i class="fa fa-check"></i><b>12.7</b> Tabular</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="13" data-path="appendix-a---acronyms.html"><a href="appendix-a---acronyms.html"><i class="fa fa-check"></i><b>13</b> Appendix A - Acronyms</a></li>
+<li class="divider"></li>
+<li>
+  <a href="https://www.rmc.usace.army.mil/">
+    <img src="images/USACE.png" alt="USACE Logo." style="height:20px; margin-right:5px; vertical-align:middle;">
+    USACE Risk Management Center
+  </a>
+</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RMC-TotalRisk User’s Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="composite-response-function" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Composite Response Function<a href="composite-response-function.html#composite-response-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This option allows you to combine multiple response functions into a single function by assigning weights to the individual input functions.</p>
+<p>To create a composite response function, right-click on the <strong>System Responses</strong> folder in the Project Explorer (Figure <a href="composite-response-function.html#fig:figure-109">8.26</a>) or navigate to <strong>Project Menu &gt; Hazards</strong> and <strong>select Add Composite Response…</strong>. Enter a name for the composite response function and click <strong>OK</strong>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figure-109"></span>
+<img src="images/figure109.png" alt="Create new composite response function."  />
+<p class="caption">
+Figure 8.26: Create new composite response function.
+</p>
+</div>
+<p>After creating the composite response function, it automatically opens in the Tabbed Documents area, and the Properties window displays its properties (Figure <a href="composite-response-function.html#fig:figure-110">8.27</a>). In the Properties window, you can configure the name, description, hazard type, hazard units, and input response functions. Use the Response Functions table to define the input functions. Click the Add Row(s) button in the table toolbar to add rows for the input functions. Ensure that the response function weights sum to 1. If the system response functions are competing, uncheck the <strong>Is Mixture</strong> checkbox and select a <strong>Dependency</strong> type: Independent, Perfectly Positive, or Perfectly Negative.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figure-110"></span>
+<img src="images/figure110.png" alt="Composite response function properties."  />
+<p class="caption">
+Figure 8.27: Composite response function properties.
+</p>
+</div>
+<p>The Tabbed Document for a composite function includes a graphical representation of the composite function (Figure <a href="composite-response-function.html#fig:figure-111">8.28</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figure-111"></span>
+<img src="images/figure111.png" alt="Composite response function graphical display."  />
+<p class="caption">
+Figure 8.28: Composite response function graphical display.
+</p>
+</div>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bivariate-response-function.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="consequence-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {},
+"info": true
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["totalrisk-user-guide.pdf"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"collapsed": true,
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -60,6 +60,29 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{booktabs}
 \usepackage{amsthm}
 \makeatletter
@@ -1533,13 +1556,13 @@ This section defines RMC-TotalRisk's event tree terminology \citep{cite-TechRef}
 
   \begin{itemize}
   \item
-    \textbf{Initiating Hazard Node}: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.
+    \includegraphics{images/hazardnode.png} \textbf{Initiating Hazard Node}: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.
   \item
-    \textbf{Chance Node}: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see ``reference node'').
+    \includegraphics{images/chancenode.png} \textbf{Chance Node}: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see ``reference node'').
   \item
-    \textbf{Reference Node}: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.
+    \includegraphics{images/referencenode.png} \textbf{Reference Node}: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.
   \item
-    \textbf{Remainder Node}: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.
+    \includegraphics{images/remaindernode.png} \textbf{Remainder Node}: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.
   \end{itemize}
 \item
   \textbf{Branch}: The line connecting two nodes in the event tree.
@@ -1575,13 +1598,13 @@ When you hover over a node, a toolbar appears above it, as shown in Figure \ref{
 
 \begin{itemize}
 \item
-  \textbf{Delete Branches}: Click this icon to remove all child branches from the selected node.
+  \includegraphics{images/deletebranches.png} \textbf{Delete Branches}: Click this icon to remove all child branches from the selected node.
 \item
-  \textbf{Copy Branches}: Click to copy the child branches into memory for pasting elsewhere.
+  \includegraphics{images/copybranches.png} \textbf{Copy Branches}: Click to copy the child branches into memory for pasting elsewhere.
 \item
-  \textbf{Paste Branches}: Click to paste previously copied branches onto the current node.
+  \includegraphics{images/pastebranches.png} \textbf{Paste Branches}: Click to paste previously copied branches onto the current node.
 \item
-  \textbf{Add New Branch}: Click to create a new branch from the selected node.
+  \includegraphics{images/newbranch.png} \textbf{Add New Branch}: Click to create a new branch from the selected node.
 \end{itemize}
 
 When you hover over a branch, a toolbar appears above its name, as shown in Figure \ref{fig:figure-87}. These options are also available by right-clicking on the branch. To rename a branch, double-click on it or use the branch properties.
@@ -1597,11 +1620,11 @@ When you hover over a branch, a toolbar appears above its name, as shown in Figu
 
 \begin{itemize}
 \item
-  \textbf{Delete Branch}: Click to remove the selected branch and all its child branches from the event tree.
+  \includegraphics{images/deletebranch.png} \textbf{Delete Branch}: Click to remove the selected branch and all its child branches from the event tree.
 \item
-  \textbf{Branch Properties}: Click to edit branch properties such as name, description, and probabilities directly in the workspace.
+  \includegraphics{images/branchproperties.png} \textbf{Branch Properties}: Click to edit branch properties such as name, description, and probabilities directly in the workspace.
 \item
-  \textbf{Save Template}: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.
+  \includegraphics{images/savetemplate.png} \textbf{Save Template}: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.
 \end{itemize}
 
 \hypertarget{customizing-an-event-tree}{%
@@ -1644,13 +1667,13 @@ The \textbf{Options} tab in the event tree Properties window provides tools to c
 \hypertarget{building-an-event-tree}{%
 \subsection{Building an Event Tree}\label{building-an-event-tree}}
 
-The following example represents an event tree developed for spillway erosion. The sequence of events is as follows: Pool elevation rises, producing spillway flow; grass in spillway is removed; headcut initiates; headcut advances to control section; control structure fails; intervention is unsuccessful; breach.
+This example demonstrates how to build an event tree for spillway erosion. The sequence of events includes: Pool elevation results in spillway flow, grass removal from the spillway, headcut initiation, headcut advancement to the control section, control structure failure, unsuccessful intervention, and breach.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Define the hazard. Click on the initiating hazard node branch, Hazard, to select it. Once selected, edit in the Properties window under the Selected Branch Properties subsection (Figure \ref{fig:figure-89}). Alternatively, edit the branch by clicking the branch properties button, , in the event tree node toolbar. Change the name to ``Pool Elevation.''
+  \textbf{Define the hazard}. Select the initiating hazard node branch, \textbf{Hazard}, by clicking on it. Once selected, edit its properties in the Properties window under the Selected Branch Properties subsection (Figure \ref{fig:figure-89}). Alternatively, click the \textbf{Branch Properties} button \includegraphics{images/branchproperties.png} in the event tree node toolbar to edit the branch. Rename the branch to ``Pool Elevation.''
 \end{enumerate}
 
 \begin{figure}
@@ -1666,11 +1689,11 @@ The following example represents an event tree developed for spillway erosion. T
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{1}
 \item
-  Use the table editing tools to enter the desired Hazard Levels.
+  \textbf{Enter hazard levels}. Use the table editing tools to input the desired hazard levels.
 \item
-  Delete the chance node that was added by default by either clicking the delete button in the toolbar or in the sub-branches properties of the initiating hazard node. A message appears requiring confirmation of the deletion. Click Yes to confirm deleting the unwanted node.
+  \textbf{Delete the default chance node}. Remove the chance node added by default by clicking the delete button \includegraphics{images/deletebranch.png} in the toolbar, or by using the \textbf{Sub-Branches Properties} section of the initiating hazard node. Confirm the deletion when prompted by clicking \textbf{Yes}.
 \item
-  Add the next node in the event tree by clicking the Add Branch button in the node toolbar, right click node context menu, or in the sub-branches properties section. Using the node properties editor, change the name of the new node, add a description, and define the probability of the event for each hazard level defined in step 1, as shown in Figure \ref{fig:figure-90}.
+  \textbf{Add a new node}. Add the next node in the event tree using one of the following methods: Click the \textbf{Add New Branch} button \includegraphics{images/newbranch.png} in the node toolbar, use the right-click node context menu on the node, or navigate to the \textbf{Sub-Branches Properties} section in the Properties window. After adding the node, use the \textbf{Node Properties Editor} to rename it, add a description, and define the event's probability for each hazard level specified in step 1 (Figure \ref{fig:figure-90}).
 \end{enumerate}
 
 \begin{figure}
@@ -1687,7 +1710,7 @@ The following example represents an event tree developed for spillway erosion. T
 \setcounter{enumi}{4}
 \tightlist
 \item
-  Continue adding nodes and defining the properties until the event tree is complete, as shown in Figure \ref{fig:figure-91}.
+  \textbf{Complete the event tree}. Continue adding nodes and defining their properties until the event tree is fully developed (Figure \ref{fig:figure-91}).
 \end{enumerate}
 
 \begin{figure}
@@ -1699,11 +1722,17 @@ The following example represents an event tree developed for spillway erosion. T
 \caption{Completed spillway erosion event tree.}\label{fig:figure-91}
 \end{figure}
 
-\hypertarget{event-tree-results}{%
-\subsection{Event Tree Results}\label{event-tree-results}}
+\hypertarget{explorting-event-tree-results}{%
+\subsection{Explorting Event Tree Results}\label{explorting-event-tree-results}}
 
-The Tabbed Document contains three tabs: Event Tree, Response, and Diagnostics. RMC-TotalRisk provides several tools for exploring the results of the event tree analysis.
-The event tree is built and edited in the Event Tree tab as discussed in the preceding sections. The Response tab contains a graphical representation of the system response function for each hazard level (Figure \ref{fig:figure-92}). This is commonly referred to as a fragility curve and represents the probability of failure for each defined hazard level. Export the function data as tabular data using the Export Plot Data button.
+The Tabbed Document contains three tabs: \textbf{Event Tree}, \textbf{Response}, and \textbf{Diagnostics}, each offering tools to explore the event tree analysis results.
+
+\begin{itemize}
+\item
+  The \textbf{Event Tree} is used to build and edit the event tree, as described in earlier sections.
+\item
+  The \textbf{Response} tab displays a graphical representation of the system response function for each hazard level (Figure \ref{fig:figure-92}). This function, commonly referred to as a fragility curve, represents the probability of failure for each defined hazard level. You can export the function data as tabular data using the \textbf{Export Plot Data} button.
+\end{itemize}
 
 \begin{figure}
 
@@ -1714,7 +1743,11 @@ The event tree is built and edited in the Event Tree tab as discussed in the pre
 \caption{System response probability function result from event tree.}\label{fig:figure-92}
 \end{figure}
 
-The Diagnostics tab contains several tools for reviewing and validating the event tree calculations. Options for reviewing the event tree results are on the left side of the Diagnostics tab. Options include Node Filters, Model Parameters, and Plot Options (Figure \ref{fig:figure-93}). Each viewing option is detailed below.
+\begin{itemize}
+\tightlist
+\item
+  The \textbf{Diagnostics} tab provides tools for reviewing and validating the event tree calculations. The left side of the Diagnostics tab offers options for \textbf{Node Filters}, \textbf{Model Parameters}, and \textbf{Plot Options} (Figure \ref{fig:figure-93}). Details for each option are provided below.
+\end{itemize}
 
 \begin{figure}
 
@@ -1725,35 +1758,38 @@ The Diagnostics tab contains several tools for reviewing and validating the even
 \caption{Event tree diagnostic viewing options.}\label{fig:figure-93}
 \end{figure}
 
+\hypertarget{node-filters}{%
+\subsubsection*{Node Filters}\label{node-filters}}
+\addcontentsline{toc}{subsubsection}{Node Filters}
+
 \begin{itemize}
 \item
-  Node Filters filters the visible plot data.
-
-  \begin{itemize}
-  \item
-    Show Remainder Nodes turns on or off displaying remainder nodes in the results.
-  \item
-    Combine Remainder Leaves, if checked, combines the terminal remainder nodes in the results. This is often akin to the probability of non-failure, as each remainder node often represents non fail conditions.
-  \item
-    Leaf Nodes Only, if checked, displays only the terminal leaf nodes (any node that doesn't have any child nodes).
-  \end{itemize}
+  \textbf{Show Remainder Nodes}: Toggles the display of remainder nodes in the results.
 \item
-  Model Parameters defines how the event tree is analyzed for review.
-
-  \begin{itemize}
-  \item
-    Monte Carlo Iterations defines the number of Monte Carlo iterations used to sample the event tree for diagnostic analysis. If no uncertainty is present, this option is disabled.
-  \item
-    Hazard Level defines the hazard level that calculates the diagnostic results.
-  \end{itemize}
+  \textbf{Combine Remainder Leaves}: Combines terminal remainder nodes, which often represent non-failure conditions, into a single result.
 \item
-  Plot Options provides various plots and tables to analyze the event tree results.
+  \textbf{Leaf Nodes Only}: Displays only terminal leaf nodes (nodes without child branches).
+\end{itemize}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Event Likelihood displays the likelihood of each node occurring in the event tree for the given hazard level (defined in the Model Parameters) as a box-and-whisker plot (Figure \ref{fig:figure-94}).
-  \end{itemize}
+\hypertarget{model-parameters}{%
+\subsubsection*{Model Parameters}\label{model-parameters}}
+\addcontentsline{toc}{subsubsection}{Model Parameters}
+
+\begin{itemize}
+\item
+  \textbf{Monte Carlo Iterations}: Specifies the number of Monte Carlo iterations used to sample the event tree for diagnostic analysis. This option is disabled if no uncertainty is present.
+\item
+  \textbf{Hazard Level}: Defines the hazard level used to calculate diagnostic results.
+\end{itemize}
+
+\hypertarget{plot-options}{%
+\subsubsection*{Plot Options}\label{plot-options}}
+\addcontentsline{toc}{subsubsection}{Plot Options}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Event Likelihood}: Displays a box-and-whisker plot of the likelihood for each node occurring at the selected hazard level (Figure \ref{fig:figure-94}).
 \end{itemize}
 
 \begin{figure}
@@ -1765,7 +1801,11 @@ The Diagnostics tab contains several tools for reviewing and validating the even
 \caption{Event tree diagnostics event likelihood plot option.}\label{fig:figure-94}
 \end{figure}
 
-Correlation to SRP displays the Pearson's correlation coefficient for how each node's sampled probabilities correlate to the overall SRP. Chance nodes have a positive correlation with the SRP, whereas remainder nodes have a negative correlation. The absolute size of the correlation coefficient indicates the strength of the association with SRP (USACE 2022). The nodal correlations to SRP display as a ranked tornado plot (Figure \ref{fig:figure-95}).
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Correlation to SRP}: Shows the Pearson correlation coefficients for how node probabilities correlate with the overall SRP. Chance nodes have a positive correlation with the SRP, whereas remainder nodes have a negative correlation. The absolute size of the correlation coefficient indicates the strength of the association with SRP. The nodal correlations to SRP display as a ranked tornado plot (Figure \ref{fig:figure-95}).
+\end{itemize}
 
 \begin{figure}
 
@@ -1776,7 +1816,11 @@ Correlation to SRP displays the Pearson's correlation coefficient for how each n
 \caption{Event tree diagnostics tree node correlation to SRP plot.}\label{fig:figure-95}
 \end{figure}
 
-Sensitivity Index displays each node's first-order sensitivity index or main effect index (Figure \ref{fig:figure-96}). This is the contribution to the output variance. It measures the effect of varying a single node averaged over variations in other input parameters. It is standardized by the total variance to provide a fractional contribution. A node with a high sensitivity index is a good indicator that reducing the node's uncertainty can significantly impact the overall SRP (Sobol 2001; USACE 2022).
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Sensitivity Index}: Displays each node's first-order sensitivity index, indicating its contribution to the variance in the SRP (Figure \ref{fig:figure-96}). A high sensitivity index suggests that reducing uncertainty for that node could significantly affect the overall SRP.
+\end{itemize}
 
 \begin{figure}
 
@@ -1787,7 +1831,11 @@ Sensitivity Index displays each node's first-order sensitivity index or main eff
 \caption{Event tree diagnostics tree node sensitivity indices.}\label{fig:figure-96}
 \end{figure}
 
-Node SRP Scatter plots the sampled values for a given node against the overall SRP for each Monte Carlo iteration. A node with a strong correlation to SRP shows a clear trend between the sampled node probability and overall SRP (Figure \ref{fig:figure-97}).
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Node SRP Scatter}: Plots the sampled probabilities of a node against the overall SRP for each Monte Carlo iteration. Nodes with strong correlations to the SRP show clear trends in this scatter plot (Figure \ref{fig:figure-97}).
+\end{itemize}
 
 \begin{figure}
 
@@ -1798,7 +1846,11 @@ Node SRP Scatter plots the sampled values for a given node against the overall S
 \caption{Event tree diagnostics tree node probability to SRP scatter plot.}\label{fig:figure-97}
 \end{figure}
 
-Tabular shows the individual node's sampled probabilities and overall SRP for each Monte Carlo iteration in the model in table form (Figure \ref{fig:figure-98}). Use the table features to verify node distribution sampling through the column statistics (Figure \ref{fig:figure-99}).
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tabular}: Displays a table of node probabilities and the overall SRP for each Monte Carlo iteration (Figure \ref{fig:figure-98}). Use the table's column statistics feature to verify sampling distributions (Figure \ref{fig:figure-99}).
+\end{itemize}
 
 \begin{figure}
 
@@ -2433,75 +2485,156 @@ For more details about the additional risk measures in RMC-TotalRisk, refer to t
 \hypertarget{risk-diagram}{%
 \section{Risk Diagram}\label{risk-diagram}}
 
-RMC-TotalRisk defines a risk analysis through a diagram, as shown in Figure \ref{fig:figure-131}. The diagram provides an intuitive way to create and connect the various components of the modeled system.
+RMC-TotalRisk defines a risk analysis using an intuitive diagram, as shown in Figure \ref{fig:figure-131}. This diagram provides a clear way to create and connect the components of the modeled system.
 
-A risk analysis computes the risk associated with a collection of potential failure modes for each component in the system. A failure mode is composed of a hazard, the system response to the hazard, and the consequences given the response to the hazard. A non-failure mode is composed of a hazard and the non-failure consequences given the hazard.
+A risk analysis computes the risk associated with multiple potential failure modes for each system component. Each failure mode combines a hazard, the system's response to that hazard, and the consequences of the response. Non-failure modes consist of a hazard and the non-failure consequences associated with it.
 
-Figure 131 shows a single system component for a dam safety risk analysis. A non-failure mode, shown at the top of the diagram with the purple line, connects the hazard function to the non-failure consequences, without any system response. Many dams often have consequences even if the structure does not fail. For example, during a major flood event, a dam could activate the emergency spillway, preventing the dam from reducing downstream flooding. The non-failure mode models the risk of non failure (USACE 2022).
+Figure \ref{fig:figure-131} illustrates a single system component for a dam safety risk analysis. The diagram includes a non-failure mode, represented by the purple line at the top, connecting the hazard function directly to the non-failure consequences without involving a system response. Many dams experience non-failure consequences. For example, during a major flood event, a dam might activate its emergency spillway to prevent overtopping. While this action protects the dam, it can still result in downstream impacts. The non-failure mode in the diagram represents the risk associated with these non-failure scenarios.
 
-The two failure modes are:
+The diagram also includes two failure modes:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  A spillway erosion failure mode, labelled PFM 1, shown in the center of the diagram, connects the hazard function at Dam A to the PFM 1 response function and consequence function.
+  \textbf{Spillway erosion failure mode (PFM 1)}: This mode, shown in the center of the diagram, connects the hazard function at Dam A to the PFM 1 response function and consequence function.
 \item
-  A concentrated leak erosion failure mode, labelled PFM 2, shown in the bottom of the diagram with the same respective connections.
+  \textbf{Concentrated leak erosion failure mode (PFM 2)}: This mode, shown at the bottom of the diagram, follows the same structure as PFM 1.
 \end{enumerate}
 
-In the risk diagram, the input functions connect from left to right and link together based on each function's hazard type (e.g., stage, flow) and units (e.g., ft, cfs). There cannot be any circular or redundant connections. As such, the risk diagram is a type of directed acyclic graph (DAG).
+\begin{figure}
 
-The system components are identified and labeled by the selected hazard function. You can rename system components by right-clicking the name in the risk diagram or editing the name in the Properties window. The failure modes within a component are identified and labeled by the selected response functions.
+{\centering \includegraphics{images/figure131} 
 
-RMC-TotalRisk permits an unlimited number of failure modes per component, depending on the selected failure mode method. However, a single system is limited to 20 components due to virtual memory and computer runtime limitations. For example, you can assess the system risk of a watershed comprising up to 20 dams, each with multiple failure modes.
+}
 
-\hypertarget{creating-a-diagram}{%
-\subsection{Creating a Diagram}\label{creating-a-diagram}}
+\caption{RMC-TotalRisk risk diagram.}\label{fig:figure-131}
+\end{figure}
 
-First, get a feel for working with the diagram. Use your mouse to left-click and drag any open area in the diagram to pan the diagram surface. Zoom in and out on the diagram using the mouse wheel.
+The risk diagram connects input functions from left to right, linking them based on their hazard type (e.g., stage, flow) and units (e.g., ft, cfs). Circular or redundant connections are not allowed, making the risk diagram a type of directed acyclic graph (DAG).
 
-Inputs to the risk analysis are designated using nodes in the diagram. Select the desired input function for a node using the selection box. Left-click and drag on any node to move the node around the diagram. A blue circle at the bottom left of the node shows the required inputs for each node (Figure 132). An orange circle at the lower right of the node shows the node output.
+System components in the diagram are labeled by their selected hazard functions. You can rename system components by right-clicking their names in the diagram or editing their names in the Properties window. Failure modes within each component are labeled by their corresponding response functions.
 
-You can add a node to the risk diagram in three ways, as shown in Figure 133:
+RMC-TotalRisk supports an unlimited number of failure modes per component, depending on the selected failure mode method. However, a single system is limited to 20 components due to virtual memory and runtime constraints. For example, you can evaluate the system risk for a watershed with up to 20 dams, each containing multiple failure modes.
 
-\begin{itemize}
+\hypertarget{working-with-the-risk-diagram}{%
+\subsection{Working with the Risk Diagram}\label{working-with-the-risk-diagram}}
+
+First, familiarize yourself with the diagram interface. Pan the diagram surface by left-clicking and dragging on any open area. Zoom in and out using the mouse wheel.
+
+Nodes in the diagram represent inputs to the risk analysis. Select a node's input function using the selection box. Move a node by left-clicking and dragging it. A blue circle at the bottom left of a node indicates required inputs, while an orange circle at the lower right shows the node output (Figure \ref{fig:figure-132}).
+
+\begin{figure}
+
+{\centering \includegraphics{images/figure132} 
+
+}
+
+\caption{Risk diagram node inputs and outputs.}\label{fig:figure-132}
+\end{figure}
+
+\hypertarget{adding-nodes}{%
+\subsubsection*{Adding Nodes}\label{adding-nodes}}
+\addcontentsline{toc}{subsubsection}{Adding Nodes}
+
+You can add nodes to the risk diagram in three ways (Figure \ref{fig:figure-133}):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
 \item
-  Place the mouse cursor over the large plus symbol in the upper left corner of the diagram to open a selection box, then left-click and drag to move the node to the desired location.
+  Hover over the large plus symbol in the upper-left corner of the diagram, then left-click and drag the node to the desired location.
 \item
-  Right-click on any empty space in the diagram to open a selection box to add a node at that location.
+  Right-click on any empty space in the diagram to open a selection box and add a node at that location.
 \item
-  Left-click on a node output to open a selection box. This third option has the added benefit of automatically connecting the new node to the clicked node output.
-\end{itemize}
+  Left-click on a node output to open a selection box. This option automatically connects the new node to the clicked node output.
+\end{enumerate}
 
-To connect two nodes, left-click and hold on a node output and drag toward the node you're connecting to. A line appears from the node output to the mouse cursor. Move the mouse cursor over the input of the desired node and release the mouse button to connect. See Figure 134.
+\begin{figure}
 
-To delete a node, either right-click on the node and select Delete or click the X that appears in the top right corner of the node when the cursor is over the node. To disconnect two nodes, left-click and hold the input to the connected node and move the cursor to either another node's input or remove the connection by clicking in any open space of the diagram.
+{\centering \includegraphics[width=0.9\linewidth]{images/figure133} 
+
+}
+
+\caption{Options to add a new input node to the risk diagram: a) Place the cursor over the plus symbol in the upper left corner of the diagram then move the node to the desired location; b) Right-click on any empty space in the diagram to add at that location; and c) left-click on a node output (this option also connects the nodes).}\label{fig:figure-133}
+\end{figure}
+
+\hypertarget{connecting-nodes}{%
+\subsubsection*{Connecting Nodes}\label{connecting-nodes}}
+\addcontentsline{toc}{subsubsection}{Connecting Nodes}
+
+To connect two nodes, left-click and hold on a node output, then drag the cursor toward the desired node input. Release the mouse button to create the connection (Figure \ref{fig:figure-134}).
+
+\begin{figure}
+
+{\centering \includegraphics{images/figure134} 
+
+}
+
+\caption{To connect a node to another node, left-click and hold on a node output, drag toward the desired node input, and release the mouse button to finish the connection.}\label{fig:figure-134}
+\end{figure}
+
+\hypertarget{deleting-and-disconnecting-nodes}{%
+\subsubsection*{Deleting and Disconnecting Nodes}\label{deleting-and-disconnecting-nodes}}
+\addcontentsline{toc}{subsubsection}{Deleting and Disconnecting Nodes}
+
+To delete a node, right-click on it and select \textbf{Delete}, or click the \textbf{X} that appears in the top-right corner when you hover over the node. To disconnect two nodes, left-click and hold the input of the connected node, then drag the cursor to another node's input or click any open space in the diagram.
+
+\hypertarget{node-types}{%
+\subsubsection*{Node Types}\label{node-types}}
+\addcontentsline{toc}{subsubsection}{Node Types}
 
 The diagram has four fundamental node types:
 
-\begin{verbatim}
-Hazard. A hazard function describes the exceedance probabilities of various hazard levels. Examples include annual maximum peak flow-frequency, peak reservoir pool stage frequency, and peak ground acceleration. The system component is identified and labeled by the selected hazard function. You can make multiple connections to a selected hazard function.
+\begin{itemize}
+\item
+  \includegraphics{images/hazardIcon.png} \textbf{Hazard Node}: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component's identity and can have multiple outputs.
+\item
+  \includegraphics{images/transformIcon.png} \textbf{Transform Node}: Converts hazard levels from one type to another (e.g., flow to stage). Transform nodes can connect sequentially and have multiple outputs unless linked to a response function. For example, an unregulated flow-frequency function may need to be transformed into regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.
+\item
+  \includegraphics{images/responseIcon.png} \textbf{Response Node}: Represents the system's conditional probability of failure at various hazard levels. Response nodes define failure modes and allow one output connection.
+\item
+  \includegraphics{images/consequenceIcon.png} \textbf{Consequence Node}: Defines the consequences of failure or non-failure. Non-failure consequences connect directly to the hazard node without a response function.
+\end{itemize}
 
-Transform. A transform function transforms (or converts) the hazard levels from one type of function to another. The required input to this node is the hazard type being transformed. The node output is the hazard type that the function is transforming into. You can make multiple connections from a transform function, unless it is transforming a response function, and you can connect multiple transforms sequentially. For example, an unregulated flow-frequency may need to be transformed into a regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.
+\hypertarget{visual-feedback}{%
+\subsubsection*{Visual Feedback}\label{visual-feedback}}
+\addcontentsline{toc}{subsubsection}{Visual Feedback}
 
-Response. A system response function describes the conditional probability of failure for various hazard levels, such as WSEs. The failure modes within a system component are identified and labeled by the selected response function. A system component can have multiple failure modes, each with different consequences. The required input is the hazard type defined by the selected response function. The output type is the same as the input. The output can only have one connection.
+The diagram provides visual feedback for data validation:
 
-Consequence. A consequence function describes the consequences of failure or non-failure for various hazard levels, such as annual maximum peak WSEs. Note that each response node can have a different consequence node, and a consequence function connected to the hazard node without a response function is considered the non-failure component of the element. A consequence node has one required input, the hazard defined by the selected consequence function
-\end{verbatim}
+\begin{itemize}
+\item
+  \textbf{No Input Selected}: Red outlines indicate a node with no input defined.
+\item
+  \textbf{Incomplete Connection}: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection.
+\item
+  \textbf{Invalid Connection}: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis.
+\item
+  \textbf{Valid Non-Failure Mode Connection}: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations.
+\end{itemize}
 
-The risk diagram provides the following visual feedback on input data validation:
+\hypertarget{example-levee-risk-diagram}{%
+\subsubsection*{Example Levee Risk Diagram}\label{example-levee-risk-diagram}}
+\addcontentsline{toc}{subsubsection}{Example Levee Risk Diagram}
 
-\begin{verbatim}
-No Input Selected. A node with no input selected is highlighted with a red outline.
+Figure \ref{fig:figure-134} illustrates a levee risk analysis. The hazard function is a river peak flow frequency curve, transformed into a peak river stage using a flow-to-stage rating curve from a hydraulic routing model. The diagram includes two failure modes:
 
-Incomplete Connection. A black connection indicates nothing is wrong with the connection, and the units match, but it lacks a completely connected failure or non-failure mode. The risk calculations will not include this connection.
+\begin{itemize}
+\item
+  \textbf{Prior OT (Backward Erosion Piping)}: Represents failure before overtopping.
+\item
+  \textbf{OT (Overtopping)}: Represents overtopping-related failure.
+\end{itemize}
 
-Invalid Connection. A red connection means the connection is not valid. Either the hazard units do not match or an input hasn’t been defined for one of the nodes. The risk analysis cannot be computed if a connection is invalid.
+The non-failure mode is represented at the top with purple connectors, where non-failure consequences connect directly to the hazard transform function.
 
-Valid Non-Failure Mode Connection. A purple connection is for valid non-failure modes. It indicates that every connection in a system component is valid and the non-failure mode is complete. A system component with purple connections for the non-failure mode indicates that the risk calculations include the component.
-\end{verbatim}
+\begin{figure}
 
-Figure 135 shows the risk diagram for a levee risk analysis. The hazard function is a river peak flow frequency curve. Peak flow is transformed to a peak river stage using a flow-to-stage rating curve derived from a hydraulic routing model. PFMs include a prior-to-overtopping failure mode (Prior OT) from backward erosion piping and an overtopping (OT) failure mode. The two failure modes have green connectors. The non-failure mode is at the top with the purple connectors. Non-fail consequences connect directly to the hazard transform function with no response function in between.
+{\centering \includegraphics{images/figure135} 
+
+}
+
+\caption{Example levee risk diagram.}\label{fig:figure-135}
+\end{figure}
 
 \hypertarget{risk-simulation}{%
 \section{Risk Simulation}\label{risk-simulation}}
@@ -2897,6 +3030,61 @@ To analyze a specific column, right-click on the column header and select \textb
 
 \caption{Example of the histogram and summary statistics output for tabular results.}\label{fig:figure-154}
 \end{figure}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
+
+\hypertarget{appendix-a---acronyms}{%
+\chapter{Appendix A - Acronyms}\label{appendix-a---acronyms}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule()
+Acronym & Full Form \\
+\midrule()
+\endhead
+AALL & Average Annual Life Loss \\
+AEP & Annual Exceedance Probability \\
+ANCOLD & Australian National Committee on Large Dams \\
+API & Annual Probability of Inundation \\
+ASR & Adaptive Simpson's Rule \\
+CCA & Common Cause Adjustment \\
+CHL & Coastal and Hydraulics Laboratory \\
+CI & Confidence Interval \\
+CPD & Computer Program Document \\
+CPU & Central Processing Unit \\
+DAG & Directed Acyclic Graph \\
+EAD & Expected Annual Damage \\
+ECB & Engineering and Construction Bulletin \\
+EM & Engineer Manual \\
+ER & Engineer Regulation \\
+EqAC & Equivalent Annual Consequences \\
+ERDC & Engineer Research and Development Center \\
+ERL & Effective Record Length \\
+FWOP & Future Without Project \\
+HEC & Hydrologic Engineering Center \\
+HEC-FDA & Flood Damage Reduction Analysis Software \\
+HEC-RAS & River Analysis System Software \\
+HEC-SSP & Statistical Software Package Software \\
+LEC & Loss Exceedance Curve \\
+NED & National Economic Development \\
+NFIP & National Flood Insurance Program \\
+OT & Overtopping \\
+PFM & Potential Failure Mode \\
+PRNG & Pseudo Random Number Generator \\
+RMC & Risk Management Center \\
+RMC-BestFit & Bayesian Estimation and Fitting Software \\
+RMC-RFA & Reservoir Frequency Analysis Software \\
+SRP & System Response Probability \\
+TD & Technical Document \\
+TR & Technical Report \\
+TRL & Tolerable Risk Limit \\
+U.S. & United States \\
+USACE & U.S. Army Corps of Engineers \\
+USBR & U.S. Bureau of Reclamation \\
+WSE & Water Surface Elevation \\
+\bottomrule()
+\end{longtable}
 
   \bibliography{book.bib}
 
