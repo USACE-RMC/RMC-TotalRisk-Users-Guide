@@ -48,7 +48,6 @@ User's Guide/po/*~
 # RStudio Connect folder
 User's Guide/rsconnect/
 
-User's Guide/_book/
-User's Guide/_bookdown_files/
+/docs/users-guide
 .Rproj.user
 /.vs
