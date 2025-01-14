@@ -95,14 +95,14 @@
 <p>Three tabs provide different views of the risk analysis results: the <strong>Loss Exceedance Plot</strong>, <strong>Conditional Loss Plot</strong>, and <strong>Summary Statistics</strong> tabs (Figure <a href="risk-analysis-results.html#fig:figure-136">11.1</a>). The first two tabs display the risk analysis results graphically, while the last presents results in tabular form.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-136"></span>
-<img src="images/figure136.png" alt="Risk results tabs."><p class="caption">
+<img src="images/figure136.png" alt="Loss Exceedance Plot, Conditional Loss Plot, and Summary Statistics tabs shown with a red box around them."><p class="caption">
 Figure 11.1: Risk results tabs.
 </p>
 </div>
 <p>Each risk result tab includes options to filter the results. To filter results, click the button next to <strong>Filter Results</strong> near the top of the tab. Use the checkboxes (Figure <a href="risk-analysis-results.html#fig:figure-137">11.2</a>) to select which risk components and types to display in both graphical and tabular results. Risk components include the overall system, all system components, and all failure modes within each component.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-137"></span>
-<img src="images/figure137.png" alt="Select checkboxes for risk type and the system component in the graphical and tabular risk results."><p class="caption">
+<img src="images/figure137.png" alt="The Loss Exceedance Plot tab in the Risk Analysis window with check boxes for selecting the risk types, alternatives, risk analyses, and failure modes."><p class="caption">
 Figure 11.2: Select checkboxes for risk type and the system component in the graphical and tabular risk results.
 </p>
 </div>
@@ -125,21 +125,21 @@ Figure 11.2: Select checkboxes for risk type and the system component in the gra
 <p>Figure <a href="risk-analysis-results.html#fig:figure-138">11.3</a> shows an example loss exceedance plot. After simulating risk with full uncertainty, the plot includes a 90% confidence interval shaded in red, along with the mean and median curves. By default, the USACE tolerable risk limit is displayed as a dotted black line <span class="citation"><a href="#ref-cite-ER1156" role="doc-biblioref">[9]</a></span>. You can customize this tolerable risk limit (TRL), also referred to as a guideline, or remove it from the plot as needed.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-138"></span>
-<img src="images/figure138.png" alt="Tolerable risk guideline viewing options for graphical risk results in RMC-TotalRisk."><p class="caption">
-Figure 11.3: Tolerable risk guideline viewing options for graphical risk results in RMC-TotalRisk.
+<img src="images/figure138.png" alt="A Loss Exceedance Plot for Excess risk type, with the 90% confidence interval shown as a red-shaded bound along with median and mean curves, with USACE tolerable risk limits displayed on the plot."><p class="caption">
+Figure 11.3: Example of Loss Exceedance Plot results with confidence intervals and the USACE tolerable risk limit.
 </p>
 </div>
 <p>To customize the TRL, select an option from the <strong>Tolerable Risk Limits</strong> dropdown menu(Figure <a href="risk-analysis-results.html#fig:figure-139">11.4</a>). Available options include <strong>None</strong>, <strong>USACE</strong>, <strong>ANCOLD</strong> (2022 guidance), or a custom limit. To automatically set the plot extents to match the selected TRL extents, check the <strong>Set TRL axis extents</strong> checkbox.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-139"></span>
-<img src="images/figure139.png" alt="Example of Loss Exceedance Plot results with confidence intervals and the USACE TRL."><p class="caption">
-Figure 11.4: Example of Loss Exceedance Plot results with confidence intervals and the USACE TRL.
+<img src="images/figure139.png" alt="Decorative."><p class="caption">
+Figure 11.4: Tolerable risk guideline viewing options for graphical risk results in RMC-TotalRisk.
 </p>
 </div>
 <p>To add or edit custom limits, click the <strong>Edit/Add Tolerable Risk Limits</strong> button to open the <strong>Tolerable Risk Limit Editor</strong> (Figure <a href="risk-analysis-results.html#fig:figure-140">11.5</a>).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-140"></span>
-<img src="images/figure140.png" alt="Tolerable Risk Limit Editor."><p class="caption">
+<img src="images/figure140.png" alt="Window with text boxes for entering the name and the description of the limit, the minimum and the maximum probability and consequence values. There is a table underneath to enter x and y values of the custom guidelines and a corresponding plot at the bottom displays those custom guidelines."><p class="caption">
 Figure 11.5: Tolerable Risk Limit Editor.
 </p>
 </div>
@@ -160,7 +160,7 @@ Figure 11.5: Tolerable Risk Limit Editor.
 <p>The diagonal line on the plot represents the product of the probability of failure and the conditional mean loss, which equals the unconditional excess mean loss, <span class="math inline">\(\mathbb{E}[C]=1.1574\times10^{-3}\)</span>. This value plots slightly above the tolerable risk limit of <span class="math inline">\(1\times10^{-3}\)</span>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-141"></span>
-<img src="images/figure141.png" alt="Conditional Loss Plot displaying excess risk results as the probability of failure and the conditional mean life loss, showing USACE Tolerable Risk Limits as dotted black lines."><p class="caption">
+<img src="images/figure141.png" alt="Decorative."><p class="caption">
 Figure 11.6: Conditional Loss Plot displaying excess risk results as the probability of failure and the conditional mean life loss, showing USACE Tolerable Risk Limits as dotted black lines.
 </p>
 </div>
@@ -172,7 +172,7 @@ Figure 11.6: Conditional Loss Plot displaying excess risk results as the probabi
 <p>The <strong>Summary Statistics</strong> tab displays result statistics for each of the filtered risk measures (Figure <a href="risk-analysis-results.html#fig:figure-142">11.7</a>).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-142"></span>
-<img src="images/figure142.png" alt="Risk analysis results on the Summary Statistics tab in RMC-TotalRisk."><p class="caption">
+<img src="images/figure142.png" alt="The Summary Statistics tab in the Risk Analysis window showing a table with probability, conditional mean loss, mean loss, and standard deviation values for Risk Analysis component, and Excess, Background, Total, Failure, and Non-Failure risk types."><p class="caption">
 Figure 11.7: Risk analysis results on the Summary Statistics tab in RMC-TotalRisk.
 </p>
 </div>

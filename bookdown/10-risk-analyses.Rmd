@@ -16,7 +16,7 @@ For more information on the quantitative risk analysis framework in RMC-TotalRis
 
 To create a risk analysis, right-click on the **Risk Analyses** folder in the Project Explorer (Figure \@ref(fig:figure-123)) or navigate to **Project Menu > Risk Analyses** and select **Add Risk Analysis…**. Enter a name for the risk analysis and click **OK**.
 
-```{r figure-123, echo=FALSE, fig.cap="Create a new risk analysis.", fig.align="center"}
+```{r figure-123, echo=FALSE, fig.cap="Create a new risk analysis.", fig.alt="The Add Risk Analysis option under the right-click menu of Risk Analyses on the left, and the Risk Analysis dialog box on the right allowing the user to enter the name of the Risk Analysis.", fig.align="center"}
 knitr::include_graphics("images/figure123.png")
 ```
 
@@ -24,7 +24,7 @@ When you create a new risk analysis, it automatically opens in the Tabbed Docume
 
 You can access additional risk analysis options through the Options tab in the Properties window (Figure \@ref(fig:figure-124)). For most applications, the default risk analysis options provide reasonable results. The following sections explain the available risk analysis options in detail.
  
-```{r figure-124, echo=FALSE, fig.cap="Risk analysis properties (general properties at left; risk analysis options at right).", fig.align="center", out.width="85%"}
+```{r figure-124, echo=FALSE, fig.cap="Risk analysis properties (general properties at left; risk analysis options at right).", fig.alt="The General tab window displayed on the left has the Risk Analysis Properties and the Simulations settings section and the Estimate button at the bottom; and the Options tab window displayed on the right has Simulation, Integration, System Component, System, and Risk Measures sections.", fig.align="center", out.width="85%"}
 knitr::include_graphics("images/figure124.png")
 ```
 
@@ -32,7 +32,7 @@ knitr::include_graphics("images/figure124.png")
 
 The simulation options allow you to configure settings for the uncertainty analysis and the loss exceedance curve (LEC) results (Figure \@ref(fig:figure-125)). 
 
-```{r figure-125, echo=FALSE, fig.cap="Risk analysis simulation options.", fig.align="center"}
+```{r figure-125, echo=FALSE, fig.cap="Risk analysis simulation options.", fig.alt="Simulation options display dropdowns to select width of the confidence interval, and the number of Monte Carlo simulation realizations; and text boxes to specify pseudo random number generator seed value, and loss exceedance curve output length.", fig.align="center"}
 knitr::include_graphics("images/figure125.png")
 ```
 
@@ -51,7 +51,7 @@ RMC-TotalRisk uses numerical integration to compute risk for each Monte Carlo re
 
 When the risk analysis has a single system component, the **Adaptive Simpson’s Rule (ASR)** performs the numerical integration. Figure \@ref(fig:figure-126) shows the available options for the ASR method.
 
-```{r figure-126, echo=FALSE, fig.cap="Risk analysis integration options when there is single system component.", fig.align="center"}
+```{r figure-126, echo=FALSE, fig.cap="Risk analysis integration options when there is single system component.", fig.alt="Integration options window displaying text boxes to enter values for maximum number of integrand evaluations, maximum recursion depth, and desired tolerance. There is also a check box for using defaults.", fig.align="center"}
 knitr::include_graphics("images/figure126.png")
 ```
 
@@ -63,7 +63,7 @@ knitr::include_graphics("images/figure126.png")
 
 When the risk analysis includes two or more system components and the **Joint System Risk Method** is selected, the adaptive importance sampling method **VEGAS** handles numerical integration. Figure \@ref(fig:figure-127) shows the available options for the VEGAS method.
 
-```{r figure-127, echo=FALSE, fig.cap="Risk analysis integration options when there are multiple system components and the joint system risk method is selected.", fig.align="center"}
+```{r figure-127, echo=FALSE, fig.cap="Risk analysis integration options when there are multiple system components and the joint system risk method is selected.", fig.alt="Integration options window displaying text boxes to enter values for maximum number of integrand evaluations, number of integrand evaluations each warmup cycle, number of warmup cycles, and final number of integrand evaluations. There is also a check box for using defaults.", fig.align="center"}
 knitr::include_graphics("images/figure127.png")
 ```
 
@@ -81,7 +81,7 @@ For more details on the numerical integration methods used by RMC-TotalRisk, ref
 
 Figure \@ref(fig:figure-128) shows the system component options.
 
-```{r figure-128, echo=FALSE, fig.cap="Risk analysis system component options.", fig.align="center"}
+```{r figure-128, echo=FALSE, fig.cap="Risk analysis system component options.", fig.alt="Displays options for selecting system component, name editable by the user, dropdown selections for failure mode method, joint consequences, failure dependency, and profile hazard function, and a text box for entering a hazard threshold value.", fig.align="center"}
 knitr::include_graphics("images/figure128.png")
 ```
 
@@ -122,7 +122,7 @@ knitr::include_graphics("images/figure128.png")
 
 The system options define how the system components interact in the risk calculations (Figure \@ref(fig:figure-129)). 
 
-```{r figure-129, echo=FALSE, fig.cap="Risk analysis system options.", fig.align="center"}
+```{r figure-129, echo=FALSE, fig.cap="Risk analysis system options.", fig.alt="Risk analysis system options window displaying dropdown options for selecting system risk method, joint consequences, and hazard dependency.", fig.align="center"}
 knitr::include_graphics("images/figure129.png")
 ```
 
@@ -150,7 +150,7 @@ knitr::include_graphics("images/figure129.png")
 
 RMC-TotalRisk offers additional risk measures that are valuable for the risk-based design of engineering structures. These measures are calculated for the entire system rather than individual components. Figure \@ref(fig:figure-130) displays the risk measure options.
 
-```{r figure-130, echo=FALSE, fig.cap="Risk measure options.", fig.align="center"}
+```{r figure-130, echo=FALSE, fig.cap="Risk measure options.", fig.alt="Risk measures options window displaying text boxes for entering consequence threshold and alpha values.", fig.align="center"}
 knitr::include_graphics("images/figure130.png")
 ```
 
@@ -174,7 +174,7 @@ The diagram also includes two failure modes:
 
 2.	**Concentrated leak erosion failure mode (PFM 2)**: This mode, shown at the bottom of the diagram, follows the same structure as PFM 1. 
 
-```{r figure-131, echo=FALSE, fig.cap="RMC-TotalRisk risk diagram.", fig.align="center"}
+```{r figure-131, echo=FALSE, fig.cap="RMC-TotalRisk risk diagram.", fig.alt="Risk diagram for a single system component showing Stage-Frequency hazard connected with Non-failure consequences, and with response functions for two failure mode and their respective consequence functions.", fig.align="center"}
 knitr::include_graphics("images/figure131.png")
 ```
 
@@ -189,7 +189,7 @@ RMC-TotalRisk supports an unlimited number of failure modes per component, depen
 First, familiarize yourself with the diagram interface. Pan the diagram surface by left-clicking and dragging on any open area. Zoom in and out using the mouse wheel.
 
 Nodes in the diagram represent inputs to the risk analysis. Select a node's input function using the selection box. Move a node by left-clicking and dragging it. A blue circle at the bottom left of a node indicates required inputs, while an orange circle at the lower right shows the node output (Figure \@ref(fig:figure-132)). 
-```{r figure-132, echo=FALSE, fig.cap="Risk diagram node inputs and outputs.", fig.align="center"}
+```{r figure-132, echo=FALSE, fig.cap="Risk diagram node inputs and outputs.", fig.alt="Response and consequence nodes for PFM 1 are connected using a green line. The node inputs and outputs are shown by a blue-colored circle and an orange-colored circle respectively.", fig.align="center"}
 knitr::include_graphics("images/figure132.png")
 ```
 #### Adding Nodes {-}
@@ -201,14 +201,14 @@ You can add nodes to the risk diagram in three ways (Figure \@ref(fig:figure-133
 
 3. Left-click on a node output to open a selection box. This option automatically connects the new node to the clicked node output.
 
-```{r figure-133, echo=FALSE, fig.cap="Options to add a new input node to the risk diagram: a) Place the cursor over the plus symbol in the upper left corner of the diagram then move the node to the desired location; b) Right-click on any empty space in the diagram to add at that location; and c) left-click on a node output (this option also connects the nodes).", fig.align="center", out.width="90%"}
+```{r figure-133, echo=FALSE, fig.cap="Options to add a new input node to the risk diagram: a) Place the cursor over the plus symbol in the upper left corner of the diagram then move the node to the desired location; b) Right-click on any empty space in the diagram to add at that location; and c) left-click on a node output (this option also connects the nodes).", fig.alt="Decorative.", fig.align="center", out.width="90%"}
 knitr::include_graphics("images/figure133.png")
 ```
 
 #### Connecting Nodes {-}
 To connect two nodes, left-click and hold on a node output, then drag the cursor toward the desired node input. Release the mouse button to create the connection (Figure \@ref(fig:figure-134)).
 
-```{r figure-134, echo=FALSE, fig.cap="To connect a node to another node, left-click and hold on a node output, drag toward the desired node input, and release the mouse button to finish the connection.", fig.align="center"}
+```{r figure-134, echo=FALSE, fig.cap="To connect a node to another node, left-click and hold on a node output, drag toward the desired node input, and release the mouse button to finish the connection.", fig.alt="Decorative.", fig.align="center"}
 knitr::include_graphics("images/figure134.png")
 ```
 
@@ -219,10 +219,6 @@ To delete a node, right-click on it and select **Delete**, or click the **X** th
 #### Node Types {-}
 
 The diagram has four fundamental node types:
-
-<!-- <ul class="hidden-level-1"> -->
-<!--     <li><img src="images/hazardIcon.png"> <b>Hazard Node</b>: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.</li> -->
-<!-- </ul> -->
 
 - ![Image](images/hazardIcon.png) **Hazard Node**: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.
  	
@@ -244,14 +240,6 @@ The diagram provides visual feedback for data validation:
  	
 - <img src="images/validNFModeConnection.png" style="width: 32px; height: 4px"> **Valid Non-Failure Mode Connection**: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations.
 
-<!-- - ![Image](images/noInputSelected.png) **No Input Selected**: Red outlines indicate a node with no input defined. -->
-
-<!-- - ![Image](images/incompleteConnection.png) **Incomplete Connection**: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection. -->
-
-<!-- - ![Image](images/invalidConnection.png) **Invalid Connection**: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis. -->
-
-<!-- - ![Image](images/validNFModeConnection.png) **Valid Non-Failure Mode Connection**: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations. -->
-
 #### Example Levee Risk Diagram {-}
 
 Figure \@ref(fig:figure-134) illustrates a levee risk analysis. The hazard function is a river peak flow frequency curve, transformed into a peak river stage using a flow-to-stage rating curve from a hydraulic routing model. The diagram includes two failure modes:
@@ -262,7 +250,7 @@ Figure \@ref(fig:figure-134) illustrates a levee risk analysis. The hazard funct
 
 The non-failure mode is represented at the top with purple connectors, where non-failure consequences connect directly to the hazard transform function.
 
-```{r figure-135, echo=FALSE, fig.cap="Example levee risk diagram.", fig.align="center"}
+```{r figure-135, echo=FALSE, fig.cap="Example levee risk diagram.", fig.alt="Decorative.", fig.align="center"}
 knitr::include_graphics("images/figure135.png")
 ```
 
@@ -276,7 +264,7 @@ Once you have created a risk analysis and configured the desired options, you ca
 
 To calculate a risk estimate, click the **Estimate** button.
 
-```{r figure-riskprop, echo=FALSE, fig.cap="Risk simulation options.", fig.align="center"}
+```{r figure-riskprop, echo=FALSE, fig.cap="Risk simulation options.", fig.alt="Decorative.", fig.align="center"}
 knitr::include_graphics("images/riskproperties.png")
 ```
 
@@ -286,6 +274,6 @@ For scenarios involving significant uncertainty in extreme events, it is recomme
 
 For a detailed explanation of the risk analysis framework, simulation options, algorithms, and underlying mathematics, refer to the technical reference manual [@cite-TechRef].
 
-```{r figure-risksim, echo=FALSE, fig.cap="Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty.", fig.align="center"}
+```{r figure-risksim, echo=FALSE, fig.cap="Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty.", fig.alt="Decorative.", fig.align="center"}
 knitr::include_graphics("images/risksimulation.png")
 ```

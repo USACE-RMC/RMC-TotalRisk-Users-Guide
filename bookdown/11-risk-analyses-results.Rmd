@@ -2,13 +2,13 @@
 
 Three tabs provide different views of the risk analysis results: the **Loss Exceedance Plot**, **Conditional Loss Plot**, and **Summary Statistics** tabs (Figure \@ref(fig:figure-136)). The first two tabs display the risk analysis results graphically, while the last presents results in tabular form. 
 
-```{r figure-136, echo=FALSE, fig.cap="Risk results tabs.", fig.align="center"}
+```{r figure-136, echo=FALSE, fig.cap="Risk results tabs.", fig.alt="Loss Exceedance Plot, Conditional Loss Plot, and Summary Statistics tabs shown with a red box around them.", fig.align="center"}
 knitr::include_graphics("images/figure136.png")
 ```
 
 Each risk result tab includes options to filter the results. To filter results, click the button next to **Filter Results** near the top of the tab. Use the checkboxes (Figure \@ref(fig:figure-137)) to select which risk components and types to display in both graphical and tabular results. Risk components include the overall system, all system components, and all failure modes within each component. 
 
-```{r figure-137, echo=FALSE, fig.cap="Select checkboxes for risk type and the system component in the graphical and tabular risk results.", fig.align="center"}
+```{r figure-137, echo=FALSE, fig.cap="Select checkboxes for risk type and the system component in the graphical and tabular risk results.", fig.alt="The Loss Exceedance Plot tab in the Risk Analysis window with check boxes for selecting the risk types, alternatives, risk analyses, and failure modes.", fig.align="center"}
 knitr::include_graphics("images/figure137.png")
 ```
 
@@ -36,19 +36,19 @@ The **Loss Exceedance Plot** displays consequences on the x-axis and the exceeda
 
 Figure \@ref(fig:figure-138) shows an example loss exceedance plot. After simulating risk with full uncertainty, the plot includes a 90% confidence interval shaded in red, along with the mean and median curves. By default, the USACE tolerable risk limit is displayed as a dotted black line [@cite-ER1156]. You can customize this tolerable risk limit (TRL), also referred to as a guideline, or remove it from the plot as needed.
 
-```{r figure-138, echo=FALSE, fig.cap="Tolerable risk guideline viewing options for graphical risk results in RMC-TotalRisk.", fig.align="center"}
+```{r figure-138, echo=FALSE, fig.cap="Example of Loss Exceedance Plot results with confidence intervals and the USACE tolerable risk limit.", fig.alt="A Loss Exceedance Plot for Excess risk type, with the 90% confidence interval shown as a red-shaded bound along with median and mean curves, with USACE tolerable risk limits displayed on the plot.", fig.align="center"}
 knitr::include_graphics("images/figure138.png")
 ```
 
 To customize the TRL, select an option from the **Tolerable Risk Limits** dropdown menu(Figure \@ref(fig:figure-139)). Available options include **None**, **USACE**, **ANCOLD** (2022 guidance), or a custom limit. To automatically set the plot extents to match the selected TRL extents, check the **Set TRL axis extents** checkbox.
 
-```{r figure-139, echo=FALSE, fig.cap="Example of Loss Exceedance Plot results with confidence intervals and the USACE TRL.", fig.align="center"}
+```{r figure-139, echo=FALSE, fig.cap="Tolerable risk guideline viewing options for graphical risk results in RMC-TotalRisk.", fig.alt="Decorative.", fig.align="center"}
 knitr::include_graphics("images/figure139.png")
 ```
 
 To add or edit custom limits, click the **Edit/Add Tolerable Risk Limits** button to open the **Tolerable Risk Limit Editor** (Figure \@ref(fig:figure-140)). 
 
-```{r figure-140, echo=FALSE, fig.cap="Tolerable Risk Limit Editor.", fig.align="center"}
+```{r figure-140, echo=FALSE, fig.cap="Tolerable Risk Limit Editor.", fig.alt="Window with text boxes for entering the name and the description of the limit, the minimum and the maximum probability and consequence values. There is a table underneath to enter x and y values of the custom guidelines and a corresponding plot at the bottom displays those custom guidelines.", fig.align="center"}
 knitr::include_graphics("images/figure140.png")
 ```
 
@@ -70,7 +70,7 @@ Stated differently, the mean annual probability of failure is $8.7985\times10^{-
 
 The diagonal line on the plot represents the product of the probability of failure and the conditional mean loss, which equals the unconditional excess mean loss, $\mathbb{E}[C]=1.1574\times10^{-3}$. This value plots slightly above the tolerable risk limit of $1\times10^{-3}$. 
 
-```{r figure-141, echo=FALSE, fig.cap="Conditional Loss Plot displaying excess risk results as the probability of failure and the conditional mean life loss, showing USACE Tolerable Risk Limits as dotted black lines.", fig.align="center"}
+```{r figure-141, echo=FALSE, fig.cap="Conditional Loss Plot displaying excess risk results as the probability of failure and the conditional mean life loss, showing USACE Tolerable Risk Limits as dotted black lines.", fig.alt="Decorative.", fig.align="center"}
 knitr::include_graphics("images/figure141.png")
 ```
 
@@ -78,7 +78,7 @@ knitr::include_graphics("images/figure141.png")
 
 The **Summary Statistics** tab displays result statistics for each of the filtered risk measures (Figure \@ref(fig:figure-142)).
 
-```{r figure-142, echo=FALSE, fig.cap="Risk analysis results on the Summary Statistics tab in RMC-TotalRisk.", fig.align="center"}
+```{r figure-142, echo=FALSE, fig.cap="Risk analysis results on the Summary Statistics tab in RMC-TotalRisk.", fig.alt="The Summary Statistics tab in the Risk Analysis window showing a table with probability, conditional mean loss, mean loss, and standard deviation values for Risk Analysis component, and Excess, Background, Total, Failure, and Non-Failure risk types.", fig.align="center"}
 knitr::include_graphics("images/figure142.png")
 ```
 
