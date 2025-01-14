@@ -10,6 +10,7 @@
 <meta name="generator" content="bookdown 0.41.2 with bs4_book()">
 <meta property="og:title" content="12 Risk Analysis Diagnostics | RMC-TotalRisk User’s Guide">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/risk-analysis-diagnostics.html">
 <meta property="og:description" content="RMC-TotalRisk includes several diagnostic tools to help explore the Monte Carlo simulation results for a risk analysis with full uncertainty. These diagnostics are most useful when the risk...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="12 Risk Analysis Diagnostics | RMC-TotalRisk User’s Guide">
@@ -43,6 +44,7 @@
       margin-left: 2em;
     }
   </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -82,7 +84,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -118,7 +120,7 @@ Figure 12.1: Example of integration diagnostics.
 <li><p><strong>Value-at-Risk (VaR)</strong>: Represents the minimum consequences for a user-specified exceedance probability <span class="math inline">\(\alpha\)</span>.</p></li>
 <li><p><strong>Conditional Value-at-Risk (CVaR)</strong>: Represents the conditional mean (or expected) consequences for a user-specified exceedance probability <span class="math inline">\(\alpha\)</span>.</p></li>
 </ul>
-<p>For mathematical details on these risk measures, refer to the technical reference manual<span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>For mathematical details on these risk measures, refer to the technical reference manual<span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <p>As shown in Figure <a href="risk-analysis-diagnostics.html#fig:figure-144">12.2</a>, you can select the desired risk type and risk measure from the dropdown menus to view the results.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-144"></span>
@@ -158,7 +160,7 @@ Figure 12.5: Example of a risk profile plot showing the hazard exceedance probab
 <h2>
 <span class="header-section-number">12.4</span> Assurance<a class="anchor" aria-label="anchor" href="#assurance"><i class="fas fa-link"></i></a>
 </h2>
-<p>RMC-TotalRisk provides an <strong>assurance</strong> plot and summary statistics based on a user-defined profile hazard type and hazard threshold. This diagnostic supports the National Flood Insurance Program (NFIP) for levees. For more details, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>RMC-TotalRisk provides an <strong>assurance</strong> plot and summary statistics based on a user-defined profile hazard type and hazard threshold. This diagnostic supports the National Flood Insurance Program (NFIP) for levees. For more details, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <p>Figure <a href="risk-analysis-diagnostics.html#fig:figure-148">12.6</a> illustrates an example risk diagram for a levee risk analysis. The primary hazard is river peak flow frequency, which is transformed into a peak river stage using a flow-to-stage rating curve derived from a hydraulic routing model. Potential Failure Modes (PFMs) include a Prior OT failure mode from backward erosion piping and an OT failure mode. The top of the levee is at a river stage of 65 feet.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-148"></span>
@@ -186,7 +188,7 @@ Figure 12.7: Setting the profile hazard type and threshold level for the system 
 <li><p>For assurance between 65% and 85%, the target level line is orange.</p></li>
 <li><p>Assurance levels above 85% are indicated by a green line.</p></li>
 </ul>
-<p>Figure <a href="risk-analysis-diagnostics.html#fig:figure-150">12.8</a> shows the standard cumulative distribution plot for assurance in the levee risk analysis example. The mean API is 0.00647, and the target level of 0.01 (100-year) has an assurance level of 84.6%, represented by the orange line. Since the assurance level falls between 65% and 85%, the levee accreditation recommendation must be supported by uncertainty analysis, past system performance, and other factors <span class="citation"><a href="references.html#ref-cite-ECB2019" role="doc-biblioref">[11]</a></span>.</p>
+<p>Figure <a href="risk-analysis-diagnostics.html#fig:figure-150">12.8</a> shows the standard cumulative distribution plot for assurance in the levee risk analysis example. The mean API is 0.00647, and the target level of 0.01 (100-year) has an assurance level of 84.6%, represented by the orange line. Since the assurance level falls between 65% and 85%, the levee accreditation recommendation must be supported by uncertainty analysis, past system performance, and other factors <span class="citation"><a href="#ref-cite-ECB2019" role="doc-biblioref">[11]</a></span>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-150"></span>
 <img src="images/figure150.png" alt="Example of the cumulative distribution plot for NFIP assurance."><p class="caption">
@@ -242,6 +244,20 @@ Figure 12.12: Example of the histogram and summary statistics output for tabular
 <!--  -->
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-TechRef" class="csl-entry">
+<div class="csl-left-margin">[1] </div>
+<div class="csl-right-inline">C. H. Smith, D. A. Margo, and W. L. Fields, <em>Draft - RMC-TotalRisk technical reference manual</em>, 1st ed. Lakewood, CO: U.S. Army Corps of Engineers, Risk Management Center, 2025. Available: <a href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk">https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk</a>
+</div>
+</div>
+<div id="ref-cite-ECB2019" class="csl-entry">
+<div class="csl-left-margin">[11] </div>
+<div class="csl-right-inline">
+<em>Transition guidance for levee system evaluations for the national flood insurance program (NFIP), ECB 2019-11</em>. Washington, D.C.: Department of the Army, U.S. Army Corps of Engineers, 2019, Expired 2021. Available: <a href="https://www.hec.usace.army.mil/confluence/fdadocs/fdatutorials/files/173934355/183108952/1/1708709328208/ecb_2019_11.pdf">https://www.hec.usace.army.mil/confluence/fdadocs/fdatutorials/files/173934355/183108952/1/1708709328208/ecb_2019_11.pdf</a>
+</div>
+</div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="risk-analysis-results.html"><span class="header-section-number">11</span> Risk Analysis Results</a></div>
 <div class="next"><a href="references.html">References</a></div>
@@ -260,8 +276,8 @@ Figure 12.12: Example of the histogram and summary statistics output for tabular
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/12-risk-analyses-diagnostics.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
-          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/12-risk-analyses-diagnostics.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/12-risk-analyses-diagnostics.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/12-risk-analyses-diagnostics.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

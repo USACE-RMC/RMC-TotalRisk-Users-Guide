@@ -10,6 +10,7 @@
 <meta name="generator" content="bookdown 0.41.2 with bs4_book()">
 <meta property="og:title" content="6 Hazard Functions | RMC-TotalRisk User’s Guide">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/hazard-functions.html">
 <meta property="og:description" content="RMC-TotalRisk defines a hazard function by the exceedance probabilities of various hazard levels, such as annual maximum peak flow or WSE. Hazard functions are also commonly referred to as...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6 Hazard Functions | RMC-TotalRisk User’s Guide">
@@ -43,6 +44,7 @@
       margin-left: 2em;
     }
   </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -82,7 +84,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -90,13 +92,13 @@
 <h1>
 <span class="header-section-number">6</span> Hazard Functions<a class="anchor" aria-label="anchor" href="#hazard-functions"><i class="fas fa-link"></i></a>
 </h1>
-<p>RMC-TotalRisk defines a hazard function by the exceedance probabilities of various hazard levels, such as annual maximum peak flow or WSE. Hazard functions are also commonly referred to as frequency curves. In dam and levee risk assessments, the annual maximum peak WSE (or stage) or the annual maximum peak ground acceleration are typically the primary hazard parameters for evaluating a potential failure mode <span class="citation"><a href="references.html#ref-cite-BestPractices" role="doc-biblioref">[3]</a></span> <span class="citation"><a href="references.html#ref-cite-SmithBartlesFleming" role="doc-biblioref">[4]</a></span>. As such, the hazard functions commonly describe the annual exceedance probability (AEP) of these hazard levels.</p>
+<p>RMC-TotalRisk defines a hazard function by the exceedance probabilities of various hazard levels, such as annual maximum peak flow or WSE. Hazard functions are also commonly referred to as frequency curves. In dam and levee risk assessments, the annual maximum peak WSE (or stage) or the annual maximum peak ground acceleration are typically the primary hazard parameters for evaluating a potential failure mode <span class="citation"><a href="#ref-cite-BestPractices" role="doc-biblioref">[3]</a></span> <span class="citation"><a href="#ref-cite-SmithBartlesFleming" role="doc-biblioref">[4]</a></span>. As such, the hazard functions commonly describe the annual exceedance probability (AEP) of these hazard levels.</p>
 <p>RMC-TotalRisk provides six options for adding a hazard function: import from RMC-BestFit, import from RMC-RFA, or creating a parametric, nonparametric, tabular, or composite function. The following subsections explain each option in detail.</p>
 <div id="bestfit" class="section level2" number="6.1">
 <h2>
 <span class="header-section-number">6.1</span> Import from RMC-BestFit<a class="anchor" aria-label="anchor" href="#bestfit"><i class="fas fa-link"></i></a>
 </h2>
-<p>The USACE RMC, in collaboration with the Engineer Research and Development Center (ERDC) Coastal and Hydraulics Laboratory (CHL), developed the Bayesian estimation and fitting software (RMC-BestFit) to enhance and expedite flood hazard assessments within the Flood Risk Management, Planning, and Dam and Levee Safety communities of practice <span class="citation"><a href="references.html#ref-cite-SmithBestFitGuide" role="doc-biblioref">[5]</a></span>. You can download RMC-BestFit from the <a href="https://www.rmc.usace.army.mil/Software/RMC-BestFit/">RMC Website</a>. RMC-TotalRisk allows you to directly import results from an RMC-BestFit version 1.0 analysis.</p>
+<p>The USACE RMC, in collaboration with the Engineer Research and Development Center (ERDC) Coastal and Hydraulics Laboratory (CHL), developed the Bayesian estimation and fitting software (RMC-BestFit) to enhance and expedite flood hazard assessments within the Flood Risk Management, Planning, and Dam and Levee Safety communities of practice <span class="citation"><a href="#ref-cite-SmithBestFitGuide" role="doc-biblioref">[5]</a></span>. You can download RMC-BestFit from the <a href="https://www.rmc.usace.army.mil/Software/RMC-BestFit/">RMC Website</a>. RMC-TotalRisk allows you to directly import results from an RMC-BestFit version 1.0 analysis.</p>
 <p>To import results of an RMC-BestFit analysis, right-click on the <strong>Hazards</strong> folder in the Project Explorer (Figure <a href="hazard-functions.html#fig:figure-54">6.1</a>) or navigate to <strong>Project Menu &gt; Hazards</strong> and select <strong>Add RMC-BestFit Hazard…</strong>. When the dialog appears, enter the name of the hazard function, choose the RMC-BestFit project file, and select the Bayesian analysis you want to import.</p>
 <p>After finalizing the import settings, click <strong>OK</strong> (Figure <a href="hazard-functions.html#fig:figure-54">6.1</a>). The RMC-BestFit hazard function is added to the Hazards folder in Project Explorer, the function opens into the Tabbed Documents area, and the input data properties display in the Properties window. From here, you can edit the name, description, hazard type, and hazard units as needed.</p>
 <div class="figure" style="text-align: center">
@@ -162,7 +164,7 @@ Figure 6.6: Summary statistics on parameter sets for mean (of log) (µ).
 <h2>
 <span class="header-section-number">6.2</span> Import from RMC-RFA<a class="anchor" aria-label="anchor" href="#import-from-rmc-rfa"><i class="fas fa-link"></i></a>
 </h2>
-<p>The USACE RMC developed the Reservoir Frequency Analysis (RMC-RFA) software to facilitate hydrologic hazard assessments for the USACE Dam Safety Program. RMC-RFA produces a reservoir stage-frequency curve with uncertainty bounds by using a deterministic flood routing model while treating the inflow volume, the inflow flood hydrograph shape, the seasonal occurrence of the flood event, and the antecedent reservoir stage as uncertain variables rather than fixed values <span class="citation"><a href="references.html#ref-cite-SmithBartlesFleming" role="doc-biblioref">[4]</a></span>. You can download RMC-RFA from the <a href="https://www.rmc.usace.army.mil/Software/RMC-RFA/">RMC Website</a>. RMC-TotalRisk allows you to directly import results from an RMC-RFA version 1.1.0 analysis.</p>
+<p>The USACE RMC developed the Reservoir Frequency Analysis (RMC-RFA) software to facilitate hydrologic hazard assessments for the USACE Dam Safety Program. RMC-RFA produces a reservoir stage-frequency curve with uncertainty bounds by using a deterministic flood routing model while treating the inflow volume, the inflow flood hydrograph shape, the seasonal occurrence of the flood event, and the antecedent reservoir stage as uncertain variables rather than fixed values <span class="citation"><a href="#ref-cite-SmithBartlesFleming" role="doc-biblioref">[4]</a></span>. You can download RMC-RFA from the <a href="https://www.rmc.usace.army.mil/Software/RMC-RFA/">RMC Website</a>. RMC-TotalRisk allows you to directly import results from an RMC-RFA version 1.1.0 analysis.</p>
 <p>To import results of an RMC-RFA analysis, right-click on the <strong>Hazards</strong> folder in the Project Explorer (Figure <a href="hazard-functions.html#fig:figure-60">6.7</a>) or go to <strong>Project Menu &gt; Hazards</strong> and select <strong>Add RMC-RFA Hazard…</strong>. When the dialog appears, enter the name of the hazard function, select the RMC-RFA project file, choose the output type, and select the simulation you want to import.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-60"></span>
@@ -302,6 +304,23 @@ Figure 6.20: Composite hazard function graphical display.
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-BestPractices" class="csl-entry">
+<div class="csl-left-margin">[3] </div>
+<div class="csl-right-inline">
+<em>Best practices in dam and levee safety risk analysis</em>. Lakewood, CO: U.S. Department of the Interior, Bureau of Reclamation; U.S. Army Corps of Engineers, 2019. Available: <a href="https://www.usbr.gov/damsafety/risk/methodology.html">https://www.usbr.gov/damsafety/risk/methodology.html</a>
+</div>
+</div>
+<div id="ref-cite-SmithBartlesFleming" class="csl-entry">
+<div class="csl-left-margin">[4] </div>
+<div class="csl-right-inline">C. H. Smith, M. Bartles, and M. Fleming, <span>“Hydrologic hazard methodology for semi-quantitative risk assessments,”</span> U.S. Army Corps of Engineers, Institute for Water Resources, Risk Management Center, RMC-TR-2018-03, 2018. doi: <a href="http://dx.doi.org/10.13140/RG.2.2.11090.89288">http://dx.doi.org/10.13140/RG.2.2.11090.89288</a>.</div>
+</div>
+<div id="ref-cite-SmithBestFitGuide" class="csl-entry">
+<div class="csl-left-margin">[5] </div>
+<div class="csl-right-inline">C. H. Smith and M. Daughty, <span>“RMC-BestFit quick start guide,”</span> U.S. Army Corps of Engineers, Institute for Water Resources, Risk Management Center, RMC-TR-2020-03, 2020. doi: <a href="http://dx.doi.org/10.13140/RG.2.2.23168.97280">http://dx.doi.org/10.13140/RG.2.2.23168.97280</a>.</div>
+</div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="create-a-project.html"><span class="header-section-number">5</span> Create a Project</a></div>
 <div class="next"><a href="transform-functions.html"><span class="header-section-number">7</span> Transform Functions</a></div>
@@ -327,8 +346,8 @@ Figure 6.20: Composite hazard function graphical display.
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/06-hazard-functions.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
-          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/06-hazard-functions.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/06-hazard-functions.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/06-hazard-functions.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

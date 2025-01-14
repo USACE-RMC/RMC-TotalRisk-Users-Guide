@@ -10,6 +10,7 @@
 <meta name="generator" content="bookdown 0.41.2 with bs4_book()">
 <meta property="og:title" content="8 System Response Functions | RMC-TotalRisk User’s Guide">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/system-response-functions.html">
 <meta property="og:description" content="System response functions specify how a system responds to a given hazard. In RMC-TotalRisk, a system response function defines the conditional probability of failure for various hazard levels,...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8 System Response Functions | RMC-TotalRisk User’s Guide">
@@ -43,6 +44,7 @@
       margin-left: 2em;
     }
   </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -82,7 +84,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -97,7 +99,7 @@
 <h2>
 <span class="header-section-number">8.1</span> Event Tree Response Function<a class="anchor" aria-label="anchor" href="#event-tree-response-function"><i class="fas fa-link"></i></a>
 </h2>
-<p>Event tree analyses (ETAs) represent the logic of how an initiating event, like a flood or earthquake, can lead to various types of damage and failure <span class="citation"><a href="references.html#ref-cite-BestPractices" role="doc-biblioref">[3]</a></span>. An event tree consists of a sequence of interconnected nodes and branches <span class="citation"><a href="references.html#ref-cite-HartfordBaecher" role="doc-biblioref">[6]</a></span>. Each node corresponds to an uncertain event (e.g., a crack forming in an embankment) or an uncertain state of nature (e.g., the existence of adversely oriented joint planes). Branches originating from a node represent the possible events or states of nature that could occur. Probabilities are assigned to each node to quantify the likelihood of each event or condition, conditional on the occurrence of all preceding events in the tree. For more details on event tree calculations in RMC-TotalRisk, refer to <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>Event tree analyses (ETAs) represent the logic of how an initiating event, like a flood or earthquake, can lead to various types of damage and failure <span class="citation"><a href="#ref-cite-BestPractices" role="doc-biblioref">[3]</a></span>. An event tree consists of a sequence of interconnected nodes and branches <span class="citation"><a href="#ref-cite-HartfordBaecher" role="doc-biblioref">[6]</a></span>. Each node corresponds to an uncertain event (e.g., a crack forming in an embankment) or an uncertain state of nature (e.g., the existence of adversely oriented joint planes). Branches originating from a node represent the possible events or states of nature that could occur. Probabilities are assigned to each node to quantify the likelihood of each event or condition, conditional on the occurrence of all preceding events in the tree. For more details on event tree calculations in RMC-TotalRisk, refer to <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <p>To create an event tree response function, right-click on the <strong>System Responses</strong> folder in the Project Explorer (Figure <a href="system-response-functions.html#fig:figure-84">8.1</a>) or navigate to <strong>Project Menu &gt; System Responses</strong> and select <strong>Add Event Tree Response…</strong>. A dialog will appear, prompting you to enter the dataset name and select an event tree template to import. This example uses the Basic template to demonstrate how to build an event tree from scratch, but you can also choose from a variety of default or user-defined templates.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-84"></span>
@@ -116,7 +118,7 @@ Figure 8.2: Event tree response function properties.
 <h3>
 <span class="header-section-number">8.1.1</span> Terminology<a class="anchor" aria-label="anchor" href="#terminology"><i class="fas fa-link"></i></a>
 </h3>
-<p>This section defines RMC-TotalRisk’s event tree terminology <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>This section defines RMC-TotalRisk’s event tree terminology <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <ul>
 <li>
 <p><strong>Node</strong>: Represents a branching point in the event tree, signifying a random event or state. Event trees include four types of nodes:</p>
@@ -412,7 +414,7 @@ Figure 8.23: Create new bivariate response function.
 </p>
 </div>
 <p>When you create the bivariate response function, it automatically opens in the Tabbed Documents area, and the Properties window displays its properties (Figure <a href="system-response-functions.html#fig:figure-107">8.24</a>). From the Properties window, you can configure the name, description, primary hazard, primary hazard units, and the interpolation transforms for the primary hazard and probabilities.</p>
-<p>Use the table tools to add the desired hazard levels for both the primary and secondary hazards, ensuring that all hazard levels are in ascending order. Assign a weight to each secondary hazard level. These weights are used during the risk computation to estimate the total system response probability for each primary hazard level. The weights must sum to 1. You can enter the weights manually or calculate them using a specified hazard function. For more details on bivariate hazard properties, refer to <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>Use the table tools to add the desired hazard levels for both the primary and secondary hazards, ensuring that all hazard levels are in ascending order. Assign a weight to each secondary hazard level. These weights are used during the risk computation to estimate the total system response probability for each primary hazard level. The weights must sum to 1. You can enter the weights manually or calculate them using a specified hazard function. For more details on bivariate hazard properties, refer to <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-107"></span>
 <img src="images/figure107.png" alt="Bivariate response function properties."><p class="caption">
@@ -456,6 +458,24 @@ Figure 8.28: Composite response function graphical display.
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-TechRef" class="csl-entry">
+<div class="csl-left-margin">[1] </div>
+<div class="csl-right-inline">C. H. Smith, D. A. Margo, and W. L. Fields, <em>Draft - RMC-TotalRisk technical reference manual</em>, 1st ed. Lakewood, CO: U.S. Army Corps of Engineers, Risk Management Center, 2025. Available: <a href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk">https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk</a>
+</div>
+</div>
+<div id="ref-cite-BestPractices" class="csl-entry">
+<div class="csl-left-margin">[3] </div>
+<div class="csl-right-inline">
+<em>Best practices in dam and levee safety risk analysis</em>. Lakewood, CO: U.S. Department of the Interior, Bureau of Reclamation; U.S. Army Corps of Engineers, 2019. Available: <a href="https://www.usbr.gov/damsafety/risk/methodology.html">https://www.usbr.gov/damsafety/risk/methodology.html</a>
+</div>
+</div>
+<div id="ref-cite-HartfordBaecher" class="csl-entry">
+<div class="csl-left-margin">[6] </div>
+<div class="csl-right-inline">D. N. D. Hartford and G. B. Baecher, <em>Risk and uncertainty in dam safety</em>. London, England: Thomas Telford, 2004.</div>
+</div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="transform-functions.html"><span class="header-section-number">7</span> Transform Functions</a></div>
 <div class="next"><a href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></div>
@@ -482,8 +502,8 @@ Figure 8.28: Composite response function graphical display.
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/08-response-functions.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
-          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/08-response-functions.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/08-response-functions.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/08-response-functions.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

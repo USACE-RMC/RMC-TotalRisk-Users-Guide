@@ -10,6 +10,7 @@
 <meta name="generator" content="bookdown 0.41.2 with bs4_book()">
 <meta property="og:title" content="11 Risk Analysis Results | RMC-TotalRisk User’s Guide">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/risk-analysis-results.html">
 <meta property="og:description" content="Three tabs provide different views of the risk analysis results: the Loss Exceedance Plot, Conditional Loss Plot, and Summary Statistics tabs (Figure 11.1). The first two tabs display the risk...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="11 Risk Analysis Results | RMC-TotalRisk User’s Guide">
@@ -43,6 +44,7 @@
       margin-left: 2em;
     }
   </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -82,7 +84,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -108,19 +110,19 @@ Figure 11.2: Select checkboxes for risk type and the system component in the gra
 <ul>
 <li><p><strong>Excess Risk</strong>: Represents the risk of system failure, calculated using the probability of the hazard, the probability of failure, and the excess consequences. Excess consequences refer to the additional losses or damages caused by failure, beyond those that would occur during the same event if the structure did not fail.</p></li>
 <li><p><strong>Background Risk</strong>: Represents the risk assuming no structural flaws or vulnerabilities in the system. It reflects the risk from natural hazards alone, without accounting for the potential impacts of structural deficiencies.</p></li>
-<li><p><strong>Total Risk</strong>: Represents the overall risk of the system (or component) and is calculated as the sum of failure risk and non-failure risk. Some USACE publications refer to total risk as residual risk (i.e., the risk that remains) <span class="citation"><a href="references.html#ref-cite-EM1619" role="doc-biblioref">[2]</a></span> <span class="citation"><a href="references.html#ref-cite-ER1156" role="doc-biblioref">[9]</a></span>. Proper estimation considers all potential hazard sources, their likelihoods of occurrence, and their potential consequences.</p></li>
+<li><p><strong>Total Risk</strong>: Represents the overall risk of the system (or component) and is calculated as the sum of failure risk and non-failure risk. Some USACE publications refer to total risk as residual risk (i.e., the risk that remains) <span class="citation"><a href="#ref-cite-EM1619" role="doc-biblioref">[2]</a></span> <span class="citation"><a href="#ref-cite-ER1156" role="doc-biblioref">[9]</a></span>. Proper estimation considers all potential hazard sources, their likelihoods of occurrence, and their potential consequences.</p></li>
 <li><p><strong>Failure Risk</strong>: Represents the risk associated with system failure, calculated based on the probability of the hazard, the probability of failure, and the consequences of failure.</p></li>
 <li><p><strong>Non-Failure Risk</strong>: Represents the risk associated with the system not failing, calculated using the probability of the hazard, the probability of non-failure, and the consequences of non-failure. Infrastructure such as dams and levees often incurs consequences even when it does not fail. For example, during a major flood event, a dam might activate its emergency spillway, preventing the dam from reducing downstream flooding.</p></li>
 </ul>
 <p>Dam and levee risk assessments often emphasize a limited range of flood and seismic hazard levels that could lead to failure, potentially overlooking the broader range of hazard levels that result in non-failure consequences. To accurately estimate background, non-failure, and total risk, it is essential to account for the full spectrum of hazard levels with adequate resolution.</p>
-<p>For a detailed explanation of the underlying mathematics for the five types of risk, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>For a detailed explanation of the underlying mathematics for the five types of risk, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <p>The following subsections describe the contents and functionality of each of the three risk results tabs.</p>
 <div id="loss-exceedance-plot" class="section level2" number="11.1">
 <h2>
 <span class="header-section-number">11.1</span> Loss Exceedance Plot<a class="anchor" aria-label="anchor" href="#loss-exceedance-plot"><i class="fas fa-link"></i></a>
 </h2>
-<p>The <strong>Loss Exceedance Plot</strong> displays consequences on the x-axis and the exceedance probability on the y-axis. This type of plot is commonly referred to as an F-N curve, survival function, or Farmer’s diagram <span class="citation"><a href="references.html#ref-cite-CenterforChemicalProcessSafety" role="doc-biblioref">[10]</a></span>. If the hazard function is defined with annual exceedance probabilities, the y-axis of the loss exceedance plot will also represent annual exceedance probabilities. A log-log scale is typically used due to the wide range of probabilities and consequences, often spanning multiple orders of magnitude.</p>
-<p>Figure <a href="risk-analysis-results.html#fig:figure-138">11.3</a> shows an example loss exceedance plot. After simulating risk with full uncertainty, the plot includes a 90% confidence interval shaded in red, along with the mean and median curves. By default, the USACE tolerable risk limit is displayed as a dotted black line <span class="citation"><a href="references.html#ref-cite-ER1156" role="doc-biblioref">[9]</a></span>. You can customize this tolerable risk limit (TRL), also referred to as a guideline, or remove it from the plot as needed.</p>
+<p>The <strong>Loss Exceedance Plot</strong> displays consequences on the x-axis and the exceedance probability on the y-axis. This type of plot is commonly referred to as an F-N curve, survival function, or Farmer’s diagram <span class="citation"><a href="#ref-cite-CenterforChemicalProcessSafety" role="doc-biblioref">[10]</a></span>. If the hazard function is defined with annual exceedance probabilities, the y-axis of the loss exceedance plot will also represent annual exceedance probabilities. A log-log scale is typically used due to the wide range of probabilities and consequences, often spanning multiple orders of magnitude.</p>
+<p>Figure <a href="risk-analysis-results.html#fig:figure-138">11.3</a> shows an example loss exceedance plot. After simulating risk with full uncertainty, the plot includes a 90% confidence interval shaded in red, along with the mean and median curves. By default, the USACE tolerable risk limit is displayed as a dotted black line <span class="citation"><a href="#ref-cite-ER1156" role="doc-biblioref">[9]</a></span>. You can customize this tolerable risk limit (TRL), also referred to as a guideline, or remove it from the plot as needed.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-138"></span>
 <img src="images/figure138.png" alt="Tolerable risk guideline viewing options for graphical risk results in RMC-TotalRisk."><p class="caption">
@@ -184,6 +186,30 @@ Figure 11.7: Risk analysis results on the Summary Statistics tab in RMC-TotalRis
 </ul>
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-TechRef" class="csl-entry">
+<div class="csl-left-margin">[1] </div>
+<div class="csl-right-inline">C. H. Smith, D. A. Margo, and W. L. Fields, <em>Draft - RMC-TotalRisk technical reference manual</em>, 1st ed. Lakewood, CO: U.S. Army Corps of Engineers, Risk Management Center, 2025. Available: <a href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk">https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk</a>
+</div>
+</div>
+<div id="ref-cite-EM1619" class="csl-entry">
+<div class="csl-left-margin">[2] </div>
+<div class="csl-right-inline">
+<em>Risk-based analysis for flood damage reduction studies, EM 1110-2-1619</em>. Washington, D.C.: Department of the Army, U.S. Army Corps of Engineers, 1996. Available: <a href="https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-1619.pdf">https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-1619.pdf</a>
+</div>
+</div>
+<div id="ref-cite-ER1156" class="csl-entry">
+<div class="csl-left-margin">[9] </div>
+<div class="csl-right-inline">
+<em>Safety of dams - policy and procedures, ER 1110-2-1156</em>. Washington, D.C.: Department of the Army, U.S. Army Corps of Engineers, 2014. Available: <a href="https://www.publications.usace.army.mil/Portals/76/Publications/EngineerRegulations/er_1110-2-1156.pdf">https://www.publications.usace.army.mil/Portals/76/Publications/EngineerRegulations/er_1110-2-1156.pdf</a>
+</div>
+</div>
+<div id="ref-cite-CenterforChemicalProcessSafety" class="csl-entry">
+<div class="csl-left-margin">[10] </div>
+<div class="csl-right-inline">C. for Chemical Process Safety, <em>Guidelines for developing quantitative safety risk criteria</em>. Hoboken, New Jersey: John Wiley &amp; Sons, Inc., 2009.</div>
+</div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="risk-analyses.html"><span class="header-section-number">10</span> Risk Analyses</a></div>
 <div class="next"><a href="risk-analysis-diagnostics.html"><span class="header-section-number">12</span> Risk Analysis Diagnostics</a></div>
@@ -198,8 +224,8 @@ Figure 11.7: Risk analysis results on the Summary Statistics tab in RMC-TotalRis
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/11-risk-analyses-results.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
-          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/11-risk-analyses-results.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/11-risk-analyses-results.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/11-risk-analyses-results.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

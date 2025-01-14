@@ -10,6 +10,7 @@
 <meta name="generator" content="bookdown 0.41.2 with bs4_book()">
 <meta property="og:title" content="9 Consequence Functions | RMC-TotalRisk User’s Guide">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/consequence-functions.html">
 <meta property="og:description" content="Consequence functions in RMC-TotalRisk quantify the magnitude of consequences that arise from a given range of hazards. These functions estimate how much life loss or economic damage to expect...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="9 Consequence Functions | RMC-TotalRisk User’s Guide">
@@ -43,6 +44,7 @@
       margin-left: 2em;
     }
   </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -82,7 +84,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -96,7 +98,7 @@
 <h2>
 <span class="header-section-number">9.1</span> Import from LifeSim<a class="anchor" aria-label="anchor" href="#import-from-lifesim"><i class="fas fa-link"></i></a>
 </h2>
-<p>The USACE RMC, in collaboration with the HEC, developed the LifeSim software for estimating life loss and economic damage <span class="citation"><a href="references.html#ref-cite-LifeSimManual" role="doc-biblioref">[7]</a></span>. LifeSim is an agent-based system that simulates population redistribution during evacuation and evaluates consequences based on the hazard (e.g., flooding) <span class="citation"><a href="references.html#ref-cite-Fields2016" role="doc-biblioref">[8]</a></span>. You can download LifeSim from the <a href="https://www.rmc.usace.army.mil/Software/LifeSim/">RMC website</a> and import its analysis results directly into RMC-TotalRisk.</p>
+<p>The USACE RMC, in collaboration with the HEC, developed the LifeSim software for estimating life loss and economic damage <span class="citation"><a href="#ref-cite-LifeSimManual" role="doc-biblioref">[7]</a></span>. LifeSim is an agent-based system that simulates population redistribution during evacuation and evaluates consequences based on the hazard (e.g., flooding) <span class="citation"><a href="#ref-cite-Fields2016" role="doc-biblioref">[8]</a></span>. You can download LifeSim from the <a href="https://www.rmc.usace.army.mil/Software/LifeSim/">RMC website</a> and import its analysis results directly into RMC-TotalRisk.</p>
 <p>To import LifeSim analysis results, right-click on the <strong>Consequences</strong> folder in the Project Explorer (Figure <a href="consequence-functions.html#fig:figure-112">9.1</a>) or go to <strong>Project Menu &gt; Consequences</strong> and select <strong>Add LifeSim Consequence…</strong>. Enter the consequence function name and select the LifeSim project file with the desired results (Figure <a href="consequence-functions.html#fig:figure-112">9.1</a>). Next, click <strong>OK</strong> to import the LifeSim study results.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-112"></span>
@@ -219,6 +221,19 @@ Figure 9.11: Composite consequence function graphical display.
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-LifeSimManual" class="csl-entry">
+<div class="csl-left-margin">[7] </div>
+<div class="csl-right-inline">
+<em>LifeSim life loss estimation user’s manual, CPD-97</em>. Davis, CA: U.S. Army Corps of Engineers, Institute for Water Resources, Hydrologic Engineering Center, 2021. Available: <a href="https://iwrlibrary.sec.usace.army.mil/resource/06bd49f2-cdd5-4e50-b58b-96c804c18886">https://iwrlibrary.sec.usace.army.mil/resource/06bd49f2-cdd5-4e50-b58b-96c804c18886</a>
+</div>
+</div>
+<div id="ref-cite-Fields2016" class="csl-entry">
+<div class="csl-left-margin">[8] </div>
+<div class="csl-right-inline">W. L. Fields, <span>“Life loss estimation from flood events: A new approach to population redistribution with uncertainty,”</span> in <em>ANCOLD conference 2016</em>, Adelaide, AUS: Australian National Committee on Large Dams, 2016.</div>
+</div>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="system-response-functions.html"><span class="header-section-number">8</span> System Response Functions</a></div>
 <div class="next"><a href="risk-analyses.html"><span class="header-section-number">10</span> Risk Analyses</a></div>
@@ -235,8 +250,8 @@ Figure 9.11: Composite consequence function graphical display.
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/09-consequence-functions.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
-          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/09-consequence-functions.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/09-consequence-functions.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/09-consequence-functions.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

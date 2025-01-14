@@ -10,6 +10,7 @@
 <meta name="generator" content="bookdown 0.41.2 with bs4_book()">
 <meta property="og:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide">
 <meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/risk-analyses.html">
 <meta property="og:description" content="In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide">
@@ -43,6 +44,7 @@
       margin-left: 2em;
     }
   </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -82,7 +84,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -95,7 +97,7 @@
 <p>Each system component can include multiple system response functions, commonly referred to as failure modes. These failure modes may lead to different consequences. For example, in a dam scenario, a seepage failure mode might progress slowly, allowing downstream populations more time to evacuate. In contrast, a seismic failure mode could cause rapid failure, providing little evacuation time. At least one failure mode is necessary to calculate excess, failure, and total risks.</p>
 <p>A system component can include only one non-failure mode. This mode does not require a response function but is essential for calculating excess, non-failure, background, and total risks. If no non-failure mode is provided, the system assumes the non-failure consequence is zero.</p>
 <p>To compute risk, a system component must include either a failure mode or a non-failure mode.</p>
-<p>For more information on the quantitative risk analysis framework in RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>For more information on the quantitative risk analysis framework in RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <div id="create-new-risk-analysis" class="section level2" number="10.1">
 <h2>
 <span class="header-section-number">10.1</span> Create New Risk Analysis<a class="anchor" aria-label="anchor" href="#create-new-risk-analysis"><i class="fas fa-link"></i></a>
@@ -164,7 +166,7 @@ Figure 10.5: Risk analysis integration options when there are multiple system co
 <li><p><strong>Warmup Cycles</strong>: Sets the number of warmup cycles for the adaptive importance sampling method. The default is <span class="math inline">\(5\)</span>.</p></li>
 <li><p><strong>Final Evaluations</strong>: Specifies the number of integrand evaluations performed after completing the warmup phase. The default is <span class="math inline">\(10,000\)</span>.</p></li>
 </ul>
-<p>For more details on the numerical integration methods used by RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>For more details on the numerical integration methods used by RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 </div>
 <div id="system-component-options" class="section level2" number="10.4">
 <h2>
@@ -259,7 +261,7 @@ Figure 10.8: Risk measure options.
 <li><p><strong>Consequence Threshold</strong>: Specifies the consequence level for calculating the probability of exceeding that threshold. The default consequence threshold is <span class="math inline">\(0\)</span>.</p></li>
 <li><p><strong>Alpha</strong> Sets the exceedance probability used to compute the Value-at-Risk (VaR) and Conditional Value-at-Risk (CVaR). The default exceedance probability is <span class="math inline">\(10^{−2}\)</span>.</p></li>
 </ul>
-<p>For more details about the additional risk measures in RMC-TotalRisk, refer to the technical reference <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>For more details about the additional risk measures in RMC-TotalRisk, refer to the technical reference <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 </div>
 <div id="risk-diagram" class="section level2" number="10.7">
 <h2>
@@ -388,7 +390,7 @@ Figure 10.14: Risk simulation options.
 </div>
 <p>Figure <a href="risk-analyses.html#fig:figure-risksim">10.15</a> illustrates the overall risk and Monte Carlo simulation framework used in RMC-TotalRisk. The <strong>Mean Risk Only</strong> method is computationally efficient and can be completed in a single loop, as shown on the left side of the figure. However, this method approximates risk and may not fully capture combinations of low-probability, high-consequence events. Consequently, it can underestimate variance and tail risk.</p>
 <p>For scenarios involving significant uncertainty in extreme events, it is recommended to use the <strong>Simulate Risk with Full Uncertainty</strong> option for a more accurate assessment.</p>
-<p>For a detailed explanation of the risk analysis framework, simulation options, algorithms, and underlying mathematics, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>For a detailed explanation of the risk analysis framework, simulation options, algorithms, and underlying mathematics, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:figure-risksim"></span>
 <img src="images/risksimulation.png" alt="Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty."><p class="caption">
@@ -396,6 +398,14 @@ Figure 10.15: Flowchart of the TotalRisk simulation options: (a) Simulate mean r
 </p>
 </div>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-TechRef" class="csl-entry">
+<div class="csl-left-margin">[1] </div>
+<div class="csl-right-inline">C. H. Smith, D. A. Margo, and W. L. Fields, <em>Draft - RMC-TotalRisk technical reference manual</em>, 1st ed. Lakewood, CO: U.S. Army Corps of Engineers, Risk Management Center, 2025. Available: <a href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk">https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk</a>
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -419,8 +429,8 @@ Figure 10.15: Flowchart of the TotalRisk simulation options: (a) Simulate mean r
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/10-risk-analyses.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
-          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/10-risk-analyses.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/10-risk-analyses.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/10-risk-analyses.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
