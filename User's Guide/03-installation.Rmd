@@ -2,7 +2,7 @@
 
 RMC-TotalRisk version 1.0 is available as a portable package (.zip). Installing a portable package does not require administrative rights. Simply extract all contents of the portable package to the desired computer location. Figure \@ref(fig:figure-1) shows an example of the package contents after extraction. Double-click the executable **RMC-TotalRisk.exe** to get started. For easy access to the program, create a desktop shortcut and pin the program to the Windows task bar. 
 
-```{r figure-1, echo=FALSE, fig.cap="RMC-TotalRisk executable file in the RMC-TotalRisk portable .zip directory.", fig.align="center"}
+```{r figure-1, echo=FALSE, fig.cap="RMC-TotalRisk executable file in the RMC-TotalRisk portable .zip directory.", fig.alt="Windows file explorer directory containing the RMC-TotalRisk executable.", fig.align="center"}
 knitr::include_graphics("images/figure1.png")
 ```
 
@@ -10,7 +10,7 @@ knitr::include_graphics("images/figure1.png")
 
 RMC-TotalRisk files have a “.tra” file extension. To have Windows automatically open .tra files with RMC-TotalRisk, right-click a .tra project file. Select **Open with…** from the resulting menu (Figure \@ref(fig:figure-2)). 
 
-```{r figure-2, echo=FALSE, fig.cap="Right-click to select how to open a file in Windows.", fig.align="center"}
+```{r figure-2, echo=FALSE, fig.cap="Right-click to select how to open a file in Windows.", fig.alt="Right-click context menu in Windows used to set the file association.", fig.align="center"}
 knitr::include_graphics("images/figure2.png")
 ```
 
@@ -18,7 +18,7 @@ From the menu that appears when you select **Open with…**, click **Try an app 
 
 When you’ve found RMC-TotalRisk and selected it, check the box labeled **Always use this app to open [.tra] files** before you click the **OK** button. Now .tra files appear in Windows Explorer with the RMC TotalRisk icon (Figure \@ref(fig:figure-3)). You can now double-click a project file to automatically open it with RMC-TotalRisk.
 
-```{r figure-3, echo=FALSE, fig.cap="RMC-TotalRisk project with file association in Windows.", fig.align="center"}
+```{r figure-3, echo=FALSE, fig.cap="RMC-TotalRisk project with file association in Windows.", fig.alt="Windows file explorer displaying the correct icon associated with RMC-TotalRisk.", fig.align="center"}
 knitr::include_graphics("images/figure3.png")
 ```
 

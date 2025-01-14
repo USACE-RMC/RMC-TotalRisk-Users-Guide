@@ -2,7 +2,7 @@
 
 The U.S. Army Corps of Engineers (USACE) Risk Management Center (RMC) developed the quantitative risk analysis software (RMC-TotalRisk) to enhance and expedite risk assessments conducted by the USACE Flood Risk Management, Planning, and Dam and Levee Safety Communities of Practice.
 
-RMC-TotalRisk is a menu-driven software that conducts risk analysis based on user-defined hazard, transform, system response, and consequence functions. The software features a fully integrated modelling platform, including a modern graphical user interface, data entry capabilities, and report quality charts and diagnostics. RMC-TotalRisk can perform multi-failure risk analysis for individual dams or levees as well as for complex system with multiple components. 
+RMC-TotalRisk is a menu-driven software that conducts risk analysis based on user-defined hazard, transform, system response, and consequence functions. The software features a fully integrated modeling platform, including a modern graphical user interface, data entry capabilities, and report quality charts and diagnostics. RMC-TotalRisk can perform multi-failure risk analysis for individual dams or levees as well as for complex system with multiple components. 
 
 ## Why You Should Use RMC-TotalRisk
 
@@ -19,6 +19,8 @@ RMC-TotalRisk calculates five critical types of risk — excess, background, tot
 Use RMC-TotalRisk whenever you need to perform a risk analysis, particularly when the analysis involves complex systems with multiple components, uncertainties, or dependencies. While the software is frequently applied in flood risk management, its capabilities extend far beyond this domain. RMC-TotalRisk is relevant to any scenario involving hazards, responses, and consequences, making it a versatile tool for a wide range of scientific, engineering, and policy applications.
 
 The examples in this document relate to flood risk for dams and levees. However, the software is not limited to flood risk management applications. RMC-TotalRisk is designed as a general-purpose risk analysis software capable of estimating risk for various complex systems. Its flexibility and robust analytical framework make it suitable for applications such as: 
+
+- **Flood Risk Assessment**: Evaluate risks associated with floods, including structural vulnerabilities and potential consequences for infrastructure and populations
 
 - **Seismic Risk Assessment**: Evaluate risks associated with earthquakes, including structural vulnerabilities and potential consequences for infrastructure and populations.
 

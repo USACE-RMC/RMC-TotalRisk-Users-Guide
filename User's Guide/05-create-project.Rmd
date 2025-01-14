@@ -2,28 +2,28 @@
 
 When you open RMC-TotalRisk, it automatically creates a Blank Project file, as shown in Figure \@ref(fig:figure-48). The blank project is stored in your local temp directory. You may begin working with the blank project file immediately.
 
-```{r figure-48, echo=FALSE, fig.cap="RMC-TotalRisk blank project.", fig.align="center"}
+```{r figure-48, echo=FALSE, fig.cap="RMC-TotalRisk blank project.", fig.alt="The Blank Project file includes folders such as Hazards, Transforms, System Responses, Consequences, and Risk Analyses.", fig.align="center"}
 knitr::include_graphics("images/figure48.png")
 ```
 
 To save changes to the blank project, click the Save button on the tool bar or under the **File** menu. This opens the **Save Project As…** prompt (Figure \@ref(fig:figure-49)). Enter the desired file name and click the save button in the bottom right. Now you are ready to continue working with RMC-TotalRisk.
 
-```{r figure-49, echo=FALSE, fig.cap="Save project as....", fig.align="center"}
+```{r figure-49, echo=FALSE, fig.cap="Save project as....", fig.alt="The Save Project As… window allows the user to save the project at their desired location. Users can also change the project file name.", fig.align="center"}
 knitr::include_graphics("images/figure49.png")
 ```
 
 You can also create a new project by clicking **New Project…** under the **File** menu (Figure \@ref(fig:figure-50)) or by clicking the **New Project** button on the tool bar (Figure \@ref(fig:figure-51)). The first time you use RMC TotalRisk, the recent projects list will be empty. 
 
-```{r figure-50, echo=FALSE, fig.cap="Crete new project from the file menu.", fig.align="center"}
+```{r figure-50, echo=FALSE, fig.cap="Create new project from the file menu.", fig.alt="The File menu includes options to create a new project, open an existing project, save a project, and exit the widow.", fig.align="center"}
 knitr::include_graphics("images/figure50.png")
 ```
 
-```{r figure-51, echo=FALSE, fig.cap="Crete new project from the tool bar.", fig.align="center"}
+```{r figure-51, echo=FALSE, fig.cap="Create new project from the tool bar.", fig.alt="The New Project button on the toolbar creates a Blank Project file with folders such as Hazards, Transforms, System Responses, Consequences, and Risk Analyses.", fig.align="center"}
 knitr::include_graphics("images/figure51.png")
 ```
 
 The project properties are shown in the **Properties** window (Figure \@ref(fig:figure-52)), which is typically on the right hand side of the main window. You may edit the project name and description. 
 
-```{r figure-52, echo=FALSE, fig.cap="Project properties.", fig.align="center"}
+```{r figure-52, echo=FALSE, fig.cap="Project properties.", fig.alt="The Properties window shows the name and description of the project. This window also shows when the project was created and last modified. It also shows the project file directory, and the software version.", fig.align="center"}
 knitr::include_graphics("images/figure52.png")
 ```

@@ -1,358 +1,694 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Graphical User Interface | RMC-TotalRisk User’s Guide</title>
-  <meta name="description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
-  <meta name="generator" content="bookdown 0.41.2 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="4 Graphical User Interface | RMC-TotalRisk User’s Guide" />
-  <meta property="og:type" content="book" />
-  
-  <meta property="og:description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
-  <meta name="github-repo" content="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Graphical User Interface | RMC-TotalRisk User’s Guide" />
-  
-  <meta name="twitter:description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
-  
-
-<meta name="author" content="C. Haden Smith and Woodrow L. Fields" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  <link rel="shortcut icon" href="TotalRiskIcon.ico" type="image/x-icon" />
-<link rel="prev" href="terms-and-conditions-for-use.html"/>
-<link rel="next" href="gui-menu-bar.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>4 Graphical User Interface | RMC-TotalRisk User’s Guide</title>
+<meta name="author" content="C. Haden Smith and Woodrow L. Fields">
+<meta name="description" content="RMC-TotalRisk is a menu-driven software package that performs risk analyses. The software features a fully integrated modeling platform, including a modern graphical user interface, data entry...">
+<meta name="generator" content="bookdown 0.41.2 with bs4_book()">
+<meta property="og:title" content="4 Graphical User Interface | RMC-TotalRisk User’s Guide">
+<meta property="og:type" content="book">
+<meta property="og:description" content="RMC-TotalRisk is a menu-driven software package that performs risk analyses. The software features a fully integrated modeling platform, including a modern graphical user interface, data entry...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="4 Graphical User Interface | RMC-TotalRisk User’s Guide">
+<meta name="twitter:description" content="RMC-TotalRisk is a menu-driven software package that performs risk analyses. The software features a fully integrated modeling platform, including a modern graphical user interface, data entry...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 <style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li>
-  <a href="./">
-    <img src="images/TotalRiskIcon.png" alt="RMC-TotalRisk icon." style="height:20px; margin-right:5px; vertical-align:middle;">
-    RMC-TotalRisk User's Guide
-  </a>
-</li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-cite-this-guide"><i class="fa fa-check"></i>How to Cite This Guide</a></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>1</b> Welcome to RMC-TotalRisk</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="why-you-should-use-rmc-totalrisk.html"><a href="why-you-should-use-rmc-totalrisk.html"><i class="fa fa-check"></i><b>1.1</b> Why You Should Use RMC-TotalRisk</a></li>
-<li class="chapter" data-level="1.2" data-path="when-you-should-use-rmc-totalrisk.html"><a href="when-you-should-use-rmc-totalrisk.html"><i class="fa fa-check"></i><b>1.2</b> When You Should Use RMC-TotalRisk</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="risk-analysis-framework.html"><a href="risk-analysis-framework.html"><i class="fa fa-check"></i><b>2</b> Risk Analysis Framework</a></li>
-<li class="chapter" data-level="3" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3</b> Installing RMC-TotalRisk</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="setting-the-file-association-in-windows.html"><a href="setting-the-file-association-in-windows.html"><i class="fa fa-check"></i><b>3.1</b> Setting the File Association in Windows</a></li>
-<li class="chapter" data-level="3.2" data-path="system-requirements.html"><a href="system-requirements.html"><i class="fa fa-check"></i><b>3.2</b> System Requirements</a></li>
-<li class="chapter" data-level="3.3" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html"><i class="fa fa-check"></i><b>3.3</b> Terms and Conditions for Use</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#waiver-of-warranty"><i class="fa fa-check"></i><b>3.3.1</b> Waiver of Warranty</a></li>
-<li class="chapter" data-level="3.3.2" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#limitation-of-liability"><i class="fa fa-check"></i><b>3.3.2</b> Limitation of Liability</a></li>
-<li class="chapter" data-level="3.3.3" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#indemnity"><i class="fa fa-check"></i><b>3.3.3</b> Indemnity</a></li>
-<li class="chapter" data-level="3.3.4" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#assent"><i class="fa fa-check"></i><b>3.3.4</b> Assent</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="gui.html"><a href="gui.html"><i class="fa fa-check"></i><b>4</b> Graphical User Interface</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html"><i class="fa fa-check"></i><b>4.1</b> Menu Bar</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-file"><i class="fa fa-check"></i><b>4.1.1</b> File</a></li>
-<li class="chapter" data-level="4.1.2" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-view"><i class="fa fa-check"></i><b>4.1.2</b> View</a></li>
-<li class="chapter" data-level="4.1.3" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-project"><i class="fa fa-check"></i><b>4.1.3</b> Project</a></li>
-<li class="chapter" data-level="4.1.4" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-tools"><i class="fa fa-check"></i><b>4.1.4</b> Tools</a></li>
-<li class="chapter" data-level="4.1.5" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-window"><i class="fa fa-check"></i><b>4.1.5</b> Window</a></li>
-<li class="chapter" data-level="4.1.6" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-help"><i class="fa fa-check"></i><b>4.1.6</b> Help</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="gui-tool-bar.html"><a href="gui-tool-bar.html"><i class="fa fa-check"></i><b>4.2</b> Tool Bar</a></li>
-<li class="chapter" data-level="4.3" data-path="gui-window-layout.html"><a href="gui-window-layout.html"><i class="fa fa-check"></i><b>4.3</b> Window Layout</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="gui-window-layout.html"><a href="gui-window-layout.html#types-of-windows"><i class="fa fa-check"></i><b>4.3.1</b> Types of Windows</a></li>
-<li class="chapter" data-level="4.3.2" data-path="gui-window-layout.html"><a href="gui-window-layout.html#tab-groups"><i class="fa fa-check"></i><b>4.3.2</b> Tab Groups</a></li>
-<li class="chapter" data-level="4.3.3" data-path="gui-window-layout.html"><a href="gui-window-layout.html#move-and-dock-windows"><i class="fa fa-check"></i><b>4.3.3</b> Move and Dock Windows</a></li>
-<li class="chapter" data-level="4.3.4" data-path="gui-window-layout.html"><a href="gui-window-layout.html#close-and-auto-hide-tool-windows"><i class="fa fa-check"></i><b>4.3.4</b> Close and Auto-Hide Tool Windows</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="project-explorer.html"><a href="project-explorer.html"><i class="fa fa-check"></i><b>4.4</b> Project Explorer</a></li>
-<li class="chapter" data-level="4.5" data-path="tabbed-documents.html"><a href="tabbed-documents.html"><i class="fa fa-check"></i><b>4.5</b> Tabbed Documents</a></li>
-<li class="chapter" data-level="4.6" data-path="properties-window.html"><a href="properties-window.html"><i class="fa fa-check"></i><b>4.6</b> Properties Window</a></li>
-<li class="chapter" data-level="4.7" data-path="message-window.html"><a href="message-window.html"><i class="fa fa-check"></i><b>4.7</b> Message Window</a></li>
-<li class="chapter" data-level="4.8" data-path="options.html"><a href="options.html"><i class="fa fa-check"></i><b>4.8</b> Personalize RMC-TotalRisk</a>
-<ul>
-<li class="chapter" data-level="4.8.1" data-path="options.html"><a href="options.html#application-options"><i class="fa fa-check"></i><b>4.8.1</b> Application Options</a></li>
-<li class="chapter" data-level="4.8.2" data-path="options.html"><a href="options.html#file-management-options"><i class="fa fa-check"></i><b>4.8.2</b> File Management Options</a></li>
-<li class="chapter" data-level="4.8.3" data-path="options.html"><a href="options.html#message-window-options"><i class="fa fa-check"></i><b>4.8.3</b> Message Window Options</a></li>
-<li class="chapter" data-level="4.8.4" data-path="options.html"><a href="options.html#default-options"><i class="fa fa-check"></i><b>4.8.4</b> Default Options</a></li>
-</ul></li>
-<li class="chapter" data-level="4.9" data-path="plot-features.html"><a href="plot-features.html"><i class="fa fa-check"></i><b>4.9</b> Plot Features</a></li>
-<li class="chapter" data-level="4.10" data-path="table-features.html"><a href="table-features.html"><i class="fa fa-check"></i><b>4.10</b> Table Features</a>
-<ul>
-<li class="chapter" data-level="4.10.1" data-path="table-features.html"><a href="table-features.html#add-and-remove-row-tools"><i class="fa fa-check"></i><b>4.10.1</b> Add and Remove Row Tools</a></li>
-<li class="chapter" data-level="4.10.2" data-path="table-features.html"><a href="table-features.html#export-and-copy-tools"><i class="fa fa-check"></i><b>4.10.2</b> Export and Copy Tools</a></li>
-<li class="chapter" data-level="4.10.3" data-path="table-features.html"><a href="table-features.html#table-row-selection-tools"><i class="fa fa-check"></i><b>4.10.3</b> Table Row Selection Tools</a></li>
-<li class="chapter" data-level="4.10.4" data-path="table-features.html"><a href="table-features.html#table-column-features"><i class="fa fa-check"></i><b>4.10.4</b> Table Column Features</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="create-a-project.html"><a href="create-a-project.html"><i class="fa fa-check"></i><b>5</b> Create a Project</a></li>
-<li class="chapter" data-level="6" data-path="hazard-functions.html"><a href="hazard-functions.html"><i class="fa fa-check"></i><b>6</b> Hazard Functions</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="bestfit.html"><a href="bestfit.html"><i class="fa fa-check"></i><b>6.1</b> Import from RMC-BestFit</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="bestfit.html"><a href="bestfit.html#graphical-results"><i class="fa fa-check"></i><b>6.1.1</b> Graphical Results</a></li>
-<li class="chapter" data-level="6.1.2" data-path="bestfit.html"><a href="bestfit.html#tabular-results"><i class="fa fa-check"></i><b>6.1.2</b> Tabular Results</a></li>
-<li class="chapter" data-level="6.1.3" data-path="bestfit.html"><a href="bestfit.html#parameter-sets"><i class="fa fa-check"></i><b>6.1.3</b> Parameter Sets</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="import-from-rmc-rfa.html"><a href="import-from-rmc-rfa.html"><i class="fa fa-check"></i><b>6.2</b> Import from RMC-RFA</a></li>
-<li class="chapter" data-level="6.3" data-path="parametric-hazard-function.html"><a href="parametric-hazard-function.html"><i class="fa fa-check"></i><b>6.3</b> Parametric Hazard Function</a></li>
-<li class="chapter" data-level="6.4" data-path="nonparametric-hazard-function.html"><a href="nonparametric-hazard-function.html"><i class="fa fa-check"></i><b>6.4</b> Nonparametric Hazard Function</a></li>
-<li class="chapter" data-level="6.5" data-path="tabular-hazard-function.html"><a href="tabular-hazard-function.html"><i class="fa fa-check"></i><b>6.5</b> Tabular Hazard Function</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="tabular-hazard-function.html"><a href="tabular-hazard-function.html#data-validation"><i class="fa fa-check"></i><b>6.5.1</b> Data Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="composite-hazard-function.html"><a href="composite-hazard-function.html"><i class="fa fa-check"></i><b>6.6</b> Composite Hazard Function</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="transform-functions.html"><a href="transform-functions.html"><i class="fa fa-check"></i><b>7</b> Transform Functions</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="linear-transform-function.html"><a href="linear-transform-function.html"><i class="fa fa-check"></i><b>7.1</b> Linear Transform Function</a></li>
-<li class="chapter" data-level="7.2" data-path="power-transform-function.html"><a href="power-transform-function.html"><i class="fa fa-check"></i><b>7.2</b> Power Transform Function</a></li>
-<li class="chapter" data-level="7.3" data-path="tabular-transform-function.html"><a href="tabular-transform-function.html"><i class="fa fa-check"></i><b>7.3</b> Tabular Transform Function</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="tabular-transform-function.html"><a href="tabular-transform-function.html#data-validation-1"><i class="fa fa-check"></i><b>7.3.1</b> Data Validation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="system-response-functions.html"><a href="system-response-functions.html"><i class="fa fa-check"></i><b>8</b> System Response Functions</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html"><i class="fa fa-check"></i><b>8.1</b> Event Tree Response Function</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
-<li class="chapter" data-level="8.1.2" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#navigating-an-event-tree"><i class="fa fa-check"></i><b>8.1.2</b> Navigating an Event Tree</a></li>
-<li class="chapter" data-level="8.1.3" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#customizing-an-event-tree"><i class="fa fa-check"></i><b>8.1.3</b> Customizing an Event Tree</a></li>
-<li class="chapter" data-level="8.1.4" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#building-an-event-tree"><i class="fa fa-check"></i><b>8.1.4</b> Building an Event Tree</a></li>
-<li class="chapter" data-level="8.1.5" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#explorting-event-tree-results"><i class="fa fa-check"></i><b>8.1.5</b> Explorting Event Tree Results</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="parametric-response-function.html"><a href="parametric-response-function.html"><i class="fa fa-check"></i><b>8.2</b> Parametric Response Function</a></li>
-<li class="chapter" data-level="8.3" data-path="tabular-response-function.html"><a href="tabular-response-function.html"><i class="fa fa-check"></i><b>8.3</b> Tabular Response Function</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="tabular-response-function.html"><a href="tabular-response-function.html#data-validation-2"><i class="fa fa-check"></i><b>8.3.1</b> Data Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="bivariate-response-function.html"><a href="bivariate-response-function.html"><i class="fa fa-check"></i><b>8.4</b> Bivariate Response Function</a></li>
-<li class="chapter" data-level="8.5" data-path="composite-response-function.html"><a href="composite-response-function.html"><i class="fa fa-check"></i><b>8.5</b> Composite Response Function</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="consequence-functions.html"><a href="consequence-functions.html"><i class="fa fa-check"></i><b>9</b> Consequence Functions</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="import-from-lifesim.html"><a href="import-from-lifesim.html"><i class="fa fa-check"></i><b>9.1</b> Import from LifeSim</a></li>
-<li class="chapter" data-level="9.2" data-path="tabular-consequence-function.html"><a href="tabular-consequence-function.html"><i class="fa fa-check"></i><b>9.2</b> Tabular Consequence Function</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="tabular-consequence-function.html"><a href="tabular-consequence-function.html#data-validation-3"><i class="fa fa-check"></i><b>9.2.1</b> Data Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="composite-consequence-function.html"><a href="composite-consequence-function.html"><i class="fa fa-check"></i><b>9.3</b> Composite Consequence Function</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="risk-analyses.html"><a href="risk-analyses.html"><i class="fa fa-check"></i><b>10</b> Risk Analyses</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="create-new-risk-analysis.html"><a href="create-new-risk-analysis.html"><i class="fa fa-check"></i><b>10.1</b> Create New Risk Analysis</a></li>
-<li class="chapter" data-level="10.2" data-path="simulation-options.html"><a href="simulation-options.html"><i class="fa fa-check"></i><b>10.2</b> Simulation Options</a></li>
-<li class="chapter" data-level="10.3" data-path="integration-options.html"><a href="integration-options.html"><i class="fa fa-check"></i><b>10.3</b> Integration Options</a></li>
-<li class="chapter" data-level="10.4" data-path="system-component-options.html"><a href="system-component-options.html"><i class="fa fa-check"></i><b>10.4</b> System Component Options</a></li>
-<li class="chapter" data-level="10.5" data-path="system-options.html"><a href="system-options.html"><i class="fa fa-check"></i><b>10.5</b> System Options</a></li>
-<li class="chapter" data-level="10.6" data-path="risk-measure-options.html"><a href="risk-measure-options.html"><i class="fa fa-check"></i><b>10.6</b> Risk Measure Options</a></li>
-<li class="chapter" data-level="10.7" data-path="risk-diagram.html"><a href="risk-diagram.html"><i class="fa fa-check"></i><b>10.7</b> Risk Diagram</a>
-<ul>
-<li class="chapter" data-level="10.7.1" data-path="risk-diagram.html"><a href="risk-diagram.html#working-with-the-risk-diagram"><i class="fa fa-check"></i><b>10.7.1</b> Working with the Risk Diagram</a></li>
-</ul></li>
-<li class="chapter" data-level="10.8" data-path="risk-simulation.html"><a href="risk-simulation.html"><i class="fa fa-check"></i><b>10.8</b> Risk Simulation</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="risk-analysis-results.html"><a href="risk-analysis-results.html"><i class="fa fa-check"></i><b>11</b> Risk Analysis Results</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="loss-exceedance-plot.html"><a href="loss-exceedance-plot.html"><i class="fa fa-check"></i><b>11.1</b> Loss Exceedance Plot</a></li>
-<li class="chapter" data-level="11.2" data-path="conditional-loss-plot.html"><a href="conditional-loss-plot.html"><i class="fa fa-check"></i><b>11.2</b> Conditional Loss Plot</a></li>
-<li class="chapter" data-level="11.3" data-path="summary-statistics.html"><a href="summary-statistics.html"><i class="fa fa-check"></i><b>11.3</b> Summary Statistics</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="risk-analysis-diagnostics.html"><a href="risk-analysis-diagnostics.html"><i class="fa fa-check"></i><b>12</b> Risk Analysis Diagnostics</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="integration.html"><a href="integration.html"><i class="fa fa-check"></i><b>12.1</b> Integration</a></li>
-<li class="chapter" data-level="12.2" data-path="risk-measures.html"><a href="risk-measures.html"><i class="fa fa-check"></i><b>12.2</b> Risk Measures</a></li>
-<li class="chapter" data-level="12.3" data-path="risk-profile.html"><a href="risk-profile.html"><i class="fa fa-check"></i><b>12.3</b> Risk Profile</a></li>
-<li class="chapter" data-level="12.4" data-path="assurance.html"><a href="assurance.html"><i class="fa fa-check"></i><b>12.4</b> Assurance</a></li>
-<li class="chapter" data-level="12.5" data-path="tornado-plot.html"><a href="tornado-plot.html"><i class="fa fa-check"></i><b>12.5</b> Tornado Plot</a></li>
-<li class="chapter" data-level="12.6" data-path="x-y-plot.html"><a href="x-y-plot.html"><i class="fa fa-check"></i><b>12.6</b> X-Y Plot</a></li>
-<li class="chapter" data-level="12.7" data-path="tabular.html"><a href="tabular.html"><i class="fa fa-check"></i><b>12.7</b> Tabular</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="13" data-path="appendix-a---acronyms.html"><a href="appendix-a---acronyms.html"><i class="fa fa-check"></i><b>13</b> Appendix A - Acronyms</a></li>
-<li class="divider"></li>
-<li>
-  <a href="https://www.rmc.usace.army.mil/">
-    <img src="images/USACE.png" alt="USACE Logo." style="height:20px; margin-right:5px; vertical-align:middle;">
-    USACE Risk Management Center
-  </a>
-</li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">RMC-TotalRisk User’s Guide</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RMC-TotalRisk User’s Guide</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="welcome.html"><span class="header-section-number">1</span> Welcome to RMC-TotalRisk</a></li>
+<li><a class="" href="risk-analysis-framework.html"><span class="header-section-number">2</span> Risk Analysis Framework</a></li>
+<li><a class="" href="installation.html"><span class="header-section-number">3</span> Installing RMC-TotalRisk</a></li>
+<li><a class="active" href="gui.html"><span class="header-section-number">4</span> Graphical User Interface</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">5</span> Create a Project</a></li>
+<li><a class="" href="hazard-functions.html"><span class="header-section-number">6</span> Hazard Functions</a></li>
+<li><a class="" href="transform-functions.html"><span class="header-section-number">7</span> Transform Functions</a></li>
+<li><a class="" href="system-response-functions.html"><span class="header-section-number">8</span> System Response Functions</a></li>
+<li><a class="" href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></li>
+<li><a class="" href="risk-analyses.html"><span class="header-section-number">10</span> Risk Analyses</a></li>
+<li><a class="" href="risk-analysis-results.html"><span class="header-section-number">11</span> Risk Analysis Results</a></li>
+<li><a class="" href="risk-analysis-diagnostics.html"><span class="header-section-number">12</span> Risk Analysis Diagnostics</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a---acronyms.html"><span class="header-section-number">13</span> Appendix A - Acronyms</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="gui" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">4</span> Graphical User Interface<a href="gui.html#gui" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="gui" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Graphical User Interface<a class="anchor" aria-label="anchor" href="#gui"><i class="fas fa-link"></i></a>
+</h1>
 <p>RMC-TotalRisk is a menu-driven software package that performs risk analyses. The software features a fully integrated modeling platform, including a modern graphical user interface, data entry capabilities, multi-failure risk analysis, and report-quality charts.</p>
 <p>The graphical user interface consists of a menu bar, tool bar, and four window panes (Figure <a href="gui.html#fig:figure-4">4.1</a>): the Project Explorer, Tabbed Documents, Properties, and the Message window. You may move, dock, hide, or close the panes as desired.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figure-4"></span>
-<img src="images/figure4.png" alt="RMC-TotalRisk graphical user interface."  />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-4"></span>
+<img src="images/figure4.png" alt="The full graphical user interface of RMC-TotalRisk, including the project explorer (left), tabbed documents (center), properties (right), and message window (bottom)."><p class="caption">
 Figure 4.1: RMC-TotalRisk graphical user interface.
 </p>
 </div>
+<div id="gui-menu-bar" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Menu Bar<a class="anchor" aria-label="anchor" href="#gui-menu-bar"><i class="fas fa-link"></i></a>
+</h2>
+<p>The menu bar at the top of the window (Figure <a href="gui.html#fig:figure-5">4.2</a>) contains important commands for working with RMC TotalRisk. The following subsections provide detail on each command.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-5"></span>
+<img src="images/figure5.png" alt="The menu bar with important commands horizontally displayed as File, View, Project, Tools, Window, and Help."><p class="caption">
+Figure 4.2: RMC-TotalRisk menu bar.
+</p>
 </div>
-            </section>
+<div id="gui-menu-bar-file" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> File<a class="anchor" aria-label="anchor" href="#gui-menu-bar-file"><i class="fas fa-link"></i></a>
+</h3>
+<p>The File menu (Figure <a href="gui.html#fig:figure-6">4.3</a>) provides essential file management functionality. From this menu, you create a new project, open an existing project, save or save as, open recent projects, or exit the application.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-6"></span>
+<img src="images/figure6.png" alt="The file menu drop-down with new, open, save, save as, and recent project options."><p class="caption">
+Figure 4.3: File menu.
+</p>
+</div>
+<p>The first time you use RMC-TotalRisk, the recent projects list will be empty. If your recent projects exceed the number that the list shows at one time (the default is 10), a menu item labeled <strong>More Files…</strong> is available. That option opens a Recent Files dialog showing all available recent project files (Figure <a href="gui.html#fig:figure-7">4.4</a>). From here, you may open any recently used project file or clear the recent project file list.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-7"></span>
+<img src="images/figure7.png" alt="The recent file dialog lists all recent files vertically in a scrollable list."><p class="caption">
+Figure 4.4: Recent file dialog.
+</p>
+</div>
+</div>
+<div id="gui-menu-bar-view" class="section level3" number="4.1.2">
+<h3>
+<span class="header-section-number">4.1.2</span> View<a class="anchor" aria-label="anchor" href="#gui-menu-bar-view"><i class="fas fa-link"></i></a>
+</h3>
+<p>You may move, dock, hide, or close the Project Explorer, the Properties window, and Message window as desired. The View menu (Figure <a href="gui.html#fig:figure-8">4.5</a>) allows you to unhide or open these windows. In addition, you can restore the default layout of the panes.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-8"></span>
+<img src="images/figure8.png" alt="The view menu drop-down with options to view the project explorer, message window, properties window, all windows, and restore default layout."><p class="caption">
+Figure 4.5: View menu.
+</p>
+</div>
+</div>
+<div id="gui-menu-bar-project" class="section level3" number="4.1.3">
+<h3>
+<span class="header-section-number">4.1.3</span> Project<a class="anchor" aria-label="anchor" href="#gui-menu-bar-project"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Project menu (Figure <a href="gui.html#fig:figure-9">4.6</a>) contains commands related to the project you are working in. From this menu, you can create a new hazard, transform, system response, or consequence function. You can also add a new risk analysis. In addition, you can edit the project properties through the Properties window.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-9"></span>
+<img src="images/figure9.png" alt="The project menu drop-down with options to create input functions, create a risk analysis, and edit the project properties."><p class="caption">
+Figure 4.6: Project menu.
+</p>
+</div>
+</div>
+<div id="gui-menu-bar-tools" class="section level3" number="4.1.4">
+<h3>
+<span class="header-section-number">4.1.4</span> Tools<a class="anchor" aria-label="anchor" href="#gui-menu-bar-tools"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Tools menu (Figure <a href="gui.html#fig:figure-10">4.7</a>) provides tools for managing your project and personalizing your workspace.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-10"></span>
+<img src="images/figure10.png" alt="The tools menu drop-down with showing several options to manage your project, including creating a batch run and setting the software options."><p class="caption">
+Figure 4.7: Tools menu.
+</p>
+</div>
+<ul>
+<li><p><strong>Compact &amp; Optimize Project File</strong> compacts and optimizes the project database and removes unnecessary tables. This tool can significantly reduce the size of your file without losing any project data.</p></li>
+<li><p><strong>Zip Project File</strong> zips your project file and prompts you to save the .zip to a location on your computer. The zip file is smaller and easier to share with others.</p></li>
+<li><p><strong>Restore From Backup</strong> restores the project from the backup file (***.tra.bak). Note: RMC-TotalRisk creates a backup file every 30 minutes by default. You can change the backup frequency in the Options dialog, File Management tab.</p></li>
+<li><p><strong>Equivalent Annual Consequences</strong> (Figure <a href="gui.html#fig:figure-11">4.8</a>) calculates equivalent annual consequences (EqAC) between two risk analyses. EqAC is required in USACE cost evaluation procedures <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>. The EqAC is automatically calculated when you define the analysis period (in years) and a discount rate (as a percentage), then select current and future risk analyses and the year those results represent. Use the table tools to add and remove EqAC calculations. You can also manually enter base and future plan results by clicking in the dropdowns and typing the value.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-11"></span>
+<img src="images/figure11.png" alt="The equivalent annual consequences tool dialog showing a comparison of four design plans with a 50-year lifecycle. "><p class="caption">
+Figure 4.8: Equaivalent Annual Consequences tool.
+</p>
+</div>
+<ul>
+<li>
+<strong>Batch Run</strong> (Figure <a href="gui.html#fig:figure-12">4.9</a>) simulates multiple risk analyses as a batch process. Batch processing is very useful when inputs have been changed that are common across multiple risk analyses.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-12"></span>
+<img src="images/figure12.png" alt="The batch run dialog lists all the risk analyses vertically in a scrollable list. Multiple analyses can be selected and run."><p class="caption">
+Figure 4.9: Batch Run Risk Analyses tool.
+</p>
+</div>
+<ul>
+<li>
+<strong>Options</strong> lets you customize the application, file management, Message window, and default settings. See section <a href="gui.html#options">4.8</a> for more details.</li>
+</ul>
+</div>
+<div id="gui-menu-bar-window" class="section level3" number="4.1.5">
+<h3>
+<span class="header-section-number">4.1.5</span> Window<a class="anchor" aria-label="anchor" href="#gui-menu-bar-window"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Window menu allows you to close or activate document windows. The active window has a check mark next to it, as shown in Figure <a href="gui.html#fig:figure-13">4.10</a>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-13"></span>
+<img src="images/figure13.png" alt="The window menu drop-down with options to close all documents and options to manage all open windows."><p class="caption">
+Figure 4.10: Window menu.
+</p>
+</div>
+<p>You can see all open windows by clicking <strong>Windows…</strong>, which opens a Windows dialog (Figure <a href="gui.html#fig:figure-14">4.11</a>). From here, you can activate or save specific document windows. In addition, you can select and close multiple windows at once.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-14"></span>
+<img src="images/figure14.png" alt="The windows dialog lists all open windows vertically in a scrollable list."><p class="caption">
+Figure 4.11: Windows dialog.
+</p>
+</div>
+</div>
+<div id="gui-menu-bar-help" class="section level3" number="4.1.6">
+<h3>
+<span class="header-section-number">4.1.6</span> Help<a class="anchor" aria-label="anchor" href="#gui-menu-bar-help"><i class="fas fa-link"></i></a>
+</h3>
+<p>From the Help menu, you can access this User’s Guide (Figure <a href="gui.html#fig:figure-15">4.12</a>), view the Terms and Conditions for Use, or view the About RMC-TotalRisk splash screen (Figure <a href="gui.html#fig:figure-16">4.13</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-15"></span>
+<img src="images/figure15.png" alt="The help menu drop-down with options to open the user guide, terms and conditions for use, and the about splash screen."><p class="caption">
+Figure 4.12: Help menu.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-16"></span>
+<img src="images/figure16.png" alt="The about splash screen showing the software icon, version number, and contact information."><p class="caption">
+Figure 4.13: About RMC-TotalRisk splash screen.
+</p>
+</div>
+</div>
+</div>
+<div id="gui-tool-bar" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Tool Bar<a class="anchor" aria-label="anchor" href="#gui-tool-bar"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Tool Bar is on the main window, below the Menu Bar, with buttons for frequently used options under the File menu: New Project, Open Project, and Save Project (Figure <a href="gui.html#fig:figure-17">4.14</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-17"></span>
+<img src="images/figure17.png" alt="The tool bar with new, open, and save project commands displayed horizontally below the menu bar."><p class="caption">
+Figure 4.14: RMC-TotalRisk tool bar.
+</p>
+</div>
+</div>
+<div id="gui-window-layout" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Window Layout<a class="anchor" aria-label="anchor" href="#gui-window-layout"><i class="fas fa-link"></i></a>
+</h2>
+<p>In RMC-TotalRisk, you can customize the position, size, and behavior of windows to create layouts that work best for you. When you customize the layout, RMC-TotalRisk remembers the configuration. For example, if you change the docking location of the Project Explorer and then close RMC-TotalRisk, the next time that you open the software, the Project Explorer is docked in that same location.</p>
+<div id="types-of-windows" class="section level3" number="4.3.1">
+<h3>
+<span class="header-section-number">4.3.1</span> Types of Windows<a class="anchor" aria-label="anchor" href="#types-of-windows"><i class="fas fa-link"></i></a>
+</h3>
+<p>RMC-TotalRisk has four basic window types: the Project Explorer, Tabbed Documents, Properties, and the Message Window (Figure <a href="gui.html#fig:figure-4">4.1</a>). These windows provide editing and reviewing space for the various project components, including hazard, response, and consequence functions. For tool windows, resize and drag them by their title bars. For document windows, drag them by their tabs.</p>
+<p>On the title bars in the Project Explorer, Properties window, and Message Window, a dropdown offers other options (Figure <a href="gui.html#fig:figure-18">4.15</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-18"></span>
+<img src="images/figure18.png" alt="The tool window title bar drop-down showing options to float or hide the window."><p class="caption">
+Figure 4.15: Tools window options.
+</p>
+</div>
+<p>On the Tabbed Documents pane, you can right-click on document tabs to set other options on the window. These options include docking, floating, and hiding windows (Figure <a href="gui.html#fig:figure-19">4.16</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-19"></span>
+<img src="images/figure19.png" alt="The document window drop-down showing several options to close, float, and create new horizontal or vertical tab groups."><p class="caption">
+Figure 4.16: Document window options.
+</p>
+</div>
+</div>
+<div id="tab-groups" class="section level3" number="4.3.2">
+<h3>
+<span class="header-section-number">4.3.2</span> Tab Groups<a class="anchor" aria-label="anchor" href="#tab-groups"><i class="fas fa-link"></i></a>
+</h3>
+<p>When you are working with two or more open documents in RMC-TotalRisk, you can group tabbed documents to enhance your ability to manage a limited workspace. Organize multiple document and tool windows into either vertical or horizontal tab groups or move documents from one group to another by dragging and dropping them; even float and move windows and tab groups to different monitors. When you need to view or edit two documents at once, you can split windows by creating two horizontal tab groups, as shown in Figure <a href="gui.html#fig:figure-20">4.17</a>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-20"></span>
+<img src="images/figure20.png" alt="The tabbed document windows are split horizontally displaying separate inputs on the left and the right of the screen."><p class="caption">
+Figure 4.17: Split document windows.
+</p>
+</div>
+</div>
+<div id="move-and-dock-windows" class="section level3" number="4.3.3">
+<h3>
+<span class="header-section-number">4.3.3</span> Move and Dock Windows<a class="anchor" aria-label="anchor" href="#move-and-dock-windows"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can dock a document window in the Tabbed Documents area or float it as a separate window independent of the main window. You can arrange windows in the following ways:</p>
+<ul>
+<li><p>Dock tool windows to the edge of the main window frame.</p></li>
+<li><p>Float tool and document windows over or outside the main window.</p></li>
+<li><p>Hide tool windows along the edge of the main window.</p></li>
+<li><p>Display windows on different monitors.</p></li>
+<li><p>Reset window placement to the default layout by choosing <strong>View &gt; Reset Default Layout</strong>.</p></li>
+</ul>
+<p>Arrange windows by dragging or right-clicking the title bar or tab of the window being arranged. When you click and drag the title bar of a tool window or the tab of a document window, a cross-shaped window placement guide appears. During the drag operation, when the cursor is over one of the arrows in the guide, a shaded area appears that shows you where the window docks if you release the mouse button. Figure <a href="gui.html#fig:figure-21">4.18</a> and Figure <a href="gui.html#fig:figure-22">4.19</a> show examples of the window placement guide.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-21"></span>
+<img src="images/figure21.png" alt="The tabbed document is being moved and relocated using the placement guide."><p class="caption">
+Figure 4.18: Moving and docking document windows.
+</p>
+</div>
+<p>Figure 22 shows the Properties window being docked below the Project Explorer. The new location is demarcated by the light blue shared area.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-22"></span>
+<img src="images/figure22.png" alt="The document is being docked into a new location using the placement guide."><p class="caption">
+Figure 4.19: Example of docking the Properties window below the Project Explorer.
+</p>
+</div>
+</div>
+<div id="close-and-auto-hide-tool-windows" class="section level3" number="4.3.4">
+<h3>
+<span class="header-section-number">4.3.4</span> Close and Auto-Hide Tool Windows<a class="anchor" aria-label="anchor" href="#close-and-auto-hide-tool-windows"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can close a tool window by clicking on the X in the upper right of the title bar. To reopen the tool window, navigate to the View menu and select the desired tool window to show. Tool windows have an auto-hide feature, which causes a window to slide out of the way when you use a different window. When a window is auto-hidden, the window name appears on the tab at the edge of the main window, as shown in Figure <a href="gui.html#fig:figure-23">4.20</a>. To show the window again, move your mouse cursor over the tab and the window slides back into view.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-23"></span>
+<img src="images/figure23.png" alt="Clicking the auto hide pin moves the tool window and hides it on the right side of the screen."><p class="caption">
+Figure 4.20: Auto-Hide tool window.
+</p>
+</div>
+</div>
+</div>
+<div id="project-explorer" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Project Explorer<a class="anchor" aria-label="anchor" href="#project-explorer"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Project Explorer* which is typically on the left-hand side of the main window, shows a graphical representation of the hierarchy of elements within your project (Figure <a href="gui.html#fig:figure-24">4.21</a>). After you create a new project, you can use the Project Explorer to view, navigate, and manage the project elements.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-24"></span>
+<img src="images/figure24.png" alt="The project explorer located on the left of the screen showing folders for the project elements, such as hazards, transforms, system responses, consequences, and risk analyses."><p class="caption">
+Figure 4.21: Project Explorer.
+</p>
+</div>
+<p>Project elements are organized under folder headers: Hazards, Transforms, System Responses, Consequences, and Risk Analyses.</p>
+<p>Many menu commands are available by right-clicking on various items in the Project Explorer. You can create new elements, create groups, or sort the items in each folder by right-clicking the folder icon or name (Figure <a href="gui.html#fig:figure-25">4.22</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-25"></span>
+<img src="images/figure25.png" alt="The hazards folder is right-clicked to display the context menu with several options such as creating a new folder group."><p class="caption">
+Figure 4.22: Example of a menu available by right-clicking on a Project Explorer folder header.
+</p>
+</div>
+<p>When right-clicking an individual project element, the following commands are available: Edit, Copy, Rename, Delete, Move Up, and Move Down (Figure <a href="gui.html#fig:figure-26">4.23</a>, left side). When multiple project elements are selected, three right-click menu commands are available: Group, Edit, and Delete (Figure <a href="gui.html#fig:figure-26">4.23</a>, right side). Double-clicking a project element opens it for editing.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-26"></span>
+<img src="images/figure26.png" alt="Different context menu options are available when clicking on single selections or multiple selections."><p class="caption">
+Figure 4.23: Examples of menu options available by right-clicking on project elements: for a single selection (left) or multiple selections (right).
+</p>
+</div>
+<p>You can move individual project elements by left-clicking, holding, and dragging the element. A horizontal line indicates where the element will move to (Figure <a href="gui.html#fig:figure-27">4.24</a>). You can also drag and drop input data from one RMC-TotalRisk project to another.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-27"></span>
+<img src="images/figure27.png" alt="The tabular hazard is being dragged upward and dropped at a higher location aided by a horizontal line."><p class="caption">
+Figure 4.24: Project Explorer element drag and drop.
+</p>
+</div>
+<p>Grouping provides a way to manage the Project Explorer by consolidating project elements into subgroups. When right-clicking a group element, all commands from the root folder are available, as well as Ungroup and Rename (Figure <a href="gui.html#fig:figure-28">4.25</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-28"></span>
+<img src="images/figure28.png" alt="Right-clicking a group header provides several options, such as ungrouping all the elements."><p class="caption">
+Figure 4.25: Project Explorer group elements.
+</p>
+</div>
+</div>
+<div id="tabbed-documents" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> Tabbed Documents<a class="anchor" aria-label="anchor" href="#tabbed-documents"><i class="fas fa-link"></i></a>
+</h2>
+<p>In RMC-TotalRisk, document windows contain the project element data, such as input tabular data, event trees, and risk analyses. Opening a project element for editing automatically opens the Tabbed Document pane, which is typically in the center of the main window (see Figure <a href="gui.html#fig:figure-29">4.26</a>). You can reorder the tabbed documents or drag or float them outside of the main window. When you click on, or activate, a document window, the Properties window shows the associated project element properties.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-29"></span>
+<img src="images/figure29.png" alt="The tabbed documents have tabbed headers horizontally located at the top of the document pane."><p class="caption">
+Figure 4.26: Tabbed Document pane.
+</p>
+</div>
+</div>
+<div id="properties-window" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> Properties Window<a class="anchor" aria-label="anchor" href="#properties-window"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Properties window, typically on the right-hand side of the main window, displays the properties for the project and selected project elements. To access the element properties, open the element for edit. Some properties are common to all project elements, such as name and description, while others are unique to the specific elements. Properties are organized into groups for easier navigation. When you click on a property, the property description displays at the bottom of the Properties window, as shown in Figure <a href="gui.html#fig:figure-30">4.27</a>. All analyses run from the Properties window.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-30"></span>
+<img src="images/figure30.png" alt="The properties window contains all the key properties and inputs for the project elements."><p class="caption">
+Figure 4.27: Properties window.
+</p>
+</div>
+</div>
+<div id="message-window" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> Message Window<a class="anchor" aria-label="anchor" href="#message-window"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Message window (Figure <a href="gui.html#fig:figure-31">4.28</a>) shows you errors, warnings, messages, and event logs regarding the current state of your project. If your project file has any errors, they are listed here. The Message window lets you perform the following tasks:</p>
+<ul>
+<li><p>Display the errors, warnings, messages, and events produced while you work in RMC-TotalRisk.</p></li>
+<li><p>Double-click any error message entry to open the project element where the problem occurs.</p></li>
+<li><p>Filter the types of entries that the Message window displays by clicking on the tabs. The default is to only display errors and warnings.</p></li>
+<li><p>Export all entries to a text file.</p></li>
+</ul>
+<p>Once you resolve an error, warning, or message, the entry disappears from the Message window. You may customize the font color of the various message types by navigating to <strong>Tools &gt; Options</strong>. See section <a href="gui.html#options">4.8</a> for more details.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-31"></span>
+<img src="images/figure31.png" alt="The message window showing one error message in red and one warning message in orange."><p class="caption">
+Figure 4.28: Message window.
+</p>
+</div>
+</div>
+<div id="options" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> Personalize RMC-TotalRisk<a class="anchor" aria-label="anchor" href="#options"><i class="fas fa-link"></i></a>
+</h2>
+<p>You can personalize RMC-TotalRisk in various ways to enhance the user experience by navigating to <strong>Tools &gt; Options</strong>. The Options dialog allows you to customize the application, file management, Message Window, and default settings.</p>
+<div id="application-options" class="section level3" number="4.8.1">
+<h3>
+<span class="header-section-number">4.8.1</span> Application Options<a class="anchor" aria-label="anchor" href="#application-options"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can set the application color theme to the Light or Blue theme, as shown in Figure <a href="gui.html#fig:figure-32">4.29</a> and Figure <a href="gui.html#fig:figure-33">4.30</a>. The default is the Light theme. If you select <strong>Save the window docking layout on close</strong>, RMC-TotalRisk remembers it when you reopen the application. You can also set the number of window items in the Window menu and the number of recent project items in the Recent Project list under the File menu.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-32"></span>
+<img src="images/figure32.png" alt="Application options with the light color theme selected. Other options are shown for managing the docking layout and recent file list."><p class="caption">
+Figure 4.29: Options dialog with light color theme.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-33"></span>
+<img src="images/figure33.png" alt="Application options with the blue color theme selected. Other options are shown for managing the docking layout and recent file list."><p class="caption">
+Figure 4.30: Options dialog with blue color theme.
+</p>
+</div>
+</div>
+<div id="file-management-options" class="section level3" number="4.8.2">
+<h3>
+<span class="header-section-number">4.8.2</span> File Management Options<a class="anchor" aria-label="anchor" href="#file-management-options"><i class="fas fa-link"></i></a>
+</h3>
+<p>RMC-TotalRisk project files are saved as SQLite databases. <a href="https://www.sqlite.org/">SQLite</a> is a self-contained, high-reliability, SQL database engine, which is also one of the most used database engines in the world. Database files can grow quickly as you use them, sometimes hindering performance. They can also occasionally become corrupt or damaged. Under Tools, select <strong>Compact &amp; Optimize Project File</strong> to prevent or fix these problems. You can also set RMC-TotalRisk to <strong>Compact &amp; optimize project file on close</strong> by checking the checkbox.</p>
+<p>You can set the time interval in which a project backup file is created (Figure <a href="gui.html#fig:figure-34">4.31</a>). A file with the extension .bak is automatically created when a project is opened. If the project closes successfully, then the .bak file is deleted. On occasion, if the database file is damaged or corrupted, or the system closes unexpectedly causing you to lose important data, you might need to restore the project from a backup file by selecting <strong>Tools &gt; Restore from Backup</strong> (Figure <a href="gui.html#fig:figure-35">4.32</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-34"></span>
+<img src="images/figure34.png" alt="The file management options to manage file size and create and recover backup files."><p class="caption">
+Figure 4.31: File management options.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-35"></span>
+<img src="images/figure35.png" alt="The tool menu drop-down with the restore from backup option selected."><p class="caption">
+Figure 4.32: Restore from backup.
+</p>
+</div>
+</div>
+<div id="message-window-options" class="section level3" number="4.8.3">
+<h3>
+<span class="header-section-number">4.8.3</span> Message Window Options<a class="anchor" aria-label="anchor" href="#message-window-options"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can adjust the auditory and visual settings for the Message window. You can turn message beeps on or off and select the font color for the different message types, as shown in Figure <a href="gui.html#fig:figure-36">4.33</a>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-36"></span>
+<img src="images/figure36.png" alt="The message window options to set the sound effects and colors of the message types."><p class="caption">
+Figure 4.33: Message window options.
+</p>
+</div>
+</div>
+<div id="default-options" class="section level3" number="4.8.4">
+<h3>
+<span class="header-section-number">4.8.4</span> Default Options<a class="anchor" aria-label="anchor" href="#default-options"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can set the default project location directory and the default number of decimal digits for the project inputs and outputs (Figure <a href="gui.html#fig:figure-37">4.34</a>). In addition, you can set the default hazard type and units for each input function category. For example, by default, when you create a new hazard function, the hazard type and unit are automatically set to Stage and ft, respectively.</p>
+<p>If the desired hazard type or unit is missing, click the “plus” button to add a new option. If you want to delete an option, click the <strong>X</strong> that appears by that option inside the dropdown.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-37"></span>
+<img src="images/figure37.png" alt="The default options to set the decimal digits and hazard type and units of project input functions."><p class="caption">
+Figure 4.34: Default options.
+</p>
+</div>
+</div>
+</div>
+<div id="plot-features" class="section level2" number="4.9">
+<h2>
+<span class="header-section-number">4.9</span> Plot Features<a class="anchor" aria-label="anchor" href="#plot-features"><i class="fas fa-link"></i></a>
+</h2>
+<p>RMC-TotalRisk’s plot features help you examine and customize the plots. Each plot has a toolbar to the right that lets you to interact with the plot in various ways (Figure <a href="gui.html#fig:figure-38">4.35</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-38"></span>
+<img src="images/figure38.png"><p class="caption">
+Figure 4.35: RMC-TotalRisk plot feature icons.
+</p>
+</div>
+<ul>
+<li>
+<img src="images/trackdata.png" alt="Image"><strong>Track Data</strong> by clicking on any plotted point or line in the graph. A tooltip then displays the plot series name along with the X and Y data points (Figure <a href="gui.html#fig:figure-39">4.36</a>).</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-39"></span>
+<img src="images/figure39.png"><p class="caption">
+Figure 4.36: Using Track Data on a plot.
+</p>
+</div>
+<ul>
+<li><p><img src="images/pan.png" alt="Image"><strong>Pan</strong> the plot area by clicking, holding, and dragging the graph with your mouse. You can pan in any direction: up, down, or side to side. Alternatively, use the middle mouse button to pan by clicking, holding, and dragging.</p></li>
+<li><p><img src="images/zoomin.png" alt="Image"><strong>Zoom In</strong> by clicking, holding, and dragging with your mouse to highlight the area of interest with the magnifying glass cursor (Figure <a href="gui.html#fig:figure-40">4.37</a>) You can also zoom in on a single axis by clicking, holding, and dragging along that axis. Alternatively, use the mouse wheel to zoom in or out.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-40"></span>
+<img src="images/figure40.png"><p class="caption">
+Figure 4.37: Zooming in on a plot.
+</p>
+</div>
+<ul>
+<li><p><img src="images/zoomout.png" alt="Image"><strong>Zoom Out</strong> to return to the full plot extents. You can also press the Escape key to zoom out.</p></li>
+<li><p><img src="images/annotations.png" alt="Image"><strong>Add Annotations</strong> to the plot to provide additional information not included in a plot series. You can choose from the following annotation types: arrow, text, vertical line, horizontal line, rectangle, ellipse, point, polygon, and polyline (Figure <a href="gui.html#fig:figure-41">4.38</a>). Note: Legends cannot be annotated, and you cannot use annotations with the tracker.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-41"></span>
+<img src="images/figure41.png"><p class="caption">
+Figure 4.38: Available plot annotations.
+</p>
+</div>
+<ul>
+<li>Move annotations by clicking and dragging them to a new position. Figure <a href="gui.html#fig:figure-42">4.39</a> shows an example of an arrow and horizontal line annotation. You can edit the default annotation text by right-clicking on the annotation or through the plot properties window.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-42"></span>
+<img src="images/figure42.png" alt="A stage-frequency curve with a horizontal line annotation for the spillway elevation and an arrow annotation showing the flood of record."><p class="caption">
+Figure 4.39: Example of plot annotations.
+</p>
+</div>
+<ul>
+<li>
+<img src="images/saveplot.png" alt="Image"><strong>Save</strong> plot images as PNG, PDF, or SVG files. Choose from common image sizes or define your own dimensions (Figure <a href="gui.html#fig:figure-43">4.40</a>).</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-43"></span>
+<img src="images/figure43.png" alt="A dialog for saving the plot image with a specific width and height."><p class="caption">
+Figure 4.40: Set the width and height of the plot image.
+</p>
+</div>
+<ul>
+<li><p><img src="images/exportplot.png" alt="Image"><strong>Export</strong> plot series data to a Comma Separate (.csv), Microsoft Excel® (.xlsx), or SQLite (.sqlite) file. Click the <strong>Export Series Data</strong> button to open a Save As dialog. Choose the file type, enter a name, and click <strong>Save</strong>. If you export to an existing Excel file, RMC-TotalRisk saves the plot series data as new tabs in that file.</p></li>
+<li><p><img src="images/plotproperties.png" alt="Image"><strong>Edit Plot Properties</strong> to customize the plot’s appearance (Figure <a href="gui.html#fig:figure-44">4.41</a>). In the Properties window, adjust general plot settings, legends, axes, series, and annotations. Use the dropdown in the upper-right corner to access other plot elements for editing. RMC-TotalRisk saves plot changes and applies them when you reopen the project.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-44"></span>
+<img src="images/figure44.png" alt="The plot properties open to the right in the properties window. The user has full control over the appearance and format of the plot."><p class="caption">
+Figure 4.41: Plot properties.
+</p>
+</div>
+</div>
+<div id="table-features" class="section level2" number="4.10">
+<h2>
+<span class="header-section-number">4.10</span> Table Features<a class="anchor" aria-label="anchor" href="#table-features"><i class="fas fa-link"></i></a>
+</h2>
+<p>Tables in RMC-TotalRisk include versatile tools for adding and removing rows, exporting and copying data, and selecting rows. The following subsections describe these table features and tools in detail.</p>
+<div id="add-and-remove-row-tools" class="section level3" number="4.10.1">
+<h3>
+<span class="header-section-number">4.10.1</span> Add and Remove Row Tools<a class="anchor" aria-label="anchor" href="#add-and-remove-row-tools"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p><img src="images/addrow.png" alt="Image"><strong>Add Row</strong>: Adds a row to the bottom of the table.</p></li>
+<li><p><img src="images/insertrow.png" alt="Image"><strong>Insert Row</strong>: Inserts a row above the selected cell(s).</p></li>
+<li><p><img src="images/deleterow.png" alt="Image"><strong>Delete Row</strong>: Deletes the row(s) containing the selected cell(s).</p></li>
+</ul>
+</div>
+<div id="export-and-copy-tools" class="section level3" number="4.10.2">
+<h3>
+<span class="header-section-number">4.10.2</span> Export and Copy Tools<a class="anchor" aria-label="anchor" href="#export-and-copy-tools"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p><img src="images/selectallcells.png" alt="Image"><strong>Select All Cells</strong>: Selects all cells in the table.</p></li>
+<li><p><img src="images/copyselectedcells.png" alt="Image"><strong>Copy Selected Cells</strong>: Copies the currently selected cells to the clipboard for pasting into other applications (e.g., Microsoft Excel).</p></li>
+<li><p><img src="images/copywheaders.png" alt="Image"><strong>Copy Selected Cells with Table Headers</strong>: Copies the selected cells along with their headers for use in other applications.</p></li>
+<li><p><img src="images/tablepaste.png" alt="Image"><strong>Paste from Clipboard into Table</strong>: Pastes data from another table or application into the current table.</p></li>
+<li><p><img src="images/exporttable.png" alt="Image"><strong>Export Table</strong>: Available for output tables only. Opens a Save As dialog to export the table in various formats, including Microsoft Excel (.xlsx). If you choose an existing Excel file, the table will be added as a new tab.</p></li>
+</ul>
+</div>
+<div id="table-row-selection-tools" class="section level3" number="4.10.3">
+<h3>
+<span class="header-section-number">4.10.3</span> Table Row Selection Tools<a class="anchor" aria-label="anchor" href="#table-row-selection-tools"><i class="fas fa-link"></i></a>
+</h3>
+<p>Row selection tools are exclusive to output tables.</p>
+<ul>
+<li>
+<img src="images/selectbyattribute.png" alt="Image"><strong>Select Rows By Attribute</strong>. Opens the Select By Attribute dialog box (Figure <a href="gui.html#fig:figure-45">4.42</a>), allowing you to perform queries, make selections, and locate features in the table.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-45"></span>
+<img src="images/figure45.png" alt="The windows dialog showing a query that filters selected records where system attribute is greater than 0.001."><p class="caption">
+Figure 4.42: Select By Attribute dialog.
+</p>
+</div>
+<ul>
+<li><p><img src="images/showallrows.png" alt="Image"><strong>Show All Rows</strong>: Displays all rows in the table after an attribute-based selection. Selected rows are highlighted in blue.</p></li>
+<li><p><img src="images/showselectedrows.png" alt="Image"><strong>Show Selected Rows Only</strong>: Displays only the rows selected by the attribute-based query.</p></li>
+<li><p><img src="images/deselectrows.png" alt="Image"><strong>Deselect All Rows</strong>: Clears all row selections.</p></li>
+</ul>
+</div>
+<div id="table-column-features" class="section level3" number="4.10.4">
+<h3>
+<span class="header-section-number">4.10.4</span> Table Column Features<a class="anchor" aria-label="anchor" href="#table-column-features"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<strong>Sort and Search</strong>: Sort and search table columns. For numeric values in output tables, you can also generate summary statistics (Figure <a href="gui.html#fig:figure-46">4.43</a>). Sort by right-clicking on a column header and selecting the desired sort option or by double clicking on the column header to sort. Note: Double-clicking a column header that is already sorted sorts it in the opposite order.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-46"></span>
+<img src="images/figure46.png" alt="The table column header is right-clicked to display the context menu with several options such as sort, summary statistics and find."><p class="caption">
+Figure 4.43: Table column header right-click options.
+</p>
+</div>
+<ul>
+<li>
+<strong>Summary Statistics</strong>: Use this tool to view detailed statistics for a column’s data. To calculate statistics for specific rows, check the <strong>Selected Rows Only</strong> box (e.g., rows where the System Response Probability (SRP) exceeds the 25th percentile) (Figure <a href="gui.html#fig:figure-47">4.44</a>).</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-47"></span>
+<img src="images/figure47.png" alt="A set of two windows. The top window displaying right-click context menu and the bottom window displaying summary statistics table on the left and a histogram plot on the right." width="85%"><p class="caption">
+Figure 4.44: Table column header right-click options.
+</p>
+</div>
 
-          </div>
-        </div>
-      </div>
-<a href="terms-and-conditions-for-use.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="gui-menu-bar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="installation.html"><span class="header-section-number">3</span> Installing RMC-TotalRisk</a></div>
+<div class="next"><a href="create-a-project.html"><span class="header-section-number">5</span> Create a Project</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#gui"><span class="header-section-number">4</span> Graphical User Interface</a></li>
+<li>
+<a class="nav-link" href="#gui-menu-bar"><span class="header-section-number">4.1</span> Menu Bar</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#gui-menu-bar-file"><span class="header-section-number">4.1.1</span> File</a></li>
+<li><a class="nav-link" href="#gui-menu-bar-view"><span class="header-section-number">4.1.2</span> View</a></li>
+<li><a class="nav-link" href="#gui-menu-bar-project"><span class="header-section-number">4.1.3</span> Project</a></li>
+<li><a class="nav-link" href="#gui-menu-bar-tools"><span class="header-section-number">4.1.4</span> Tools</a></li>
+<li><a class="nav-link" href="#gui-menu-bar-window"><span class="header-section-number">4.1.5</span> Window</a></li>
+<li><a class="nav-link" href="#gui-menu-bar-help"><span class="header-section-number">4.1.6</span> Help</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#gui-tool-bar"><span class="header-section-number">4.2</span> Tool Bar</a></li>
+<li>
+<a class="nav-link" href="#gui-window-layout"><span class="header-section-number">4.3</span> Window Layout</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#types-of-windows"><span class="header-section-number">4.3.1</span> Types of Windows</a></li>
+<li><a class="nav-link" href="#tab-groups"><span class="header-section-number">4.3.2</span> Tab Groups</a></li>
+<li><a class="nav-link" href="#move-and-dock-windows"><span class="header-section-number">4.3.3</span> Move and Dock Windows</a></li>
+<li><a class="nav-link" href="#close-and-auto-hide-tool-windows"><span class="header-section-number">4.3.4</span> Close and Auto-Hide Tool Windows</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#project-explorer"><span class="header-section-number">4.4</span> Project Explorer</a></li>
+<li><a class="nav-link" href="#tabbed-documents"><span class="header-section-number">4.5</span> Tabbed Documents</a></li>
+<li><a class="nav-link" href="#properties-window"><span class="header-section-number">4.6</span> Properties Window</a></li>
+<li><a class="nav-link" href="#message-window"><span class="header-section-number">4.7</span> Message Window</a></li>
+<li>
+<a class="nav-link" href="#options"><span class="header-section-number">4.8</span> Personalize RMC-TotalRisk</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#application-options"><span class="header-section-number">4.8.1</span> Application Options</a></li>
+<li><a class="nav-link" href="#file-management-options"><span class="header-section-number">4.8.2</span> File Management Options</a></li>
+<li><a class="nav-link" href="#message-window-options"><span class="header-section-number">4.8.3</span> Message Window Options</a></li>
+<li><a class="nav-link" href="#default-options"><span class="header-section-number">4.8.4</span> Default Options</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#plot-features"><span class="header-section-number">4.9</span> Plot Features</a></li>
+<li>
+<a class="nav-link" href="#table-features"><span class="header-section-number">4.10</span> Table Features</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#add-and-remove-row-tools"><span class="header-section-number">4.10.1</span> Add and Remove Row Tools</a></li>
+<li><a class="nav-link" href="#export-and-copy-tools"><span class="header-section-number">4.10.2</span> Export and Copy Tools</a></li>
+<li><a class="nav-link" href="#table-row-selection-tools"><span class="header-section-number">4.10.3</span> Table Row Selection Tools</a></li>
+<li><a class="nav-link" href="#table-column-features"><span class="header-section-number">4.10.4</span> Table Column Features</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/04-gui.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
+          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/04-gui.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>RMC-TotalRisk User’s Guide</strong>" was written by C. Haden Smith and Woodrow L. Fields. It was last built on Last updated: 2025-01-14.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": true,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": {},
-"info": true
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["totalrisk-users-guide.pdf"],
-"search": {
-"engine": "lunr",
-"options": null
-},
-"toc": {
-"collapse": "section",
-"collapsed": true,
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "fixed"
-}
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -364,7 +700,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

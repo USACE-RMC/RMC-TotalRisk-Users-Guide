@@ -1,362 +1,446 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Risk Analyses | RMC-TotalRisk User’s Guide</title>
-  <meta name="description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
-  <meta name="generator" content="bookdown 0.41.2 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide" />
-  <meta property="og:type" content="book" />
-  
-  <meta property="og:description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
-  <meta name="github-repo" content="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide" />
-  
-  <meta name="twitter:description" content="This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk." />
-  
-
-<meta name="author" content="C. Haden Smith and Woodrow L. Fields" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  <link rel="shortcut icon" href="TotalRiskIcon.ico" type="image/x-icon" />
-<link rel="prev" href="composite-consequence-function.html"/>
-<link rel="next" href="create-new-risk-analysis.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>10 Risk Analyses | RMC-TotalRisk User’s Guide</title>
+<meta name="author" content="C. Haden Smith and Woodrow L. Fields">
+<meta name="description" content="In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and...">
+<meta name="generator" content="bookdown 0.41.2 with bs4_book()">
+<meta property="og:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide">
+<meta name="twitter:description" content="In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 <style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li>
-  <a href="./">
-    <img src="images/TotalRiskIcon.png" alt="RMC-TotalRisk icon." style="height:20px; margin-right:5px; vertical-align:middle;">
-    RMC-TotalRisk User's Guide
-  </a>
-</li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-cite-this-guide"><i class="fa fa-check"></i>How to Cite This Guide</a></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i><b>1</b> Welcome to RMC-TotalRisk</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="why-you-should-use-rmc-totalrisk.html"><a href="why-you-should-use-rmc-totalrisk.html"><i class="fa fa-check"></i><b>1.1</b> Why You Should Use RMC-TotalRisk</a></li>
-<li class="chapter" data-level="1.2" data-path="when-you-should-use-rmc-totalrisk.html"><a href="when-you-should-use-rmc-totalrisk.html"><i class="fa fa-check"></i><b>1.2</b> When You Should Use RMC-TotalRisk</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="risk-analysis-framework.html"><a href="risk-analysis-framework.html"><i class="fa fa-check"></i><b>2</b> Risk Analysis Framework</a></li>
-<li class="chapter" data-level="3" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>3</b> Installing RMC-TotalRisk</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="setting-the-file-association-in-windows.html"><a href="setting-the-file-association-in-windows.html"><i class="fa fa-check"></i><b>3.1</b> Setting the File Association in Windows</a></li>
-<li class="chapter" data-level="3.2" data-path="system-requirements.html"><a href="system-requirements.html"><i class="fa fa-check"></i><b>3.2</b> System Requirements</a></li>
-<li class="chapter" data-level="3.3" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html"><i class="fa fa-check"></i><b>3.3</b> Terms and Conditions for Use</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#waiver-of-warranty"><i class="fa fa-check"></i><b>3.3.1</b> Waiver of Warranty</a></li>
-<li class="chapter" data-level="3.3.2" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#limitation-of-liability"><i class="fa fa-check"></i><b>3.3.2</b> Limitation of Liability</a></li>
-<li class="chapter" data-level="3.3.3" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#indemnity"><i class="fa fa-check"></i><b>3.3.3</b> Indemnity</a></li>
-<li class="chapter" data-level="3.3.4" data-path="terms-and-conditions-for-use.html"><a href="terms-and-conditions-for-use.html#assent"><i class="fa fa-check"></i><b>3.3.4</b> Assent</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="gui.html"><a href="gui.html"><i class="fa fa-check"></i><b>4</b> Graphical User Interface</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html"><i class="fa fa-check"></i><b>4.1</b> Menu Bar</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-file"><i class="fa fa-check"></i><b>4.1.1</b> File</a></li>
-<li class="chapter" data-level="4.1.2" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-view"><i class="fa fa-check"></i><b>4.1.2</b> View</a></li>
-<li class="chapter" data-level="4.1.3" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-project"><i class="fa fa-check"></i><b>4.1.3</b> Project</a></li>
-<li class="chapter" data-level="4.1.4" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-tools"><i class="fa fa-check"></i><b>4.1.4</b> Tools</a></li>
-<li class="chapter" data-level="4.1.5" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-window"><i class="fa fa-check"></i><b>4.1.5</b> Window</a></li>
-<li class="chapter" data-level="4.1.6" data-path="gui-menu-bar.html"><a href="gui-menu-bar.html#gui-menu-bar-help"><i class="fa fa-check"></i><b>4.1.6</b> Help</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="gui-tool-bar.html"><a href="gui-tool-bar.html"><i class="fa fa-check"></i><b>4.2</b> Tool Bar</a></li>
-<li class="chapter" data-level="4.3" data-path="gui-window-layout.html"><a href="gui-window-layout.html"><i class="fa fa-check"></i><b>4.3</b> Window Layout</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="gui-window-layout.html"><a href="gui-window-layout.html#types-of-windows"><i class="fa fa-check"></i><b>4.3.1</b> Types of Windows</a></li>
-<li class="chapter" data-level="4.3.2" data-path="gui-window-layout.html"><a href="gui-window-layout.html#tab-groups"><i class="fa fa-check"></i><b>4.3.2</b> Tab Groups</a></li>
-<li class="chapter" data-level="4.3.3" data-path="gui-window-layout.html"><a href="gui-window-layout.html#move-and-dock-windows"><i class="fa fa-check"></i><b>4.3.3</b> Move and Dock Windows</a></li>
-<li class="chapter" data-level="4.3.4" data-path="gui-window-layout.html"><a href="gui-window-layout.html#close-and-auto-hide-tool-windows"><i class="fa fa-check"></i><b>4.3.4</b> Close and Auto-Hide Tool Windows</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="project-explorer.html"><a href="project-explorer.html"><i class="fa fa-check"></i><b>4.4</b> Project Explorer</a></li>
-<li class="chapter" data-level="4.5" data-path="tabbed-documents.html"><a href="tabbed-documents.html"><i class="fa fa-check"></i><b>4.5</b> Tabbed Documents</a></li>
-<li class="chapter" data-level="4.6" data-path="properties-window.html"><a href="properties-window.html"><i class="fa fa-check"></i><b>4.6</b> Properties Window</a></li>
-<li class="chapter" data-level="4.7" data-path="message-window.html"><a href="message-window.html"><i class="fa fa-check"></i><b>4.7</b> Message Window</a></li>
-<li class="chapter" data-level="4.8" data-path="options.html"><a href="options.html"><i class="fa fa-check"></i><b>4.8</b> Personalize RMC-TotalRisk</a>
-<ul>
-<li class="chapter" data-level="4.8.1" data-path="options.html"><a href="options.html#application-options"><i class="fa fa-check"></i><b>4.8.1</b> Application Options</a></li>
-<li class="chapter" data-level="4.8.2" data-path="options.html"><a href="options.html#file-management-options"><i class="fa fa-check"></i><b>4.8.2</b> File Management Options</a></li>
-<li class="chapter" data-level="4.8.3" data-path="options.html"><a href="options.html#message-window-options"><i class="fa fa-check"></i><b>4.8.3</b> Message Window Options</a></li>
-<li class="chapter" data-level="4.8.4" data-path="options.html"><a href="options.html#default-options"><i class="fa fa-check"></i><b>4.8.4</b> Default Options</a></li>
-</ul></li>
-<li class="chapter" data-level="4.9" data-path="plot-features.html"><a href="plot-features.html"><i class="fa fa-check"></i><b>4.9</b> Plot Features</a></li>
-<li class="chapter" data-level="4.10" data-path="table-features.html"><a href="table-features.html"><i class="fa fa-check"></i><b>4.10</b> Table Features</a>
-<ul>
-<li class="chapter" data-level="4.10.1" data-path="table-features.html"><a href="table-features.html#add-and-remove-row-tools"><i class="fa fa-check"></i><b>4.10.1</b> Add and Remove Row Tools</a></li>
-<li class="chapter" data-level="4.10.2" data-path="table-features.html"><a href="table-features.html#export-and-copy-tools"><i class="fa fa-check"></i><b>4.10.2</b> Export and Copy Tools</a></li>
-<li class="chapter" data-level="4.10.3" data-path="table-features.html"><a href="table-features.html#table-row-selection-tools"><i class="fa fa-check"></i><b>4.10.3</b> Table Row Selection Tools</a></li>
-<li class="chapter" data-level="4.10.4" data-path="table-features.html"><a href="table-features.html#table-column-features"><i class="fa fa-check"></i><b>4.10.4</b> Table Column Features</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="create-a-project.html"><a href="create-a-project.html"><i class="fa fa-check"></i><b>5</b> Create a Project</a></li>
-<li class="chapter" data-level="6" data-path="hazard-functions.html"><a href="hazard-functions.html"><i class="fa fa-check"></i><b>6</b> Hazard Functions</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="bestfit.html"><a href="bestfit.html"><i class="fa fa-check"></i><b>6.1</b> Import from RMC-BestFit</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="bestfit.html"><a href="bestfit.html#graphical-results"><i class="fa fa-check"></i><b>6.1.1</b> Graphical Results</a></li>
-<li class="chapter" data-level="6.1.2" data-path="bestfit.html"><a href="bestfit.html#tabular-results"><i class="fa fa-check"></i><b>6.1.2</b> Tabular Results</a></li>
-<li class="chapter" data-level="6.1.3" data-path="bestfit.html"><a href="bestfit.html#parameter-sets"><i class="fa fa-check"></i><b>6.1.3</b> Parameter Sets</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="import-from-rmc-rfa.html"><a href="import-from-rmc-rfa.html"><i class="fa fa-check"></i><b>6.2</b> Import from RMC-RFA</a></li>
-<li class="chapter" data-level="6.3" data-path="parametric-hazard-function.html"><a href="parametric-hazard-function.html"><i class="fa fa-check"></i><b>6.3</b> Parametric Hazard Function</a></li>
-<li class="chapter" data-level="6.4" data-path="nonparametric-hazard-function.html"><a href="nonparametric-hazard-function.html"><i class="fa fa-check"></i><b>6.4</b> Nonparametric Hazard Function</a></li>
-<li class="chapter" data-level="6.5" data-path="tabular-hazard-function.html"><a href="tabular-hazard-function.html"><i class="fa fa-check"></i><b>6.5</b> Tabular Hazard Function</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="tabular-hazard-function.html"><a href="tabular-hazard-function.html#data-validation"><i class="fa fa-check"></i><b>6.5.1</b> Data Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="composite-hazard-function.html"><a href="composite-hazard-function.html"><i class="fa fa-check"></i><b>6.6</b> Composite Hazard Function</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="transform-functions.html"><a href="transform-functions.html"><i class="fa fa-check"></i><b>7</b> Transform Functions</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="linear-transform-function.html"><a href="linear-transform-function.html"><i class="fa fa-check"></i><b>7.1</b> Linear Transform Function</a></li>
-<li class="chapter" data-level="7.2" data-path="power-transform-function.html"><a href="power-transform-function.html"><i class="fa fa-check"></i><b>7.2</b> Power Transform Function</a></li>
-<li class="chapter" data-level="7.3" data-path="tabular-transform-function.html"><a href="tabular-transform-function.html"><i class="fa fa-check"></i><b>7.3</b> Tabular Transform Function</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="tabular-transform-function.html"><a href="tabular-transform-function.html#data-validation-1"><i class="fa fa-check"></i><b>7.3.1</b> Data Validation</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="system-response-functions.html"><a href="system-response-functions.html"><i class="fa fa-check"></i><b>8</b> System Response Functions</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html"><i class="fa fa-check"></i><b>8.1</b> Event Tree Response Function</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#terminology"><i class="fa fa-check"></i><b>8.1.1</b> Terminology</a></li>
-<li class="chapter" data-level="8.1.2" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#navigating-an-event-tree"><i class="fa fa-check"></i><b>8.1.2</b> Navigating an Event Tree</a></li>
-<li class="chapter" data-level="8.1.3" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#customizing-an-event-tree"><i class="fa fa-check"></i><b>8.1.3</b> Customizing an Event Tree</a></li>
-<li class="chapter" data-level="8.1.4" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#building-an-event-tree"><i class="fa fa-check"></i><b>8.1.4</b> Building an Event Tree</a></li>
-<li class="chapter" data-level="8.1.5" data-path="event-tree-response-function.html"><a href="event-tree-response-function.html#explorting-event-tree-results"><i class="fa fa-check"></i><b>8.1.5</b> Explorting Event Tree Results</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="parametric-response-function.html"><a href="parametric-response-function.html"><i class="fa fa-check"></i><b>8.2</b> Parametric Response Function</a></li>
-<li class="chapter" data-level="8.3" data-path="tabular-response-function.html"><a href="tabular-response-function.html"><i class="fa fa-check"></i><b>8.3</b> Tabular Response Function</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="tabular-response-function.html"><a href="tabular-response-function.html#data-validation-2"><i class="fa fa-check"></i><b>8.3.1</b> Data Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="bivariate-response-function.html"><a href="bivariate-response-function.html"><i class="fa fa-check"></i><b>8.4</b> Bivariate Response Function</a></li>
-<li class="chapter" data-level="8.5" data-path="composite-response-function.html"><a href="composite-response-function.html"><i class="fa fa-check"></i><b>8.5</b> Composite Response Function</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="consequence-functions.html"><a href="consequence-functions.html"><i class="fa fa-check"></i><b>9</b> Consequence Functions</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="import-from-lifesim.html"><a href="import-from-lifesim.html"><i class="fa fa-check"></i><b>9.1</b> Import from LifeSim</a></li>
-<li class="chapter" data-level="9.2" data-path="tabular-consequence-function.html"><a href="tabular-consequence-function.html"><i class="fa fa-check"></i><b>9.2</b> Tabular Consequence Function</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="tabular-consequence-function.html"><a href="tabular-consequence-function.html#data-validation-3"><i class="fa fa-check"></i><b>9.2.1</b> Data Validation</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="composite-consequence-function.html"><a href="composite-consequence-function.html"><i class="fa fa-check"></i><b>9.3</b> Composite Consequence Function</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="risk-analyses.html"><a href="risk-analyses.html"><i class="fa fa-check"></i><b>10</b> Risk Analyses</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="create-new-risk-analysis.html"><a href="create-new-risk-analysis.html"><i class="fa fa-check"></i><b>10.1</b> Create New Risk Analysis</a></li>
-<li class="chapter" data-level="10.2" data-path="simulation-options.html"><a href="simulation-options.html"><i class="fa fa-check"></i><b>10.2</b> Simulation Options</a></li>
-<li class="chapter" data-level="10.3" data-path="integration-options.html"><a href="integration-options.html"><i class="fa fa-check"></i><b>10.3</b> Integration Options</a></li>
-<li class="chapter" data-level="10.4" data-path="system-component-options.html"><a href="system-component-options.html"><i class="fa fa-check"></i><b>10.4</b> System Component Options</a></li>
-<li class="chapter" data-level="10.5" data-path="system-options.html"><a href="system-options.html"><i class="fa fa-check"></i><b>10.5</b> System Options</a></li>
-<li class="chapter" data-level="10.6" data-path="risk-measure-options.html"><a href="risk-measure-options.html"><i class="fa fa-check"></i><b>10.6</b> Risk Measure Options</a></li>
-<li class="chapter" data-level="10.7" data-path="risk-diagram.html"><a href="risk-diagram.html"><i class="fa fa-check"></i><b>10.7</b> Risk Diagram</a>
-<ul>
-<li class="chapter" data-level="10.7.1" data-path="risk-diagram.html"><a href="risk-diagram.html#working-with-the-risk-diagram"><i class="fa fa-check"></i><b>10.7.1</b> Working with the Risk Diagram</a></li>
-</ul></li>
-<li class="chapter" data-level="10.8" data-path="risk-simulation.html"><a href="risk-simulation.html"><i class="fa fa-check"></i><b>10.8</b> Risk Simulation</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="risk-analysis-results.html"><a href="risk-analysis-results.html"><i class="fa fa-check"></i><b>11</b> Risk Analysis Results</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="loss-exceedance-plot.html"><a href="loss-exceedance-plot.html"><i class="fa fa-check"></i><b>11.1</b> Loss Exceedance Plot</a></li>
-<li class="chapter" data-level="11.2" data-path="conditional-loss-plot.html"><a href="conditional-loss-plot.html"><i class="fa fa-check"></i><b>11.2</b> Conditional Loss Plot</a></li>
-<li class="chapter" data-level="11.3" data-path="summary-statistics.html"><a href="summary-statistics.html"><i class="fa fa-check"></i><b>11.3</b> Summary Statistics</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="risk-analysis-diagnostics.html"><a href="risk-analysis-diagnostics.html"><i class="fa fa-check"></i><b>12</b> Risk Analysis Diagnostics</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="integration.html"><a href="integration.html"><i class="fa fa-check"></i><b>12.1</b> Integration</a></li>
-<li class="chapter" data-level="12.2" data-path="risk-measures.html"><a href="risk-measures.html"><i class="fa fa-check"></i><b>12.2</b> Risk Measures</a></li>
-<li class="chapter" data-level="12.3" data-path="risk-profile.html"><a href="risk-profile.html"><i class="fa fa-check"></i><b>12.3</b> Risk Profile</a></li>
-<li class="chapter" data-level="12.4" data-path="assurance.html"><a href="assurance.html"><i class="fa fa-check"></i><b>12.4</b> Assurance</a></li>
-<li class="chapter" data-level="12.5" data-path="tornado-plot.html"><a href="tornado-plot.html"><i class="fa fa-check"></i><b>12.5</b> Tornado Plot</a></li>
-<li class="chapter" data-level="12.6" data-path="x-y-plot.html"><a href="x-y-plot.html"><i class="fa fa-check"></i><b>12.6</b> X-Y Plot</a></li>
-<li class="chapter" data-level="12.7" data-path="tabular.html"><a href="tabular.html"><i class="fa fa-check"></i><b>12.7</b> Tabular</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="13" data-path="appendix-a---acronyms.html"><a href="appendix-a---acronyms.html"><i class="fa fa-check"></i><b>13</b> Appendix A - Acronyms</a></li>
-<li class="divider"></li>
-<li>
-  <a href="https://www.rmc.usace.army.mil/">
-    <img src="images/USACE.png" alt="USACE Logo." style="height:20px; margin-right:5px; vertical-align:middle;">
-    USACE Risk Management Center
-  </a>
-</li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">RMC-TotalRisk User’s Guide</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">RMC-TotalRisk User’s Guide</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="welcome.html"><span class="header-section-number">1</span> Welcome to RMC-TotalRisk</a></li>
+<li><a class="" href="risk-analysis-framework.html"><span class="header-section-number">2</span> Risk Analysis Framework</a></li>
+<li><a class="" href="installation.html"><span class="header-section-number">3</span> Installing RMC-TotalRisk</a></li>
+<li><a class="" href="gui.html"><span class="header-section-number">4</span> Graphical User Interface</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">5</span> Create a Project</a></li>
+<li><a class="" href="hazard-functions.html"><span class="header-section-number">6</span> Hazard Functions</a></li>
+<li><a class="" href="transform-functions.html"><span class="header-section-number">7</span> Transform Functions</a></li>
+<li><a class="" href="system-response-functions.html"><span class="header-section-number">8</span> System Response Functions</a></li>
+<li><a class="" href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></li>
+<li><a class="active" href="risk-analyses.html"><span class="header-section-number">10</span> Risk Analyses</a></li>
+<li><a class="" href="risk-analysis-results.html"><span class="header-section-number">11</span> Risk Analysis Results</a></li>
+<li><a class="" href="risk-analysis-diagnostics.html"><span class="header-section-number">12</span> Risk Analysis Diagnostics</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a---acronyms.html"><span class="header-section-number">13</span> Appendix A - Acronyms</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-gitlab"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="risk-analyses" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">10</span> Risk Analyses<a href="risk-analyses.html#risk-analyses" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="risk-analyses" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Risk Analyses<a class="anchor" aria-label="anchor" href="#risk-analyses"><i class="fas fa-link"></i></a>
+</h1>
 <p>In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and a consequence function. Transform functions are optional.</p>
 <p>A risk analysis must include at least one system component. You can use multiple components to represent either different structures within the system or various hazard types affecting a single structure.</p>
 <p>Each system component can include multiple system response functions, commonly referred to as failure modes. These failure modes may lead to different consequences. For example, in a dam scenario, a seepage failure mode might progress slowly, allowing downstream populations more time to evacuate. In contrast, a seismic failure mode could cause rapid failure, providing little evacuation time. At least one failure mode is necessary to calculate excess, failure, and total risks.</p>
 <p>A system component can include only one non-failure mode. This mode does not require a response function but is essential for calculating excess, non-failure, background, and total risks. If no non-failure mode is provided, the system assumes the non-failure consequence is zero.</p>
 <p>To compute risk, a system component must include either a failure mode or a non-failure mode.</p>
-<p>For more information on the quantitative risk analysis framework in RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>For more information on the quantitative risk analysis framework in RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<div id="create-new-risk-analysis" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Create New Risk Analysis<a class="anchor" aria-label="anchor" href="#create-new-risk-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>To create a risk analysis, right-click on the <strong>Risk Analyses</strong> folder in the Project Explorer (Figure <a href="risk-analyses.html#fig:figure-123">10.1</a>) or navigate to <strong>Project Menu &gt; Risk Analyses</strong> and select <strong>Add Risk Analysis…</strong>. Enter a name for the risk analysis and click <strong>OK</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-123"></span>
+<img src="images/figure123.png" alt="Create a new risk analysis."><p class="caption">
+Figure 10.1: Create a new risk analysis.
+</p>
 </div>
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body">
-<div id="ref-cite-TechRef" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">C. H. Smith, D. A. Margo, and W. L. Fields, <em>Draft - RMC-TotalRisk technical reference manual</em>, 1st ed. Lakewood, CO: U.S. Army Corps of Engineers, Risk Management Center, 2025. Available: <a href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk">https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk</a></div>
+<p>When you create a new risk analysis, it automatically opens in the Tabbed Documents area, and the Properties window displays the risk analysis properties (Figure <a href="risk-analyses.html#fig:figure-124">10.2</a>). In the Properties window, you can configure the name, description, consequence type, and consequence units. The consequence type and units are required, and all consequence functions in the analysis must match the selected consequence type.</p>
+<p>You can access additional risk analysis options through the Options tab in the Properties window (Figure <a href="risk-analyses.html#fig:figure-124">10.2</a>). For most applications, the default risk analysis options provide reasonable results. The following sections explain the available risk analysis options in detail.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-124"></span>
+<img src="images/figure124.png" alt="Risk analysis properties (general properties at left; risk analysis options at right)." width="85%"><p class="caption">
+Figure 10.2: Risk analysis properties (general properties at left; risk analysis options at right).
+</p>
 </div>
 </div>
-            </section>
+<div id="simulation-options" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Simulation Options<a class="anchor" aria-label="anchor" href="#simulation-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>The simulation options allow you to configure settings for the uncertainty analysis and the loss exceedance curve (LEC) results (Figure <a href="risk-analyses.html#fig:figure-125">10.3</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-125"></span>
+<img src="images/figure125.png" alt="Risk analysis simulation options."><p class="caption">
+Figure 10.3: Risk analysis simulation options.
+</p>
+</div>
+<ul>
+<li><p><strong>Confidence Interval</strong>: Specifies the width of the confidence interval (CI). For a 90% CI, the value of interest has a 90% probability of falling within the interval. CIs are computed only after simulating risk with full uncertainty. The default CI is 90%.</p></li>
+<li><p><strong>Realizations</strong>: Sets the number of Monte Carlo simulation realizations for simulating risk with full uncertainty. The default is 1,000 realizations, balancing reasonably accurate CIs with shorter runtimes. The maximum allowed number of realizations is 10,000 due to runtime and file size constraints. Running 10,000 realizations is recommended for the most accurate results, although minor sampling errors in mean risk results and percentiles may still occur with fewer realizations.</p></li>
+<li><p><strong>PRNG Seed</strong>: Defines the pseudo random number generator (PRNG) seed value for the Monte Carlo simulation. Using the same seed value ensures repeatable results, while changing the seed value alters the sequence of random numbers used in the simulation.</p></li>
+<li><p><strong>LEC Output Length</strong>: Specifies the number of points used to construct the LECs. An LEC displays risk results with consequences on the x-axis and exceedance probability on the y-axis. Using at least 200 points is recommended to enhance the accuracy of the curves.</p></li>
+</ul>
+</div>
+<div id="integration-options" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> Integration Options<a class="anchor" aria-label="anchor" href="#integration-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>RMC-TotalRisk uses numerical integration to compute risk for each Monte Carlo realization.</p>
+<p>When the risk analysis has a single system component, the <strong>Adaptive Simpson’s Rule (ASR)</strong> performs the numerical integration. Figure <a href="risk-analyses.html#fig:figure-126">10.4</a> shows the available options for the ASR method.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-126"></span>
+<img src="images/figure126.png" alt="Risk analysis integration options when there is single system component."><p class="caption">
+Figure 10.4: Risk analysis integration options when there is single system component.
+</p>
+</div>
+<ul>
+<li><p><strong>Max Evaluations</strong>: Specifies the maximum number of integrand evaluations allowed during numerical integration. The value must be between <span class="math inline">\(10,000\)</span> and <span class="math inline">\(1,000,000\)</span>, with a default of <span class="math inline">\(1,000,000\)</span>.</p></li>
+<li><p><strong>Max Depth</strong>: Sets the maximum recursion depth for ASR integration. The default is <span class="math inline">\(100\)</span>.</p></li>
+<li><p><strong>Tolerance</strong>: Defines the desired tolerance for the ASR integration. This setting applies to the mean of the total system risk, with a default value of <span class="math inline">\(10^{-8}\)</span>.</p></li>
+</ul>
+<p>When the risk analysis includes two or more system components and the <strong>Joint System Risk Method</strong> is selected, the adaptive importance sampling method <strong>VEGAS</strong> handles numerical integration. Figure <a href="risk-analyses.html#fig:figure-127">10.5</a> shows the available options for the VEGAS method.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-127"></span>
+<img src="images/figure127.png" alt="Risk analysis integration options when there are multiple system components and the joint system risk method is selected."><p class="caption">
+Figure 10.5: Risk analysis integration options when there are multiple system components and the joint system risk method is selected.
+</p>
+</div>
+<ul>
+<li><p><strong>Max Evaluations</strong>: Specifies the maximum number of integrand evaluations allowed during numerical integration. The value must be between <span class="math inline">\(10,000\)</span> and <span class="math inline">\(1,000,000\)</span>, with a default of <span class="math inline">\(1,000,000\)</span>.</p></li>
+<li><p><strong>Warmup Evaluations</strong>: Determines the number of integrand evaluations per warmup cycle. The default is <span class="math inline">\(1,000 \times D\)</span>, where <span class="math inline">\(D\)</span> is the number of integrand dimensions (i.e., system components).</p></li>
+<li><p><strong>Warmup Cycles</strong>: Sets the number of warmup cycles for the adaptive importance sampling method. The default is <span class="math inline">\(5\)</span>.</p></li>
+<li><p><strong>Final Evaluations</strong>: Specifies the number of integrand evaluations performed after completing the warmup phase. The default is <span class="math inline">\(10,000\)</span>.</p></li>
+</ul>
+<p>For more details on the numerical integration methods used by RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+</div>
+<div id="system-component-options" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> System Component Options<a class="anchor" aria-label="anchor" href="#system-component-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>Figure <a href="risk-analyses.html#fig:figure-128">10.6</a> shows the system component options.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-128"></span>
+<img src="images/figure128.png" alt="Risk analysis system component options."><p class="caption">
+Figure 10.6: Risk analysis system component options.
+</p>
+</div>
+<ul>
+<li><p><strong>System Component</strong>: A system component consists of three key inputs: the hazard, the system response to that hazard, and the consequences given the response and hazard. By default, the system component is identified and labeled by the selected hazard function, which can only be used once per risk analysis. A single risk analysis is limited to 20 system components due to virtual memory and runtime constraints. Several options are available to customize how the risk analysis computes each system component.</p></li>
+<li><p><strong>Name</strong>: Users can edit the name of the selected system component.</p></li>
+<li>
+<p><strong>Failure Mode Method</strong>: This setting determines how the risk analysis accounts for multiple failure modes. Options include <strong>joint</strong>, <strong>competing</strong>, <strong>common cause</strong>, and <strong>mutually exclusive</strong> failures. Note: The <strong>joint</strong> and <strong>competing</strong> methods are computationally intensive and are limited to 20 failure modes.</p>
+<ul>
+<li><p><strong>Joint</strong> (default): Use this method when multiple failure modes can occur simultaneously during the same event. This method requires selecting a joint consequence rule.</p></li>
+<li><p><strong>Competing</strong>: Use this method when joint failures are not possible because the system component fails when the first of the competing failure modes reaches a failure state. The system response functions’ capacity automatically determines the failure mode order. Ensure that the system response functions increase monotonically.</p></li>
+<li><p><strong>Common Cause</strong>: This method assumes a common cause initiates multiple failure modes, but joint failures are not possible. While included for backward compatibility with existing risk analysis software, use the competing method when feasible.</p></li>
+<li><p><strong>Mutually Exclusive</strong>: Use this method when failure modes are disjoint (have no intersection) and cannot occur simultaneously. During the risk analysis, response probabilities exceeding 1 at a given hazard level are normalized.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Joint Consequences</strong>: This setting applies to the joint failure mode method and determines how joint failure consequences are treated. Options include <strong>additive</strong>, <strong>average</strong>, <strong>maximum</strong> (default), and <strong>minimum</strong>.</p>
+<ul>
+<li><p>Use <strong>additive</strong> when failure modes affect different inundation areas, and the total consequences are best represented by adding consequences for each area.</p></li>
+<li><p>Use <strong>average</strong> when inundation areas are partially overlapping.</p></li>
+<li><p>Use <strong>maximum</strong> when failure modes share the same inundation area to avoid overestimating consequences.</p></li>
+<li><p>Use <strong>minimum</strong> as a sensitivity or to establish a lower bound for risk.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Failure Dependency</strong>: This option sets the statistical dependency between failure modes within the selected system component. It is unavailable for the mutually exclusive method. The dependency influences the joint probability of the response functions. The options include <strong>independent</strong> (default), <strong>perfectly positive</strong>, <strong>perfectly negative</strong>, or a user-defined <strong>correlation matrix</strong>.</p>
+<ul>
+<li>The <strong>Correlation Matrix</strong> option becomes available when you select it as the dependency method. Clicking the button opens a table where you can enter correlation coefficients between failure modes.</li>
+</ul>
+</li>
+<li><p><strong>Profile Hazard</strong>: This option sets the hazard function used to construct risk profiles and estimate the probability of exceeding a hazard threshold. You can select the primary hazard function or any hazard-to-response transform functions. For levee accreditation analyses, use stage or water surface elevation as the profile hazard type.</p></li>
+<li><p><strong>Hazard Threshold</strong>: This setting defines the hazard level for calculating the probability of exceeding that threshold. The default hazard threshold is 0. For levee accreditation analyses, use the top of levee height or elevation as the hazard threshold.</p></li>
+</ul>
+</div>
+<div id="system-options" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> System Options<a class="anchor" aria-label="anchor" href="#system-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>The system options define how the system components interact in the risk calculations (Figure <a href="risk-analyses.html#fig:figure-129">10.7</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-129"></span>
+<img src="images/figure129.png" alt="Risk analysis system options."><p class="caption">
+Figure 10.7: Risk analysis system options.
+</p>
+</div>
+<ul>
+<li>
+<p><strong>System Risk Method</strong>: This option determines how the analysis calculates system risk. The available methods are <strong>additive</strong> and <strong>joint risk</strong>:</p>
+<ul>
+<li><p><strong>Additive Risk Method</strong> (default): Assumes system components are independent, and their consequences can be summed. This method has shorter runtimes but does not generate system-level loss exceedance curves (LECs) and computes fewer system-wide risk measures.</p></li>
+<li><p><strong>Joint Risk Method</strong>: Allows modeling dependencies between components and generates a complete set of system risk outputs, including system-level LECs and more comprehensive risk measures. However, this method typically has longer runtimes.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Joint Consequences</strong>: Defines how the risk analysis handles the consequences of joint events among system components. Options include <strong>additive</strong>, <strong>average</strong>, <strong>maximum</strong> (default), and <strong>minimum</strong>.</p>
+<ul>
+<li><p>Use <strong>additive</strong> when the system components have nonoverlapping inundation areas, where summing consequences is more appropriate.</p></li>
+<li><p>Use <strong>average</strong> when inundation areas partially overlap, and averaging the consequences is appropriate.</p></li>
+<li><p>Use <strong>maximum</strong> when modeling various hazard types affecting a single structure to prevent overestimating the consequences.</p></li>
+<li><p>Use <strong>minimum</strong> as a sensitivity or to establish a lower bound for system risk.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Hazard Dependency</strong>: Specifies the statistical dependency between system component hazards in the risk analysis. This option is only available for the joint risk method. The dependency influences the joint probability of the hazard functions. Options include <strong>independent</strong> (default), <strong>perfectly positive</strong>, <strong>perfectly negative</strong>, or a user-defined <strong>correlation matrix</strong>.</p>
+<ul>
+<li>The <strong>Correlation Matrix</strong> option becomes available when you select it as the dependency method. Clicking the button opens a table where you can enter correlation coefficients between system component hazard functions.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="risk-measure-options" class="section level2" number="10.6">
+<h2>
+<span class="header-section-number">10.6</span> Risk Measure Options<a class="anchor" aria-label="anchor" href="#risk-measure-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>RMC-TotalRisk offers additional risk measures that are valuable for the risk-based design of engineering structures. These measures are calculated for the entire system rather than individual components. Figure <a href="risk-analyses.html#fig:figure-130">10.8</a> displays the risk measure options.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-130"></span>
+<img src="images/figure130.png" alt="Risk measure options."><p class="caption">
+Figure 10.8: Risk measure options.
+</p>
+</div>
+<ul>
+<li><p><strong>Consequence Threshold</strong>: Specifies the consequence level for calculating the probability of exceeding that threshold. The default consequence threshold is <span class="math inline">\(0\)</span>.</p></li>
+<li><p><strong>Alpha</strong> Sets the exceedance probability used to compute the Value-at-Risk (VaR) and Conditional Value-at-Risk (CVaR). The default exceedance probability is <span class="math inline">\(10^{−2}\)</span>.</p></li>
+</ul>
+<p>For more details about the additional risk measures in RMC-TotalRisk, refer to the technical reference <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+</div>
+<div id="risk-diagram" class="section level2" number="10.7">
+<h2>
+<span class="header-section-number">10.7</span> Risk Diagram<a class="anchor" aria-label="anchor" href="#risk-diagram"><i class="fas fa-link"></i></a>
+</h2>
+<p>RMC-TotalRisk defines a risk analysis using an intuitive diagram, as shown in Figure <a href="risk-analyses.html#fig:figure-131">10.9</a>. This diagram provides a clear way to create and connect the components of the modeled system.</p>
+<p>A risk analysis computes the risk associated with multiple potential failure modes for each system component. Each failure mode combines a hazard, the system’s response to that hazard, and the consequences of the response. Non-failure modes consist of a hazard and the non-failure consequences associated with it.</p>
+<p>Figure <a href="risk-analyses.html#fig:figure-131">10.9</a> illustrates a single system component for a dam safety risk analysis. The diagram includes a non-failure mode, represented by the purple line at the top, connecting the hazard function directly to the non-failure consequences without involving a system response. Many dams experience non-failure consequences. For example, during a major flood event, a dam might activate its emergency spillway to prevent overtopping. While this action protects the dam, it can still result in downstream impacts. The non-failure mode in the diagram represents the risk associated with these non-failure scenarios.</p>
+<p>The diagram also includes two failure modes:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Spillway erosion failure mode (PFM 1)</strong>: This mode, shown in the center of the diagram, connects the hazard function at Dam A to the PFM 1 response function and consequence function.</p></li>
+<li><p><strong>Concentrated leak erosion failure mode (PFM 2)</strong>: This mode, shown at the bottom of the diagram, follows the same structure as PFM 1.</p></li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-131"></span>
+<img src="images/figure131.png" alt="RMC-TotalRisk risk diagram."><p class="caption">
+Figure 10.9: RMC-TotalRisk risk diagram.
+</p>
+</div>
+<p>The risk diagram connects input functions from left to right, linking them based on their hazard type (e.g., stage, flow) and units (e.g., ft, cfs). Circular or redundant connections are not allowed, making the risk diagram a type of directed acyclic graph (DAG).</p>
+<p>System components in the diagram are labeled by their selected hazard functions. You can rename system components by right-clicking their names in the diagram or editing their names in the Properties window. Failure modes within each component are labeled by their corresponding response functions.</p>
+<p>RMC-TotalRisk supports an unlimited number of failure modes per component, depending on the selected failure mode method. However, a single system is limited to 20 components due to virtual memory and runtime constraints. For example, you can evaluate the system risk for a watershed with up to 20 dams, each containing multiple failure modes.</p>
+<div id="working-with-the-risk-diagram" class="section level3" number="10.7.1">
+<h3>
+<span class="header-section-number">10.7.1</span> Working with the Risk Diagram<a class="anchor" aria-label="anchor" href="#working-with-the-risk-diagram"><i class="fas fa-link"></i></a>
+</h3>
+<p>First, familiarize yourself with the diagram interface. Pan the diagram surface by left-clicking and dragging on any open area. Zoom in and out using the mouse wheel.</p>
+Nodes in the diagram represent inputs to the risk analysis. Select a node’s input function using the selection box. Move a node by left-clicking and dragging it. A blue circle at the bottom left of a node indicates required inputs, while an orange circle at the lower right shows the node output (Figure <a href="risk-analyses.html#fig:figure-132">10.10</a>).
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-132"></span>
+<img src="images/figure132.png" alt="Risk diagram node inputs and outputs."><p class="caption">
+Figure 10.10: Risk diagram node inputs and outputs.
+</p>
+</div>
+<div id="adding-nodes" class="section level4 unnumbered">
+<h4>Adding Nodes<a class="anchor" aria-label="anchor" href="#adding-nodes"><i class="fas fa-link"></i></a>
+</h4>
+<p>You can add nodes to the risk diagram in three ways (Figure <a href="risk-analyses.html#fig:figure-133">10.11</a>):</p>
+<ol style="list-style-type: decimal">
+<li><p>Hover over the large plus symbol in the upper-left corner of the diagram, then left-click and drag the node to the desired location.</p></li>
+<li><p>Right-click on any empty space in the diagram to open a selection box and add a node at that location.</p></li>
+<li><p>Left-click on a node output to open a selection box. This option automatically connects the new node to the clicked node output.</p></li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-133"></span>
+<img src="images/figure133.png" alt="Options to add a new input node to the risk diagram: a) Place the cursor over the plus symbol in the upper left corner of the diagram then move the node to the desired location; b) Right-click on any empty space in the diagram to add at that location; and c) left-click on a node output (this option also connects the nodes)." width="90%"><p class="caption">
+Figure 10.11: Options to add a new input node to the risk diagram: a) Place the cursor over the plus symbol in the upper left corner of the diagram then move the node to the desired location; b) Right-click on any empty space in the diagram to add at that location; and c) left-click on a node output (this option also connects the nodes).
+</p>
+</div>
+</div>
+<div id="connecting-nodes" class="section level4 unnumbered">
+<h4>Connecting Nodes<a class="anchor" aria-label="anchor" href="#connecting-nodes"><i class="fas fa-link"></i></a>
+</h4>
+<p>To connect two nodes, left-click and hold on a node output, then drag the cursor toward the desired node input. Release the mouse button to create the connection (Figure <a href="risk-analyses.html#fig:figure-134">10.12</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-134"></span>
+<img src="images/figure134.png" alt="To connect a node to another node, left-click and hold on a node output, drag toward the desired node input, and release the mouse button to finish the connection."><p class="caption">
+Figure 10.12: To connect a node to another node, left-click and hold on a node output, drag toward the desired node input, and release the mouse button to finish the connection.
+</p>
+</div>
+</div>
+<div id="deleting-and-disconnecting-nodes" class="section level4 unnumbered">
+<h4>Deleting and Disconnecting Nodes<a class="anchor" aria-label="anchor" href="#deleting-and-disconnecting-nodes"><i class="fas fa-link"></i></a>
+</h4>
+<p>To delete a node, right-click on it and select <strong>Delete</strong>, or click the <strong>X</strong> that appears in the top-right corner when you hover over the node. To disconnect two nodes, left-click and hold the input of the connected node, then drag the cursor to another node’s input or click any open space in the diagram.</p>
+</div>
+<div id="node-types" class="section level4 unnumbered">
+<h4>Node Types<a class="anchor" aria-label="anchor" href="#node-types"><i class="fas fa-link"></i></a>
+</h4>
+<p>The diagram has four fundamental node types:</p>
+<!-- <ul class="hidden-level-1"> -->
+<!--     <li><img src="images/hazardIcon.png"> <b>Hazard Node</b>: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.</li> -->
+<!-- </ul> -->
+<ul>
+<li><p><img src="images/hazardIcon.png" alt="Image"><strong>Hazard Node</strong>: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.</p></li>
+<li><p><img src="images/transformIcon.png" alt="Image"><strong>Transform Node</strong>: Converts hazard levels from one type to another (e.g., flow to stage). Transform nodes can connect sequentially and have multiple outputs unless linked to a response function. For example, an unregulated flow-frequency function may need to be transformed into regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.</p></li>
+<li><p><img src="images/responseIcon.png" alt="Image"><strong>Response Node</strong>: Represents the system’s conditional probability of failure at various hazard levels. Response nodes define failure modes and allow one output connection.</p></li>
+<li><p><img src="images/consequenceIcon.png" alt="Image"><strong>Consequence Node</strong>: Defines the consequences of failure or non-failure. Non-failure consequences connect directly to the hazard node without a response function.</p></li>
+</ul>
+</div>
+<div id="visual-feedback" class="section level4 unnumbered">
+<h4>Visual Feedback<a class="anchor" aria-label="anchor" href="#visual-feedback"><i class="fas fa-link"></i></a>
+</h4>
+<p>The diagram provides visual feedback for data validation:</p>
+<ul>
+<li><p><img src="images/noInputSelected.png" style="width: 32px; height: 12px"><strong>No Input Selected</strong>: Red outlines indicate a node with no input defined.</p></li>
+<li><p><img src="images/incompleteConnection.png" style="width: 32px; height: 4px"><strong>Incomplete Connection</strong>: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection.</p></li>
+<li><p><img src="images/invalidConnection.png" style="width: 32px; height: 4px"><strong>Invalid Connection</strong>: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis.</p></li>
+<li><p><img src="images/validNFModeConnection.png" style="width: 32px; height: 4px"><strong>Valid Non-Failure Mode Connection</strong>: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations.</p></li>
+</ul>
+<!-- - ![Image](images/noInputSelected.png) **No Input Selected**: Red outlines indicate a node with no input defined. --><!-- - ![Image](images/incompleteConnection.png) **Incomplete Connection**: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection. --><!-- - ![Image](images/invalidConnection.png) **Invalid Connection**: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis. --><!-- - ![Image](images/validNFModeConnection.png) **Valid Non-Failure Mode Connection**: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations. -->
+</div>
+<div id="example-levee-risk-diagram" class="section level4 unnumbered">
+<h4>Example Levee Risk Diagram<a class="anchor" aria-label="anchor" href="#example-levee-risk-diagram"><i class="fas fa-link"></i></a>
+</h4>
+<p>Figure <a href="risk-analyses.html#fig:figure-134">10.12</a> illustrates a levee risk analysis. The hazard function is a river peak flow frequency curve, transformed into a peak river stage using a flow-to-stage rating curve from a hydraulic routing model. The diagram includes two failure modes:</p>
+<ul>
+<li><p><strong>Prior OT (Backward Erosion Piping)</strong>: Represents failure before overtopping.</p></li>
+<li><p><strong>OT (Overtopping)</strong>: Represents overtopping-related failure.</p></li>
+</ul>
+<p>The non-failure mode is represented at the top with purple connectors, where non-failure consequences connect directly to the hazard transform function.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-135"></span>
+<img src="images/figure135.png" alt="Example levee risk diagram."><p class="caption">
+Figure 10.13: Example levee risk diagram.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="risk-simulation" class="section level2" number="10.8">
+<h2>
+<span class="header-section-number">10.8</span> Risk Simulation<a class="anchor" aria-label="anchor" href="#risk-simulation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once you have created a risk analysis and configured the desired options, you can run a risk simulation. Choose between two simulation methods (Figure <a href="risk-analyses.html#fig:figure-riskprop">10.14</a>):</p>
+<ul>
+<li><p><strong>Simulate Mean Risk Only</strong> (default): This method uses the mean result from each input function to compute risk.</p></li>
+<li><p><strong>Simulate Risk with Full Uncertainty</strong>: This method employs Monte Carlo simulation to estimate risk using the full range of uncertainty from each input function</p></li>
+</ul>
+<p>To calculate a risk estimate, click the <strong>Estimate</strong> button.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-riskprop"></span>
+<img src="images/riskproperties.png" alt="Risk simulation options."><p class="caption">
+Figure 10.14: Risk simulation options.
+</p>
+</div>
+<p>Figure <a href="risk-analyses.html#fig:figure-risksim">10.15</a> illustrates the overall risk and Monte Carlo simulation framework used in RMC-TotalRisk. The <strong>Mean Risk Only</strong> method is computationally efficient and can be completed in a single loop, as shown on the left side of the figure. However, this method approximates risk and may not fully capture combinations of low-probability, high-consequence events. Consequently, it can underestimate variance and tail risk.</p>
+<p>For scenarios involving significant uncertainty in extreme events, it is recommended to use the <strong>Simulate Risk with Full Uncertainty</strong> option for a more accurate assessment.</p>
+<p>For a detailed explanation of the risk analysis framework, simulation options, algorithms, and underlying mathematics, refer to the technical reference manual <span class="citation"><a href="references.html#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-risksim"></span>
+<img src="images/risksimulation.png" alt="Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty."><p class="caption">
+Figure 10.15: Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty.
+</p>
+</div>
 
-          </div>
-        </div>
-      </div>
-<a href="composite-consequence-function.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="create-new-risk-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></div>
+<div class="next"><a href="risk-analysis-results.html"><span class="header-section-number">11</span> Risk Analysis Results</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#risk-analyses"><span class="header-section-number">10</span> Risk Analyses</a></li>
+<li><a class="nav-link" href="#create-new-risk-analysis"><span class="header-section-number">10.1</span> Create New Risk Analysis</a></li>
+<li><a class="nav-link" href="#simulation-options"><span class="header-section-number">10.2</span> Simulation Options</a></li>
+<li><a class="nav-link" href="#integration-options"><span class="header-section-number">10.3</span> Integration Options</a></li>
+<li><a class="nav-link" href="#system-component-options"><span class="header-section-number">10.4</span> System Component Options</a></li>
+<li><a class="nav-link" href="#system-options"><span class="header-section-number">10.5</span> System Options</a></li>
+<li><a class="nav-link" href="#risk-measure-options"><span class="header-section-number">10.6</span> Risk Measure Options</a></li>
+<li>
+<a class="nav-link" href="#risk-diagram"><span class="header-section-number">10.7</span> Risk Diagram</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#working-with-the-risk-diagram"><span class="header-section-number">10.7.1</span> Working with the Risk Diagram</a></li></ul>
+</li>
+<li><a class="nav-link" href="#risk-simulation"><span class="header-section-number">10.8</span> Risk Simulation</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/master/10-risk-analyses.Rmd">View source <i class="fab fa-gitlab"></i></a></li>
+          <li><a id="book-edit" href="USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/master/10-risk-analyses.Rmd">Edit this page <i class="fab fa-gitlab"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>RMC-TotalRisk User’s Guide</strong>" was written by C. Haden Smith and Woodrow L. Fields. It was last built on Last updated: 2025-01-14.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": true,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": {},
-"info": true
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["totalrisk-users-guide.pdf"],
-"search": {
-"engine": "lunr",
-"options": null
-},
-"toc": {
-"collapse": "section",
-"collapsed": true,
-"scroll_highlight": true
-},
-"toolbar": {
-"position": "fixed"
-}
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -368,7 +452,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

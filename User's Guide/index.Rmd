@@ -3,7 +3,7 @@ title: "RMC-TotalRisk User's Guide"
 author: "C. Haden Smith and Woodrow L. Fields"
 date: "`r paste('Last updated:', Sys.Date())`"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
+output: bookdown::bs4_book
 documentclass: book
 bibliography: [book.bib]
 csl: ieee.csl

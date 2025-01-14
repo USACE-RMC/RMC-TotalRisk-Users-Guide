@@ -14,7 +14,7 @@ A risk analysis uses four types of functions as inputs:
 
 For example, Figure \@ref(fig:figure-0) illustrates the conceptual risk analysis process for a levee with a single failure mode and a single system component. Beginning in the top left of the figure, the flood **hazard** is defined by an annual maximum peak flow-frequency distribution, estimated using flood-frequency analysis methods. Next, moving to the top right, peak flow is **transformed** to a WSE using a stage-discharge rating curve estimated using a hydraulic model. Then, moving to the bottom right, the **system response function** is defined by a probability of failure given the WSE, often derived from engineering analysis and expert elicitation methods. And finally, moving to the bottom left, the **consequences** given failure are estimated as a function of WSE. 
 
-```{r figure-0, echo=FALSE, fig.cap="Levee risk analysis process for a single failure mode and a single system component.", fig.align="center"}
+```{r figure-0, echo=FALSE, fig.cap="Levee risk analysis process for a single failure mode and a single system component.", fig.alt="The four inputs- hazard function, transform function, response function, and consequence function displayed for a conceptual risk analysis process for a levee with single failure mode and a single system component.", fig.align="center"}
 knitr::include_graphics("images/figure0.png")
 ```
 
