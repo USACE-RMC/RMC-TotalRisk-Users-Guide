@@ -1,7 +1,12 @@
 bookdown::bs4_book:
+  css: style.css
+  split_bib: true
   theme:
     primary: "#4D6F8D"
-  repo: "USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide"
+  repo:
+    base: "https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide"
+    branch: main
+    subdir: bookdown
   includes:
     in_header:
 bookdown::gitbook:

@@ -9,8 +9,9 @@ bibliography: [book.bib]
 csl: ieee.csl
 link-citations: yes
 github-repo: "USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk"
+url: 'https://www.rmc.usace.army.mil/'
 favicon: "TotalRiskIcon.ico"
-description: "This is a user guide for working with the quantitative risk analysis software, RMC-TotalRisk."
+description: "This is a user's guide for working with the quantitative risk analysis software, RMC-TotalRisk."
 mathsize: 0.9
 ---
 
