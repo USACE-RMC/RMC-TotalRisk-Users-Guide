@@ -6,7 +6,7 @@ A risk analysis must include at least one system component. You can use multiple
 
 Each system component can include multiple system response functions, commonly referred to as failure modes. These failure modes may lead to different consequences. For example, in a dam scenario, a seepage failure mode might progress slowly, allowing downstream populations more time to evacuate. In contrast, a seismic failure mode could cause rapid failure, providing little evacuation time. At least one failure mode is necessary to calculate excess, failure, and total risks.
 
-A system component can include only one non-failure mode. This mode does not require a response function but is essential for calculating excess, non-failure, background, and total risks. If no non-failure mode is provided, the system assumes the non-failure consequence is zero. 
+A system component can include only one non-failure mode. This mode does not require a response function but is essential for calculating excess, non-failure, background, and total risks. If a non-failure mode is not provided, the risk calculations assume the non-failure consequences are zero. 
 
 To compute risk, a system component must include either a failure mode or a non-failure mode.
 
@@ -38,7 +38,7 @@ knitr::include_graphics("images/figure125.png")
 
 -	**Confidence Interval**: Specifies the width of the confidence interval (CI). For a 90% CI, the value of interest has a 90% probability of falling within the interval. CIs are computed only after simulating risk with full uncertainty. The default CI is 90%.
 
--	**Realizations**: Sets the number of Monte Carlo simulation realizations for simulating risk with full uncertainty. The default is 1,000 realizations, balancing reasonably accurate CIs with shorter runtimes. The maximum allowed number of realizations is 10,000 due to runtime and file size constraints. Running 10,000 realizations is recommended for the most accurate results, although minor sampling errors in mean risk results and percentiles may still occur with fewer realizations.
+-	**Realizations**: Sets the number of Monte Carlo simulation realizations for simulating risk with full uncertainty. The default is 1,000 realizations, balancing reasonably accurate CIs with shorter runtimes. The maximum allowed number of realizations is 10,000 due to runtime and file size constraints. Running 10,000 realizations is recommended for the most accurate results, although minor sampling errors in mean risk results and percentiles may still occur.
 
 -	**PRNG Seed**: Defines the pseudo random number generator (PRNG) seed value for the Monte Carlo simulation. Using the same seed value ensures repeatable results, while changing the seed value alters the sequence of random numbers used in the simulation.
 
@@ -116,7 +116,7 @@ knitr::include_graphics("images/figure128.png")
 
 -	**Profile Hazard**: This option sets the hazard function used to construct risk profiles and estimate the probability of exceeding a hazard threshold. You can select the primary hazard function or any hazard-to-response transform functions. For levee accreditation analyses, use stage or water surface elevation as the profile hazard type.
 
--	**Hazard Threshold**: This setting defines the hazard level for calculating the probability of exceeding that threshold. The default hazard threshold is 0. For levee accreditation analyses, use the top of levee height or elevation as the hazard threshold. 
+-	**Hazard Threshold**: This setting defines the hazard level for calculating the probability of exceeding that threshold. The default hazard threshold is 0. For levee accreditation analyses, use the top of levee stage or elevation as the hazard threshold. 
 
 ## System Options
 
@@ -220,29 +220,29 @@ To delete a node, right-click on it and select **Delete**, or click the **X** th
 
 The diagram has four fundamental node types:
 
-- ![Image](images/hazardIcon.png) **Hazard Node**: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.
+- ![Image](images/hazardIcon.png)&nbsp;**Hazard Node**: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.
  	
-- ![Image](images/transformIcon.png) **Transform Node**: Converts hazard levels from one type to another (e.g., flow to stage). Transform nodes can connect sequentially and have multiple outputs unless linked to a response function. For example, an unregulated flow-frequency function may need to be transformed into regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.
+- ![Image](images/transformIcon.png)&nbsp;**Transform Node**: Converts hazard levels from one type to another (e.g., flow to stage). Transform nodes can connect sequentially and have multiple outputs unless linked to a response function. For example, an unregulated flow-frequency function may need to be transformed into regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.
  	
-- ![Image](images/responseIcon.png) **Response Node**: Represents the system’s conditional probability of failure at various hazard levels. Response nodes define failure modes and allow one output connection.
+- ![Image](images/responseIcon.png)&nbsp;**Response Node**: Represents the system’s conditional probability of failure at various hazard levels. Response nodes define failure modes and allow one output connection.
  	
-- ![Image](images/consequenceIcon.png) **Consequence Node**: Defines the consequences of failure or non-failure. Non-failure consequences connect directly to the hazard node without a response function.
+- ![Image](images/consequenceIcon.png)&nbsp;**Consequence Node**: Defines the consequences of failure or non-failure. Non-failure consequences connect directly to the hazard node without a response function.
 
 #### Visual Feedback {-}
 
 The diagram provides visual feedback for data validation:
 
-- <img src="images/noInputSelected.png" style="width: 32px; height: 12px"> **No Input Selected**: Red outlines indicate a node with no input defined.
+- <img src="images/noInputSelected.png" style="width: 32px; height: 12px">&nbsp;**No Input Selected**: Red outlines indicate a node with no input defined.
 
-- <img src="images/incompleteConnection.png" style="width: 32px; height: 4px"> **Incomplete Connection**: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection.
+- <img src="images/incompleteConnection.png" style="width: 32px; height: 4px">&nbsp;**Incomplete Connection**: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection.
  	
-- <img src="images/invalidConnection.png" style="width: 32px; height: 4px"> **Invalid Connection**: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis.
+- <img src="images/invalidConnection.png" style="width: 32px; height: 4px">&nbsp;**Invalid Connection**: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis.
  	
-- <img src="images/validNFModeConnection.png" style="width: 32px; height: 4px"> **Valid Non-Failure Mode Connection**: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations.
+- <img src="images/validNFModeConnection.png" style="width: 32px; height: 4px">&nbsp;**Valid Non-Failure Mode Connection**: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations.
 
 #### Example Levee Risk Diagram {-}
 
-Figure \@ref(fig:figure-134) illustrates a levee risk analysis. The hazard function is a river peak flow frequency curve, transformed into a peak river stage using a flow-to-stage rating curve from a hydraulic routing model. The diagram includes two failure modes:
+Figure \@ref(fig:figure-135) illustrates a levee risk analysis. The hazard function is a river peak flow frequency curve, transformed into a peak river stage using a flow-to-stage rating curve from a hydraulic routing model. The diagram includes two failure modes:
 
 - **Prior OT (Backward Erosion Piping)**: Represents failure before overtopping.
 
@@ -274,6 +274,6 @@ For scenarios involving significant uncertainty in extreme events, it is recomme
 
 For a detailed explanation of the risk analysis framework, simulation options, algorithms, and underlying mathematics, refer to the technical reference manual [@cite-TechRef].
 
-```{r figure-risksim, echo=FALSE, fig.cap="Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty.", fig.alt="Decorative.", fig.align="center"}
+```{r figure-risksim, echo=FALSE, fig.cap="Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty.", fig.alt="Decorative.", fig.align="center", out.width="95%"}
 knitr::include_graphics("images/risksimulation.png")
 ```

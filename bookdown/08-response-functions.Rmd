@@ -28,13 +28,13 @@ This section defines RMC-TotalRisk’s event tree terminology [@cite-TechRef].
 
 -	**Node**: Represents a branching point in the event tree, signifying a random event or state. Event trees include four types of nodes:
 
-    - ![Image](images/hazardnode.png) **Initiating Hazard Node**: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.
+    - ![Image](images/hazardnode.png)&nbsp;**Initiating Hazard Node**: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.
  	
-    - ![Image](images/chancenode.png) **Chance Node**: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see "reference node").
+    - ![Image](images/chancenode.png)&nbsp;**Chance Node**: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see "reference node").
  	
-    - ![Image](images/referencenode.png) **Reference Node**: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.
+    - ![Image](images/referencenode.png)&nbsp;**Reference Node**: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.
     
-    - ![Image](images/remaindernode.png) **Remainder Node**: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.
+    - ![Image](images/remaindernode.png)&nbsp;**Remainder Node**: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.
 
 -	**Branch**: The line connecting two nodes in the event tree. 
 
@@ -60,13 +60,13 @@ When you hover over a node, a toolbar appears above it, as shown in Figure \@ref
 knitr::include_graphics("images/figure86.png")
 ```
 
-- ![Image](images/deletebranches.png) **Delete Branches**: Click this icon to remove all child branches from the selected node.
+- ![Image](images/deletebranches.png)&nbsp;**Delete Branches**: Click this icon to remove all child branches from the selected node.
 
-- ![Image](images/copybranches.png) **Copy Branches**: Click to copy the child branches into memory for pasting elsewhere.
+- ![Image](images/copybranches.png)&nbsp;**Copy Branches**: Click to copy the child branches into memory for pasting elsewhere.
 
-- ![Image](images/pastebranches.png) **Paste Branches**: Click to paste previously copied branches onto the current node.
+- ![Image](images/pastebranches.png)&nbsp;**Paste Branches**: Click to paste previously copied branches onto the current node.
 
-- ![Image](images/newbranch.png) **Add New Branch**: Click to create a new branch from the selected node.
+- ![Image](images/newbranch.png)&nbsp;**Add New Branch**: Click to create a new branch from the selected node.
 
 When you hover over a branch, a toolbar appears above its name, as shown in Figure \@ref(fig:figure-87). These options are also available by right-clicking on the branch. To rename a branch, double-click on it or use the branch properties.
  
@@ -74,11 +74,11 @@ When you hover over a branch, a toolbar appears above its name, as shown in Figu
 knitr::include_graphics("images/figure87.png")
 ```
 
-- ![Image](images/deletebranch.png) **Delete Branch**: Click to remove the selected branch and all its child branches from the event tree.
+- ![Image](images/deletebranch.png)&nbsp;**Delete Branch**: Click to remove the selected branch and all its child branches from the event tree.
 
-- ![Image](images/branchproperties.png) **Branch Properties**: Click to edit branch properties such as name, description, and probabilities directly in the workspace.
+- ![Image](images/branchproperties.png)&nbsp;**Branch Properties**: Click to edit branch properties such as name, description, and probabilities directly in the workspace.
 
-- ![Image](images/savetemplate.png) **Save Template**: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.
+- ![Image](images/savetemplate.png)&nbsp;**Save Template**: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.
 
 ### Customizing an Event Tree
 
@@ -110,7 +110,7 @@ knitr::include_graphics("images/figure88.png")
 
 ### Building an Event Tree
 
-This example demonstrates how to build an event tree for spillway erosion. The sequence of events includes: Pool elevation results in spillway flow, grass removal from the spillway, headcut initiation, headcut advancement to the control section, control structure failure, unsuccessful intervention, and breach.
+This example demonstrates how to build an event tree for spillway erosion. The sequence of events includes: pool elevation results in spillway flow, grass erodes from the spillway, headcut initiates, headcut advances to the control section, control structure fails, unsuccessful intervention, and breach.
 
 1. **Define the hazard**. Select the initiating hazard node branch, **Hazard**, by clicking on it. Once selected, edit its properties in the Properties window under the Selected Branch Properties subsection (Figure \@ref(fig:figure-89)). Alternatively, click the **Branch Properties** button ![Image](images/branchproperties.png) in the event tree node toolbar to edit the branch. Rename the branch to “Pool Elevation.”
 
@@ -134,7 +134,7 @@ knitr::include_graphics("images/figure90.png")
 knitr::include_graphics("images/figure91.png")
 ```
 
-### Explorting Event Tree Results
+### Exploring Event Tree Results
 
 The Tabbed Document contains three tabs: **Event Tree**, **Response**, and **Diagnostics**, each offering tools to explore the event tree analysis results. 
 

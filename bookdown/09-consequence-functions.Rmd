@@ -1,6 +1,6 @@
 # Consequence Functions
 
-Consequence functions in RMC-TotalRisk quantify the magnitude of consequences that arise from a given range of hazards. These functions estimate how much life loss or economic damage to expect based on a hazard level and the associated system response. Dam and levee safety risk analyses typically define consequence functions separately for each PFM because the consequences can vary depending on the failure mode being assessed. For example, an overtopping failure mode typically provides much less warning time than an earthquake-driven failure, resulting in different life loss estimates.
+Consequence functions in RMC-TotalRisk quantify the magnitude of consequences that arise from a given range of hazards. These functions estimate how much life loss or economic damage to expect based on a hazard level and the associated system response. Dam and levee safety risk analyses typically define consequence functions separately for each PFM because the consequences can vary depending on the failure mode being assessed. For example, an overtopping failure mode typically provides more warning time than an earthquake-driven failure, resulting in different life loss estimates.
 
 You can define consequence functions in RMC-TotalRisk by importing them directly from a LifeSim version 2.0 model, specifying a tabular function, or creating a composite function. The following subsections describe each consequence function option in detail.
 
@@ -84,7 +84,7 @@ knitr::include_graphics("images/figure119.png")
 
 ## Composite Consequence Function
 
-This option combines multiple consequence functions into a single function by either weighting the individual input functions or adding them. Common use cases include combining a daytime consequence function with a nighttime function using a day-night weight ratio or aggregating damage functions by structure damage category into a single damage function.
+This option combines multiple consequence functions into a single function by weighting the individual input functions, averaging them, or adding them. Common use cases include combining a daytime consequence function with a nighttime function by weighting them or aggregating damage functions by structure damage category into a single damage function by adding them.
 
 To create a composite consequence function, right-click on the **Consequences** folder in the Project Explorer (Figure \@ref(fig:figure-120)) or go to **Project Menu > Consequences** and select **Add Composite Consequence…**. Enter a name for the composite consequence function and click **OK**. 
 

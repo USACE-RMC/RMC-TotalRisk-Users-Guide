@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>8 System Response Functions | RMC-TotalRisk User’s Guide</title>
+<meta name="author" content="C. Haden Smith and Woodrow L. Fields">
+<meta name="description" content="System response functions specify how a system responds to a given hazard. In RMC-TotalRisk, a system response function defines the conditional probability of failure for various hazard levels,...">
+<meta name="generator" content="bookdown 0.42 with bs4_book()">
+<meta property="og:title" content="8 System Response Functions | RMC-TotalRisk User’s Guide">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/system-response-functions.html">
+<meta property="og:description" content="System response functions specify how a system responds to a given hazard. In RMC-TotalRisk, a system response function defines the conditional probability of failure for various hazard levels,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8 System Response Functions | RMC-TotalRisk User’s Guide">
+<meta name="twitter:description" content="System response functions specify how a system responds to a given hazard. In RMC-TotalRisk, a system response function defines the conditional probability of failure for various hazard levels,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">RMC-TotalRisk User’s Guide</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="welcome.html"><span class="header-section-number">1</span> Welcome to RMC-TotalRisk</a></li>
+<li><a class="" href="risk-analysis-framework.html"><span class="header-section-number">2</span> Risk Analysis Framework</a></li>
+<li><a class="" href="installation.html"><span class="header-section-number">3</span> Installing RMC-TotalRisk</a></li>
+<li><a class="" href="gui.html"><span class="header-section-number">4</span> Graphical User Interface</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">5</span> Create a Project</a></li>
+<li><a class="" href="hazard-functions.html"><span class="header-section-number">6</span> Hazard Functions</a></li>
+<li><a class="" href="transform-functions.html"><span class="header-section-number">7</span> Transform Functions</a></li>
+<li><a class="active" href="system-response-functions.html"><span class="header-section-number">8</span> System Response Functions</a></li>
+<li><a class="" href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></li>
+<li><a class="" href="risk-analyses.html"><span class="header-section-number">10</span> Risk Analyses</a></li>
+<li><a class="" href="risk-analysis-results.html"><span class="header-section-number">11</span> Risk Analysis Results</a></li>
+<li><a class="" href="risk-analysis-diagnostics.html"><span class="header-section-number">12</span> Risk Analysis Diagnostics</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a---acronyms.html"><span class="header-section-number">13</span> Appendix A - Acronyms</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="system-response-functions" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> System Response Functions<a class="anchor" aria-label="anchor" href="#system-response-functions"><i class="fas fa-link"></i></a>
+</h1>
+<p>System response functions specify how a system responds to a given hazard. In RMC-TotalRisk, a system response function defines the conditional probability of failure for various hazard levels, such as WSEs.</p>
+<p>In dam and levee safety risk analyses, analysts develop system response functions for multiple potential failure modes (PFMs). Common PFMs include seepage and piping, erosion and bank caving, and overtopping. Each PFM may result in different consequence outcomes, so analysts should keep PFMs distinct in a risk analysis.</p>
+<p>RMC-TotalRisk allows users to define system response functions using an event tree, parametric function, tabular function, bivariate tabular function, or a composite of multiple functions. The following subsections describe each input option in detail.</p>
+<div id="event-tree-response-function" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Event Tree Response Function<a class="anchor" aria-label="anchor" href="#event-tree-response-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>Event tree analyses (ETAs) represent the logic of how an initiating event, like a flood or earthquake, can lead to various types of damage and failure <span class="citation"><a href="#ref-cite-BestPractices" role="doc-biblioref">[3]</a></span>. An event tree consists of a sequence of interconnected nodes and branches <span class="citation"><a href="#ref-cite-HartfordBaecher" role="doc-biblioref">[6]</a></span>. Each node corresponds to an uncertain event (e.g., a crack forming in an embankment) or an uncertain state of nature (e.g., the existence of adversely oriented joint planes). Branches originating from a node represent the possible events or states of nature that could occur. Probabilities are assigned to each node to quantify the likelihood of each event or condition, conditional on the occurrence of all preceding events in the tree. For more details on event tree calculations in RMC-TotalRisk, refer to <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<p>To create an event tree response function, right-click on the <strong>System Responses</strong> folder in the Project Explorer (Figure <a href="system-response-functions.html#fig:figure-84">8.1</a>) or navigate to <strong>Project Menu &gt; System Responses</strong> and select <strong>Add Event Tree Response…</strong>. A dialog will appear, prompting you to enter the dataset name and select an event tree template to import. This example uses the Basic template to demonstrate how to build an event tree from scratch, but you can also choose from a variety of default or user-defined templates.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-84"></span>
+<img src="images/figure84.png" alt="The Add Event Tree Response option under the right-click menu of System Responses on the left, and the event tree response function dialog box on the right allowing the user to enter the name of the response function and select a template from a dropdown."><p class="caption">
+Figure 8.1: Create new event tree response function.
+</p>
+</div>
+<p>After creating the new event tree response function, the Tabbed Documents area automatically opens, and the Properties window displays the event tree properties (Figure <a href="system-response-functions.html#fig:figure-85">8.2</a>). In the Properties window, you can configure the name, description, hazard type, hazard units, hazard interpolation, probability interpolation, and selected event tree node properties. The interpolation transforms define how the data is interpolated when sampling values between hazard levels.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-85"></span>
+<img src="images/figure85.png" alt="The properties window includes two tabs General and Options. The General tab displays the event tree properties, dropdown selections for hazard and probability interpolations and the selected branch properties."><p class="caption">
+Figure 8.2: Event tree response function properties.
+</p>
+</div>
+<div id="terminology" class="section level3" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> Terminology<a class="anchor" aria-label="anchor" href="#terminology"><i class="fas fa-link"></i></a>
+</h3>
+<p>This section defines RMC-TotalRisk’s event tree terminology <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<ul>
+<li>
+<p><strong>Node</strong>: Represents a branching point in the event tree, signifying a random event or state. Event trees include four types of nodes:</p>
+<ul>
+<li><p><img src="images/hazardnode.png" alt="Image"> <strong>Initiating Hazard Node</strong>: Always the first node in the event tree. This node defines the hazard levels and links system response probabilities to the hazard function. Enter only hazard levels for this node, not hazard exceedance probabilities. To improve the accuracy of dam and levee risk assessments, define at least five hazard levels. Start with a hazard level with a near-zero probability of failure and progress to a level exceeding the crest height. Include intermediate levels with critical features or inflection points, such as the normal pool or the spillway invert for dams.</p></li>
+<li><p><img src="images/chancenode.png" alt="Image"> <strong>Chance Node</strong>: Represents the probability of an event occurring at each hazard level defined in the initiating hazard node. You can define probabilities as a single value for all hazard levels (single value), as unique values for each hazard level (multi-value), or by referencing another source (see “reference node”).</p></li>
+<li><p><img src="images/referencenode.png" alt="Image"> <strong>Reference Node</strong>: Functions like a chance node but pulls probabilities from a previously defined response function or node in the event tree instead of defining them directly at the node.</p></li>
+<li><p><img src="images/remaindernode.png" alt="Image"> <strong>Remainder Node</strong>: Represents the probability remaining after accounting for all other chance and reference node probabilities at the current branching point. For example, if an event has two potential outcomes, the remainder node accounts for the probability that neither outcome occurs. The software computes the remainder probability automatically; users cannot modify it.</p></li>
+</ul>
+</li>
+<li><p><strong>Branch</strong>: The line connecting two nodes in the event tree.</p></li>
+<li><p><strong>End Node</strong>: A node with no downstream branches, representing the final state in a sequence of events. This is also called a leaf node or terminal node..</p></li>
+<li><p><strong>Pathway</strong>: A unique sequence of events representing a potential failure progression. The probability of a pathway equals the joint probability of all nodes in the series from the initiating hazard node to the end node. This is also referred to as a path, sequence, connection, or root-to-node.</p></li>
+<li><p><strong>Upstream Nodes</strong>: Nodes located to the left of a selected node in the tree. These nodes must occur before the selected node’s event. Upstream nodes are also called parent nodes, conditional events, or preceding nodes.</p></li>
+<li><p><strong>Downstream Nodes</strong>: Nodes located to the right of a selected node in the tree. These nodes occur after the selected node’s event. Downstream nodes are also called child nodes, conditional events, proceeding nodes, or subsequent nodes.</p></li>
+<li><p><strong>Node Probability</strong>: Represents the probability of the selected node event occurring, conditioned on the occurrence of all upstream nodes.</p></li>
+<li><p><strong>Event Likelihood</strong>: Represents the probability of a node event occurring at a given hazard level. This is the joint probability of the selected node event and all its upstream nodes.</p></li>
+</ul>
+</div>
+<div id="navigating-an-event-tree" class="section level3" number="8.1.2">
+<h3>
+<span class="header-section-number">8.1.2</span> Navigating an Event Tree<a class="anchor" aria-label="anchor" href="#navigating-an-event-tree"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can move the event tree around the workspace by clicking and dragging the background canvas with any mouse button. Use the mouse wheel to zoom in and out. When you hover over a node or branch, it highlights. Left-click to select nodes or branches, and right-click to display context menu options.</p>
+<p>When you hover over a node, a toolbar appears above it, as shown in Figure <a href="system-response-functions.html#fig:figure-86">8.3</a>. You can also access these toolbar options by right-clicking on a node.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-86"></span>
+<img src="images/figure86.png" alt="Displays icons for deleting branches from the target node, copying branches, pasting branches, and adding a new branch to the node."><p class="caption">
+Figure 8.3: Event tree node toolbar icons.
+</p>
+</div>
+<ul>
+<li><p><img src="images/deletebranches.png" alt="Image"> <strong>Delete Branches</strong>: Click this icon to remove all child branches from the selected node.</p></li>
+<li><p><img src="images/copybranches.png" alt="Image"> <strong>Copy Branches</strong>: Click to copy the child branches into memory for pasting elsewhere.</p></li>
+<li><p><img src="images/pastebranches.png" alt="Image"> <strong>Paste Branches</strong>: Click to paste previously copied branches onto the current node.</p></li>
+<li><p><img src="images/newbranch.png" alt="Image"> <strong>Add New Branch</strong>: Click to create a new branch from the selected node.</p></li>
+</ul>
+<p>When you hover over a branch, a toolbar appears above its name, as shown in Figure <a href="system-response-functions.html#fig:figure-87">8.4</a>. These options are also available by right-clicking on the branch. To rename a branch, double-click on it or use the branch properties.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-87"></span>
+<img src="images/figure87.png" alt="Displays icons for deleting a branch, editing branch properties, and saving template."><p class="caption">
+Figure 8.4: Event tree branch toolbar icons.
+</p>
+</div>
+<ul>
+<li><p><img src="images/deletebranch.png" alt="Image"> <strong>Delete Branch</strong>: Click to remove the selected branch and all its child branches from the event tree.</p></li>
+<li><p><img src="images/branchproperties.png" alt="Image"> <strong>Branch Properties</strong>: Click to edit branch properties such as name, description, and probabilities directly in the workspace.</p></li>
+<li><p><img src="images/savetemplate.png" alt="Image"> <strong>Save Template</strong>: Save the event tree as a template for future use. This option is only available on the initiating hazard branch.</p></li>
+</ul>
+</div>
+<div id="customizing-an-event-tree" class="section level3" number="8.1.3">
+<h3>
+<span class="header-section-number">8.1.3</span> Customizing an Event Tree<a class="anchor" aria-label="anchor" href="#customizing-an-event-tree"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <strong>Options</strong> tab in the event tree Properties window provides tools to customize your event tree’s appearance and layout (Figure <a href="system-response-functions.html#fig:figure-88">8.5</a>).</p>
+<ul>
+<li><p><strong>Height</strong>: Adjusts the height of each node in pixels. Increasing the height beyond 70 pixels allows node names to span multiple lines.</p></li>
+<li><p><strong>Width</strong>: Sets the horizontal spacing, in pixels, between nodes.</p></li>
+<li><p><strong>Smooth</strong>: Controls the smoothness of the connector lines between nodes.</p></li>
+<li><p><strong>Extend</strong>: If selected, extends the terminal (leaf) nodes to align with the right-most column in the event tree.</p></li>
+<li><p><strong>Background Color</strong>: Changes the background color of the event tree workspace.</p></li>
+<li><p><strong>Gridline Color</strong>: Sets the color of the background gridlines in the workspace.</p></li>
+<li><p><strong>Node Fill</strong>: Specifies the fill color for the selected node.</p></li>
+<li><p><strong>Node Stroke</strong>: Defines the outline color for the selected node.</p></li>
+<li><p><strong>Reset</strong>: Restores all options to their default settings when clicked.</p></li>
+<li><p><strong>Zoom Scale</strong>: Adjusts the zoom scale factor for the event tree workspace. A value of 1 represents the base zoom level.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-88"></span>
+<img src="images/figure88.png" alt="The General tab of the properties window displays the event tree style options to change height, width, and color to customize event tree. There is a Reset button to restore options to default settings. There is also an option to change zoom scale."><p class="caption">
+Figure 8.5: Event tree style options.
+</p>
+</div>
+</div>
+<div id="building-an-event-tree" class="section level3" number="8.1.4">
+<h3>
+<span class="header-section-number">8.1.4</span> Building an Event Tree<a class="anchor" aria-label="anchor" href="#building-an-event-tree"><i class="fas fa-link"></i></a>
+</h3>
+<p>This example demonstrates how to build an event tree for spillway erosion. The sequence of events includes: pool elevation results in spillway flow, grass erodes from the spillway, headcut initiates, headcut advances to the control section, control structure fails, unsuccessful intervention, and breach.</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Define the hazard</strong>. Select the initiating hazard node branch, <strong>Hazard</strong>, by clicking on it. Once selected, edit its properties in the Properties window under the Selected Branch Properties subsection (Figure <a href="system-response-functions.html#fig:figure-89">8.6</a>). Alternatively, click the <strong>Branch Properties</strong> button <img src="images/branchproperties.png" alt="Image"> in the event tree node toolbar to edit the branch. Rename the branch to “Pool Elevation.”</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-89"></span>
+<img src="images/figure89.png" alt="Displays properties popup window from the node tool bar icon on the left, and the event tree properties window on the right. The node properties can be edited from either of these two options."><p class="caption">
+Figure 8.6: Edit the node properties from either the node toolbar or Properties window.
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li><p><strong>Enter hazard levels</strong>. Use the table editing tools to input the desired hazard levels.</p></li>
+<li><p><strong>Delete the default chance node</strong>. Remove the chance node added by default by clicking the delete button <img src="images/deletebranch.png" alt="Image"> in the toolbar, or by using the <strong>Sub-Branches Properties</strong> section of the initiating hazard node. Confirm the deletion when prompted by clicking <strong>Yes</strong>.</p></li>
+<li><p><strong>Add a new node</strong>. Add the next node in the event tree using one of the following methods: Click the <strong>Add New Branch</strong> button <img src="images/newbranch.png" alt="Image"> in the node toolbar, use the right-click node context menu on the node, or navigate to the <strong>Sub-Branches Properties</strong> section in the Properties window. After adding the node, use the <strong>Node Properties Editor</strong> to rename it, add a description, and define the event’s probability for each hazard level specified in step 1 (Figure <a href="system-response-functions.html#fig:figure-90">8.7</a>).</p></li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-90"></span>
+<img src="images/figure90.png" alt="Displays property popup window for Grass Removal node from the node tool bar icon. The window displays text boxes for name, and description; drop-downs for selecting the system response’s source and distribution, as well as the system response table at the bottom."><p class="caption">
+Figure 8.7: Properties for the Grass Removal probability event tree node.
+</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>
+<strong>Complete the event tree</strong>. Continue adding nodes and defining their properties until the event tree is fully developed (Figure <a href="system-response-functions.html#fig:figure-91">8.8</a>).</li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-91"></span>
+<img src="images/figure91.png" alt="Displays completed event tree with Pool Elevation as the initiating hazard node; Grass Removal, Head-cut initiation, Advancement, Failure of control structure, Unsuccessful intervention, and Breach chance nodes, and the corresponding remainder nodes."><p class="caption">
+Figure 8.8: Completed spillway erosion event tree.
+</p>
+</div>
+</div>
+<div id="exploring-event-tree-results" class="section level3" number="8.1.5">
+<h3>
+<span class="header-section-number">8.1.5</span> Exploring Event Tree Results<a class="anchor" aria-label="anchor" href="#exploring-event-tree-results"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Tabbed Document contains three tabs: <strong>Event Tree</strong>, <strong>Response</strong>, and <strong>Diagnostics</strong>, each offering tools to explore the event tree analysis results.</p>
+<ul>
+<li><p>The <strong>Event Tree</strong> is used to build and edit the event tree, as described in earlier sections.</p></li>
+<li><p>The <strong>Response</strong> tab displays a graphical representation of the system response function for each hazard level (Figure <a href="system-response-functions.html#fig:figure-92">8.9</a>). This function, commonly referred to as a fragility curve, represents the probability of failure for each defined hazard level. You can export the function data as tabular data using the <strong>Export Plot Data</strong> button.</p></li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-92"></span>
+<img src="images/figure92.png" alt="A graphical representation of the system response function displaying mean and 90% confidence interval with Stage in ft on the x-axis and Conditional probability of failure on the y-axis."><p class="caption">
+Figure 8.9: System response probability function result from event tree.
+</p>
+</div>
+<ul>
+<li>The <strong>Diagnostics</strong> tab provides tools for reviewing and validating the event tree calculations. The left side of the Diagnostics tab offers options for <strong>Node Filters</strong>, <strong>Model Parameters</strong>, and <strong>Plot Options</strong> (Figure <a href="system-response-functions.html#fig:figure-93">8.10</a>). Details for each option are provided below.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-93"></span>
+<img src="images/figure93.png" alt="Displays Node filters check boxes; text box and drop downs for model parameters, and radio buttons for selecting plot options."><p class="caption">
+Figure 8.10: Event tree diagnostic viewing options.
+</p>
+</div>
+<div id="node-filters" class="section level4 unnumbered">
+<h4>Node Filters<a class="anchor" aria-label="anchor" href="#node-filters"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p><strong>Show Remainder Nodes</strong>: Toggles the display of remainder nodes in the results.</p></li>
+<li><p><strong>Combine Remainder Leaves</strong>: Combines terminal remainder nodes, which often represent non-failure conditions, into a single result.</p></li>
+<li><p><strong>Leaf Nodes Only</strong>: Displays only terminal leaf nodes (nodes without child branches).</p></li>
+</ul>
+</div>
+<div id="model-parameters" class="section level4 unnumbered">
+<h4>Model Parameters<a class="anchor" aria-label="anchor" href="#model-parameters"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p><strong>Monte Carlo Iterations</strong>: Specifies the number of Monte Carlo iterations used to sample the event tree for diagnostic analysis. This option is disabled if no uncertainty is present.</p></li>
+<li><p><strong>Hazard Level</strong>: Defines the hazard level used to calculate diagnostic results.</p></li>
+</ul>
+</div>
+<div id="plot-options" class="section level4 unnumbered">
+<h4>Plot Options<a class="anchor" aria-label="anchor" href="#plot-options"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>
+<strong>Event Likelihood</strong>: Displays a box-and-whisker plot of the likelihood for each node occurring at the selected hazard level (Figure <a href="system-response-functions.html#fig:figure-94">8.11</a>).</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-94"></span>
+<img src="images/figure94.png" alt="A box-and-whisker plot displaying the likelihood on the x-axis, and each node of the event tree on the y-axis. With likelihoods of Grass removal and Head-cut initiation as almost certain, and likelihood of breach under 0.3."><p class="caption">
+Figure 8.11: Event tree diagnostics event likelihood plot option.
+</p>
+</div>
+<ul>
+<li>
+<strong>Correlation to SRP</strong>: Shows the Pearson correlation coefficients for how node probabilities correlate with the overall SRP. Chance nodes have a positive correlation with the SRP, whereas remainder nodes have a negative correlation. The absolute size of the correlation coefficient indicates the strength of the association with SRP. The nodal correlations to SRP display as a ranked tornado plot (Figure <a href="system-response-functions.html#fig:figure-95">8.12</a>).</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-95"></span>
+<img src="images/figure95.png" alt="A ranked tornado plot displaying correlation coefficients on the x-axis and the nodes on the y-axis. The failure of control structure and head-cut advances have the highest correlation, and the Grass removal and Head-cut initiates have the lowest correlation to the overall SRP."><p class="caption">
+Figure 8.12: Event tree diagnostics tree node correlation to SRP plot.
+</p>
+</div>
+<ul>
+<li>
+<strong>Sensitivity Index</strong>: Displays each node’s first-order sensitivity index, indicating its contribution to the variance in the SRP (Figure <a href="system-response-functions.html#fig:figure-96">8.13</a>). A high sensitivity index suggests that reducing uncertainty for that node could significantly affect the overall SRP.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-96"></span>
+<img src="images/figure96.png" alt="Displaying sensitivity index on the x-axis and the nodes on the y-axis. The failure of control structure and head-cut advances have the highest sensitivity indices, and the Grass removal and Head-cut initiates have the lowest sensitivity indices."><p class="caption">
+Figure 8.13: Event tree diagnostics tree node sensitivity indices.
+</p>
+</div>
+<ul>
+<li>
+<strong>Node SRP Scatter</strong>: Plots the sampled probabilities of a node against the overall SRP for each Monte Carlo iteration. Nodes with strong correlations to the SRP show clear trends in this scatter plot (Figure <a href="system-response-functions.html#fig:figure-97">8.14</a>).</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-97"></span>
+<img src="images/figure97.png" alt="A scatter plot for Failure of Control Structure node showing a clear positive trend between the sampled node probability and the overall SRP."><p class="caption">
+Figure 8.14: Event tree diagnostics tree node probability to SRP scatter plot.
+</p>
+</div>
+<!-- ## Update figure to not say sampled SRP. Either computed or overall SRP -->
+<ul>
+<li>
+<strong>Tabular</strong>: Displays a table of node probabilities and the overall SRP for each Monte Carlo iteration (Figure <a href="system-response-functions.html#fig:figure-98">8.15</a>). Use the table’s column statistics feature to verify sampling distributions (Figure <a href="system-response-functions.html#fig:figure-99">8.16</a>).</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-98"></span>
+<img src="images/figure98.png" alt="A table showing each of the individual node’s sampled probabilities and overall SRP for each Monte Carlo iteration in the model."><p class="caption">
+Figure 8.15: Event tree diagnostics tabular output.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-99"></span>
+<img src="images/figure99.png" alt="A triangular histogram plot. Decorative."><p class="caption">
+Figure 8.16: Column statistics for the Unsuccessful Interventions node’s sampled probabilities, confirming that the node distribution (triangular) is being sampled correctly.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="parametric-response-function" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> Parametric Response Function<a class="anchor" aria-label="anchor" href="#parametric-response-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>This option enables you to define a system response function using a parametric distribution.</p>
+<p>To create a parametric response function, right-click on the <strong>System Responses</strong> folder in the Project Explorer (Figure <a href="system-response-functions.html#fig:figure-100">8.17</a>) or go to <strong>Project Menu &gt; System Responses</strong> and select <strong>Add Parametric Response…</strong>. Enter a name for the parametric response function and click <strong>OK</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-100"></span>
+<img src="images/figure100.png" alt="The Add Parametric Response option under the right-click menu of System Responses on the left, and the Parametric Response function dialog box on the right allowing the user to enter the name of the response function."><p class="caption">
+Figure 8.17: Create new parametric response function.
+</p>
+</div>
+<p>After creating the parametric response function, the system automatically opens it in the Tabbed Documents area, and the Properties window displays its properties (Figure <a href="system-response-functions.html#fig:figure-101">8.18</a>). In the Properties window, you can set the name, description, hazard type, and hazard units. Define the parametric distribution by setting the ERL, type of distribution, and parameters for the distribution. Once the parameters have been set, click the <strong>Compute</strong> button to generate and view the parametric response function.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-101"></span>
+<img src="images/figure101.png" alt="Displays the Distribution section of the parametric response function properties window to define the parametric distribution. There are buttons to compute the parametric hazard function and to perform bootstrap analysis at the bottom of the window."><p class="caption">
+Figure 8.18: Parametric response function properties.
+</p>
+</div>
+<p>Additional options for computing the parametric function are available in the Options tab on the Properties window. These include bootstrap sampling, confidence intervals, the number of realizations, a pseudo random number generator (PRNG) seed for random number generation, and output probability ordinates.</p>
+<p>Similar to RMC-BestFit, RMC-RFA, and parametric hazard functions, you can view frequency results in graphical or tabular form. For more information on these viewing options, refer to section <a href="hazard-functions.html#bestfit">6.1</a>.</p>
+</div>
+<div id="tabular-response-function" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> Tabular Response Function<a class="anchor" aria-label="anchor" href="#tabular-response-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>This option allows you to define a system response function using tabular data. The most common use case involves copying and pasting data from another application, such as Microsoft Excel.</p>
+<p>To create a tabular response function, right-click on the <strong>System Responses folder</strong> in the Project Explorer (Figure <a href="system-response-functions.html#fig:figure-102">8.19</a>) or go to <strong>Project Menu &gt; System Responses</strong> and select <strong>Add Tabular Response…</strong>. Enter a name for the tabular response function and click <strong>OK</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-102"></span>
+<img src="images/figure102.png" alt="The Add Tabular Response option under the right-click menu of System Responses on the left, and the Tabular Response function dialog box on the right allowing the user to enter the name of the response function."><p class="caption">
+Figure 8.19: Create new tabular response function.
+</p>
+</div>
+<p>Once you create the tabular response function, the system automatically opens it in the Tabbed Documents area, and the Properties window displays the tabular function’s properties (Figure <a href="system-response-functions.html#fig:figure-103">8.20</a>). In the Properties window, you can configure the name, description, hazard type, hazard units, and hazard and probability interpolation transforms. The interpolation transforms define how the data is interpolated when sampling values between the specified tabular ordinates.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-103"></span>
+<img src="images/figure103.png" alt="The Tabular Response properties window displaying name, description, created on and last modified dates, hazard type, hazard units, and interpolation transforms."><p class="caption">
+Figure 8.20: Tabular response function properties.
+</p>
+</div>
+<p>The Tabbed Document for a tabular response function includes a table for data entry and a graphical representation of the data (Figure <a href="system-response-functions.html#fig:figure-104">8.21</a>). Select a distribution to define uncertainty and enter the parameters for the selected distribution at each ordinate in the tabular data. You can input data manually into the table or paste it from an external source, such as Microsoft Excel.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-104"></span>
+<img src="images/figure104.png" alt="Displays the tabular response function table using PERT distribution selection from dropdown on the left and the corresponding graph with mean, median, and 90% confidence interval on the right with Stage in ft on the x-axis and Conditional probability of failure on the y-axis."><p class="caption">
+Figure 8.21: Tabular response function example.
+</p>
+</div>
+<div id="data-validation-2" class="section level3" number="8.3.1">
+<h3>
+<span class="header-section-number">8.3.1</span> Data Validation<a class="anchor" aria-label="anchor" href="#data-validation-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>The input data table has built-in validation. Tabular data must meet the following requirements:</p>
+<ul>
+<li><p>The hazard values must be in ascending order.</p></li>
+<li><p>The probability values must be between 0 and 1.</p></li>
+<li><p>If uncertainty is defined, the uncertain ordinates must contain valid distribution parameters.</p></li>
+</ul>
+<p>If you enter invalid data, the corresponding table cell turns red, and a tooltip explains the error, as shown in Figure <a href="system-response-functions.html#fig:figure-105">8.22</a>. In addition, an error message appears in the Message window prompting you to resolve all errors in the data table.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-105"></span>
+<img src="images/figure105.png" alt="The stage-response probability input data table with invalid data cells turned red, and a tooltip displaying the source of the error."><p class="caption">
+Figure 8.22: Tabular response function input data validation.
+</p>
+</div>
+</div>
+</div>
+<div id="bivariate-response-function" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Bivariate Response Function<a class="anchor" aria-label="anchor" href="#bivariate-response-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>This option enables you to define a system response function that depends on two hazards using tabular data.</p>
+<p>To create a bivariate response function, right-click on the <strong>System Responses</strong> folder in the Project Explorer (Figure <a href="system-response-functions.html#fig:figure-106">8.23</a>) or go to <strong>Project Menu &gt; System Responses</strong> and select <strong>Add Bivariate Response…</strong>. Enter a name for the bivariate response function and click <strong>OK</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-106"></span>
+<img src="images/figure106.png" alt="The Add Bivariate Response option under the right-click menu of System Responses on the left, and the Bivariate Response function dialog box on the right allowing the user to enter the name of the response function."><p class="caption">
+Figure 8.23: Create new bivariate response function.
+</p>
+</div>
+<p>When you create the bivariate response function, it automatically opens in the Tabbed Documents area, and the Properties window displays its properties (Figure <a href="system-response-functions.html#fig:figure-107">8.24</a>). From the Properties window, you can configure the name, description, primary hazard, primary hazard units, and the interpolation transforms for the primary hazard and probabilities.</p>
+<p>Use the table tools to add the desired hazard levels for both the primary and secondary hazards, ensuring that all hazard levels are in ascending order. Assign a weight to each secondary hazard level. These weights are used during the risk computation to estimate the total system response probability for each primary hazard level. The weights must sum to 1. You can enter the weights manually or calculate them using a specified hazard function. For more details on bivariate hazard properties, refer to <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-107"></span>
+<img src="images/figure107.png" alt="Displaying the primary hazard levels and the secondary hazard levels of the Bivariate Response function Properties window with Primary hazard levels specified as Stage, and the secondary hazard specified as PGA-Frequency. There is a check box for manually entering the weights."><p class="caption">
+Figure 8.24: Bivariate response function properties.
+</p>
+</div>
+<p>As you input primary and secondary hazard levels in the Properties window, the table at the top of the Tabbed Document automatically updates, with each row representing a primary hazard level and each column representing a secondary hazard level (Figure <a href="system-response-functions.html#fig:figure-108">8.25</a>). To complete the bivariate response function, enter the probability of failure in each cell based on the combination of the primary hazard (row) and secondary hazard (column). A graphical representation of the system response functions for each secondary hazard level appears below the table.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-108"></span>
+<img src="images/figure108.png" alt="Displays a table with the primary hazard levels in rows and the secondary hazard levels in columns. The plot below has lines corresponding to each secondary hazard level as well as a weighted line. The primary hazard, Stage in ft is on the x-axis and Conditional probability of failure on the y-axis."><p class="caption">
+Figure 8.25: Bivariate response function graphical display.
+</p>
+</div>
+</div>
+<div id="composite-response-function" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> Composite Response Function<a class="anchor" aria-label="anchor" href="#composite-response-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>This option allows you to combine multiple response functions into a single function by assigning weights to the individual input functions.</p>
+<p>To create a composite response function, right-click on the <strong>System Responses</strong> folder in the Project Explorer (Figure <a href="system-response-functions.html#fig:figure-109">8.26</a>) or navigate to <strong>Project Menu &gt; Hazards</strong> and <strong>select Add Composite Response…</strong>. Enter a name for the composite response function and click <strong>OK</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-109"></span>
+<img src="images/figure109.png" alt="The Add Composite Response option under the right-click menu of System Responses on the left, and the Composite Response function dialog box on the right allowing the user to enter the name of the response function."><p class="caption">
+Figure 8.26: Create new composite response function.
+</p>
+</div>
+<p>After creating the composite response function, it automatically opens in the Tabbed Documents area, and the Properties window displays its properties (Figure <a href="system-response-functions.html#fig:figure-110">8.27</a>). In the Properties window, you can configure the name, description, hazard type, hazard units, and input response functions. Use the Response Functions table to define the input functions. Click the Add Row(s) button in the table toolbar to add rows for the input functions. Ensure that the response function weights sum to 1. If the system response functions are competing, uncheck the <strong>Is Mixture</strong> checkbox and select a <strong>Dependency</strong> type: Independent, Perfectly Positive, or Perfectly Negative.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-110"></span>
+<img src="images/figure110.png" alt="Displays the Response Function section of the Composite response function properties window with a check box for Is Mixture and dropdowns for selecting response function levels and corresponding text boxes for entering the weights for each level of the response function."><p class="caption">
+Figure 8.27: Composite response function properties.
+</p>
+</div>
+<p>The Tabbed Document for a composite function includes a graphical representation of the composite function (Figure <a href="system-response-functions.html#fig:figure-111">8.28</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-111"></span>
+<img src="images/figure111.png" alt="The composite response distribution plot displays lines corresponding to each secondary hazard level as well as a Mean line. The primary hazard, Stage in ft is on the x-axis and Conditional probability of failure on the y-axis."><p class="caption">
+Figure 8.28: Composite response function graphical display.
+</p>
+</div>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-TechRef" class="csl-entry">
+<div class="csl-left-margin">[1] </div>
+<div class="csl-right-inline">C. H. Smith, D. A. Margo, and W. L. Fields, <em>Draft - RMC-TotalRisk technical reference manual</em>, 1st ed. Lakewood, CO: U.S. Army Corps of Engineers, Risk Management Center, 2025. Available: <a href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk">https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk</a>
+</div>
+</div>
+<div id="ref-cite-BestPractices" class="csl-entry">
+<div class="csl-left-margin">[3] </div>
+<div class="csl-right-inline">
+<em>Best practices in dam and levee safety risk analysis</em>. Lakewood, CO: U.S. Department of the Interior, Bureau of Reclamation; U.S. Army Corps of Engineers, 2019. Available: <a href="https://www.usbr.gov/damsafety/risk/methodology.html">https://www.usbr.gov/damsafety/risk/methodology.html</a>
+</div>
+</div>
+<div id="ref-cite-HartfordBaecher" class="csl-entry">
+<div class="csl-left-margin">[6] </div>
+<div class="csl-right-inline">D. N. D. Hartford and G. B. Baecher, <em>Risk and uncertainty in dam safety</em>. London, England: Thomas Telford, 2004.</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="transform-functions.html"><span class="header-section-number">7</span> Transform Functions</a></div>
+<div class="next"><a href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#system-response-functions"><span class="header-section-number">8</span> System Response Functions</a></li>
+<li>
+<a class="nav-link" href="#event-tree-response-function"><span class="header-section-number">8.1</span> Event Tree Response Function</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#terminology"><span class="header-section-number">8.1.1</span> Terminology</a></li>
+<li><a class="nav-link" href="#navigating-an-event-tree"><span class="header-section-number">8.1.2</span> Navigating an Event Tree</a></li>
+<li><a class="nav-link" href="#customizing-an-event-tree"><span class="header-section-number">8.1.3</span> Customizing an Event Tree</a></li>
+<li><a class="nav-link" href="#building-an-event-tree"><span class="header-section-number">8.1.4</span> Building an Event Tree</a></li>
+<li><a class="nav-link" href="#exploring-event-tree-results"><span class="header-section-number">8.1.5</span> Exploring Event Tree Results</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#parametric-response-function"><span class="header-section-number">8.2</span> Parametric Response Function</a></li>
+<li>
+<a class="nav-link" href="#tabular-response-function"><span class="header-section-number">8.3</span> Tabular Response Function</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#data-validation-2"><span class="header-section-number">8.3.1</span> Data Validation</a></li></ul>
+</li>
+<li><a class="nav-link" href="#bivariate-response-function"><span class="header-section-number">8.4</span> Bivariate Response Function</a></li>
+<li><a class="nav-link" href="#composite-response-function"><span class="header-section-number">8.5</span> Composite Response Function</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/08-response-functions.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/08-response-functions.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>RMC-TotalRisk User’s Guide</strong>" was written by C. Haden Smith and Woodrow L. Fields. It was last built on Last updated: 2025-01-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

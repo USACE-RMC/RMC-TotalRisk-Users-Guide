@@ -4,7 +4,7 @@ RMC-TotalRisk is a menu-driven software package that performs risk analyses. The
 
 The graphical user interface consists of a menu bar, tool bar, and four window panes (Figure \@ref(fig:figure-4)): the Project Explorer, Tabbed Documents, Properties, and the Message window. You may move, dock, hide, or close the panes as desired.
 
-```{r figure-4, echo=FALSE, fig.cap="RMC-TotalRisk graphical user interface.", fig.alt="The full graphical user interface of RMC-TotalRisk, including the project explorer (left), tabbed documents (center), properties (right), and message window (bottom).", fig.align="center"}
+```{r figure-4, echo=FALSE, fig.cap="RMC-TotalRisk graphical user interface.", fig.alt="The full graphical user interface of RMC-TotalRisk, including the project explorer (left), tabbed documents (center), properties (right), and message window (bottom).", fig.align="center", out.width="100%"}
 knitr::include_graphics("images/figure4.png")
 ```
 
@@ -156,7 +156,7 @@ Arrange windows by dragging or right-clicking the title bar or tab of the window
  knitr::include_graphics("images/figure21.png")
 ```
 
-Figure 22 shows the Properties window being docked below the Project Explorer. The new location is demarcated by the light blue shared area.
+Figure \@ref(fig:figure-22) shows the Properties window being docked below the Project Explorer. The new location is demarcated by the light blue shared area.
 
 ```{r figure-22, echo=FALSE, fig.cap="Example of docking the Properties window below the Project Explorer.", fig.alt="The document is being docked into a new location using the placement guide.", fig.align="center"}
  knitr::include_graphics("images/figure22.png")
@@ -172,9 +172,9 @@ You can close a tool window by clicking on the X in the upper right of the title
 
 ## Project Explorer
 
-The Project Explorer* which is typically on the left-hand side of the main window, shows a graphical representation of the hierarchy of elements within your project (Figure \@ref(fig:figure-24)). After you create a new project, you can use the Project Explorer to view, navigate, and manage the project elements. 
+The Project Explorer which is typically on the left-hand side of the main window, shows a graphical representation of the hierarchy of elements within your project (Figure \@ref(fig:figure-24)). After you create a new project, you can use the Project Explorer to view, navigate, and manage the project elements. 
 
-```{r figure-24, echo=FALSE, fig.cap="Project Explorer.", fig.alt="The project explorer located on the left of the screen showing folders for the project elements, such as hazards, transforms, system responses, consequences, and risk analyses.", fig.align="center"}
+```{r figure-24, echo=FALSE, fig.cap="Project Explorer.", fig.alt="The project explorer located on the left of the screen showing folders for the project elements, such as hazards, transforms, system responses, consequences, and risk analyses.", fig.align="center", fig.width=3.58}
  knitr::include_graphics("images/figure24.png")
 ```
 
@@ -188,7 +188,7 @@ Many menu commands are available by right-clicking on various items in the Proje
 
 When right-clicking an individual project element, the following commands are available: Edit, Copy, Rename, Delete, Move Up, and Move Down (Figure \@ref(fig:figure-26), left side). When multiple project elements are selected, three right-click menu commands are available: Group, Edit, and Delete (Figure \@ref(fig:figure-26), right side). Double-clicking a project element opens it for editing. 
 
-```{r figure-26, echo=FALSE, fig.cap="Examples of menu options available by right-clicking on project elements: for a single selection (left) or multiple selections (right).", fig.alt="Different context menu options are available when clicking on single selections or multiple selections.", fig.align="center"}
+```{r figure-26, echo=FALSE, fig.cap="Examples of menu options available by right-clicking on project elements: for a single selection (left) or multiple selections (right).", fig.alt="Different context menu options are available when clicking on single selections or multiple selections.", fig.align="center", out.width="95%"}
  knitr::include_graphics("images/figure26.png")
 ```
 
@@ -288,29 +288,29 @@ If the desired hazard type or unit is missing, click the “plus” button to ad
 
 ## Plot Features
 
-RMC-TotalRisk’s plot features help you examine and customize the plots. Each plot has a toolbar to the right that lets you to interact with the plot in various ways (Figure \@ref(fig:figure-38)).
+RMC-TotalRisk’s plot features help you examine and customize the plots. Each plot has a toolbar to the right that lets you interact with the plot in various ways (Figure \@ref(fig:figure-38)).
 
 ```{r figure-38, echo=FALSE, fig.cap="RMC-TotalRisk plot feature icons.", fig.alt="", fig.align="center"}
  knitr::include_graphics("images/figure38.png")
 ```
 
-- ![Image](images/trackdata.png) **Track Data** by clicking on any plotted point or line in the graph. A tooltip then displays the plot series name along with the X and Y data points (Figure \@ref(fig:figure-39)).
+- ![Image](images/trackdata.png)&nbsp;**Track Data** by clicking on any plotted point or line in the graph. A tooltip then displays the plot series name along with the X and Y data points (Figure \@ref(fig:figure-39)).
 
 ```{r figure-39, echo=FALSE, fig.cap="Using Track Data on a plot.", fig.alt="", fig.align="center"}
  knitr::include_graphics("images/figure39.png")
 ```
 
-- ![Image](images/pan.png) **Pan** the plot area by clicking, holding, and dragging the graph with your mouse. You can pan in any direction: up, down, or side to side. Alternatively, use the middle mouse button to pan by clicking, holding, and dragging.
+- ![Image](images/pan.png)&nbsp;**Pan** the plot area by clicking, holding, and dragging the graph with your mouse. You can pan in any direction: up, down, or side to side. Alternatively, use the middle mouse button to pan by clicking, holding, and dragging.
 
-- ![Image](images/zoomin.png) **Zoom In** by clicking, holding, and dragging with your mouse to highlight the area of interest with the magnifying glass cursor (Figure \@ref(fig:figure-40)) You can also zoom in on a single axis by clicking, holding, and dragging along that axis. Alternatively, use the mouse wheel to zoom in or out.
+- ![Image](images/zoomin.png)&nbsp;**Zoom In** by clicking, holding, and dragging with your mouse to highlight the area of interest with the magnifying glass cursor (Figure \@ref(fig:figure-40)) You can also zoom in on a single axis by clicking, holding, and dragging along that axis. Alternatively, use the mouse wheel to zoom in or out.
 
 ```{r figure-40, echo=FALSE, fig.cap="Zooming in on a plot.", fig.alt="", fig.align="center"}
  knitr::include_graphics("images/figure40.png")
 ```
 
-- ![Image](images/zoomout.png) **Zoom Out** to return to the full plot extents. You can also press the Escape key to zoom out.
+- ![Image](images/zoomout.png)&nbsp;**Zoom Out** to return to the full plot extents. You can also press the Escape key to zoom out.
 
-- ![Image](images/annotations.png) **Add Annotations** to the plot to provide additional information not included in a plot series. You can choose from the following annotation types: arrow, text, vertical line, horizontal line, rectangle, ellipse, point, polygon, and polyline (Figure \@ref(fig:figure-41)). Note: Legends cannot be annotated, and you cannot use annotations with the tracker.
+- ![Image](images/annotations.png)&nbsp;**Add Annotations** to the plot to provide additional information not included in a plot series. You can choose from the following annotation types: arrow, text, vertical line, horizontal line, rectangle, ellipse, point, polygon, and polyline (Figure \@ref(fig:figure-41)). Note: Legends cannot be annotated, and you cannot use annotations with the tracker.
 
 ```{r figure-41, echo=FALSE, fig.cap="Available plot annotations.", fig.alt="", fig.align="center"}
  knitr::include_graphics("images/figure41.png")
@@ -322,15 +322,15 @@ RMC-TotalRisk’s plot features help you examine and customize the plots. Each p
  knitr::include_graphics("images/figure42.png")
 ```
 
-- ![Image](images/saveplot.png) **Save** plot images as PNG, PDF, or SVG files. Choose from common image sizes or define your own dimensions (Figure \@ref(fig:figure-43)).
+- ![Image](images/saveplot.png)&nbsp;**Save** plot images as PNG, PDF, or SVG files. Choose from common image sizes or define your own dimensions (Figure \@ref(fig:figure-43)).
 
 ```{r figure-43, echo=FALSE, fig.cap="Set the width and height of the plot image.", fig.alt="A dialog for saving the plot image with a specific width and height.", fig.align="center"}
  knitr::include_graphics("images/figure43.png")
 ```
 
-- ![Image](images/exportplot.png) **Export** plot series data to a Comma Separate (.csv), Microsoft Excel® (.xlsx), or SQLite (.sqlite) file. Click the **Export Series Data** button to open a Save As dialog. Choose the file type, enter a name, and click **Save**. If you export to an existing Excel file, RMC-TotalRisk saves the plot series data as new tabs in that file.
+- ![Image](images/exportplot.png)&nbsp;**Export** plot series data to a Comma Separated Values (.csv), Microsoft Excel® (.xlsx), or SQLite (.sqlite) file. Click the **Export Series Data** button to open a Save As dialog. Choose the file type, enter a name, and click **Save**. If you export to an existing Excel file, RMC-TotalRisk saves the plot series data as new tabs in that file.
 
-- ![Image](images/plotproperties.png) **Edit Plot Properties** to customize the plot’s appearance (Figure \@ref(fig:figure-44)). In the Properties window, adjust general plot settings, legends, axes, series, and annotations. Use the dropdown in the upper-right corner to access other plot elements for editing. RMC-TotalRisk saves plot changes and applies them when you reopen the project. 
+- ![Image](images/plotproperties.png)&nbsp;**Edit Plot Properties** to customize the plot’s appearance (Figure \@ref(fig:figure-44)). In the Properties window, adjust general plot settings, legends, axes, series, and annotations. Use the dropdown in the upper-right corner to access other plot elements for editing. RMC-TotalRisk saves plot changes and applies them when you reopen the project. 
 
 ```{r figure-44, echo=FALSE, fig.cap="Plot properties.", fig.alt="The plot properties open to the right in the properties window. The user has full control over the appearance and format of the plot.", fig.align="center"}
  knitr::include_graphics("images/figure44.png")
@@ -342,39 +342,39 @@ Tables in RMC-TotalRisk include versatile tools for adding and removing rows, ex
 
 ### Add and Remove Row Tools
 
-- ![Image](images/addrow.png) **Add Row**: Adds a row to the bottom of the table.
+- ![Image](images/addrow.png)&nbsp;**Add Row**: Adds a row to the bottom of the table.
 
-- ![Image](images/insertrow.png) **Insert Row**: Inserts a row above the selected cell(s).
+- ![Image](images/insertrow.png)&nbsp;**Insert Row**: Inserts a row above the selected cell(s).
 
-- ![Image](images/deleterow.png) **Delete Row**: Deletes the row(s) containing the selected cell(s).
+- ![Image](images/deleterow.png)&nbsp;**Delete Row**: Deletes the row(s) containing the selected cell(s).
 
 ### Export and Copy Tools
 
-- ![Image](images/selectallcells.png) **Select All Cells**: Selects all cells in the table.
+- ![Image](images/selectallcells.png)&nbsp;**Select All Cells**: Selects all cells in the table.
 
-- ![Image](images/copyselectedcells.png) **Copy Selected Cells**: Copies the currently selected cells to the clipboard for pasting into other applications (e.g., Microsoft Excel).
+- ![Image](images/copyselectedcells.png)&nbsp;**Copy Selected Cells**: Copies the currently selected cells to the clipboard for pasting into other applications (e.g., Microsoft Excel).
 
-- ![Image](images/copywheaders.png) **Copy Selected Cells with Table Headers**: Copies the selected cells along with their headers for use in other applications.
+- ![Image](images/copywheaders.png)&nbsp;**Copy Selected Cells with Table Headers**: Copies the selected cells along with their headers for use in other applications.
 
-- ![Image](images/tablepaste.png) **Paste from Clipboard into Table**: Pastes data from another table or application into the current table.
+- ![Image](images/tablepaste.png)&nbsp;**Paste from Clipboard into Table**: Pastes data from another table or application into the current table.
 
-- ![Image](images/exporttable.png) **Export Table**: Available for output tables only. Opens a Save As dialog to export the table in various formats, including Microsoft Excel (.xlsx). If you choose an existing Excel file, the table will be added as a new tab.
+- ![Image](images/exporttable.png)&nbsp;**Export Table**: Available for output tables only. Opens a Save As dialog to export the table in various formats, including Microsoft Excel (.xlsx). If you choose an existing Excel file, the table will be added as a new tab.
 
 ### Table Row Selection Tools
 
 Row selection tools are exclusive to output tables. 
 
-- ![Image](images/selectbyattribute.png) **Select Rows By Attribute**. Opens the Select By Attribute dialog box (Figure \@ref(fig:figure-45)), allowing you to perform queries, make selections, and locate features in the table.
+- ![Image](images/selectbyattribute.png)&nbsp;**Select Rows By Attribute**. Opens the Select By Attribute dialog box (Figure \@ref(fig:figure-45)), allowing you to perform queries, make selections, and locate features in the table.
 
 ```{r figure-45, echo=FALSE, fig.cap="Select By Attribute dialog.", fig.alt="The windows dialog showing a query that filters selected records where system attribute is greater than 0.001.", fig.align="center"}
  knitr::include_graphics("images/figure45.png")
 ```
 
-- ![Image](images/showallrows.png) **Show All Rows**: Displays all rows in the table after an attribute-based selection. Selected rows are highlighted in blue.
+- ![Image](images/showallrows.png)&nbsp;**Show All Rows**: Displays all rows in the table after an attribute-based selection. Selected rows are highlighted in blue.
 
-- ![Image](images/showselectedrows.png) **Show Selected Rows Only**: Displays only the rows selected by the attribute-based query.
+- ![Image](images/showselectedrows.png)&nbsp;**Show Selected Rows Only**: Displays only the rows selected by the attribute-based query.
 
-- ![Image](images/deselectrows.png) **Deselect All Rows**: Clears all row selections.
+- ![Image](images/deselectrows.png)&nbsp;**Deselect All Rows**: Clears all row selections.
 
 ### Table Column Features
 
@@ -384,8 +384,8 @@ Row selection tools are exclusive to output tables.
  knitr::include_graphics("images/figure46.png")
 ```
 
--	**Summary Statistics**: Use this tool to view detailed statistics for a column’s data. To calculate statistics for specific rows, check the **Selected Rows Only** box (e.g., rows where the System Response Probability (SRP) exceeds the 25th percentile) (Figure \@ref(fig:figure-47)).
+-	**Summary Statistics**: Use this tool to view detailed statistics for a column’s data. To calculate statistics for specific rows, check the **Selected Rows Only** box (Figure \@ref(fig:figure-47)).
 
-```{r figure-47, echo=FALSE, fig.cap="Table column header right-click options.", fig.alt="A set of two windows. The top window displaying right-click context menu and the bottom window displaying summary statistics table on the left and a histogram plot on the right.", fig.align="center", out.width="85%"}
+```{r figure-47, echo=FALSE, fig.cap="Table column header right-click options.", fig.alt="A set of two windows. The top window displaying right-click context menu and the bottom window displaying summary statistics table on the left and a histogram plot on the right.", fig.align="center", out.width="90%"}
  knitr::include_graphics("images/figure47.png")
 ```

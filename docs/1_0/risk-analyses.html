@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>10 Risk Analyses | RMC-TotalRisk User’s Guide</title>
+<meta name="author" content="C. Haden Smith and Woodrow L. Fields">
+<meta name="description" content="In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and...">
+<meta name="generator" content="bookdown 0.42 with bs4_book()">
+<meta property="og:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://www.rmc.usace.army.mil/risk-analyses.html">
+<meta property="og:description" content="In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="10 Risk Analyses | RMC-TotalRisk User’s Guide">
+<meta name="twitter:description" content="In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.8.0/transition.js"></script><script src="libs/bs3compat-0.8.0/tabs.js"></script><script src="libs/bs3compat-0.8.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">RMC-TotalRisk User’s Guide</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="welcome.html"><span class="header-section-number">1</span> Welcome to RMC-TotalRisk</a></li>
+<li><a class="" href="risk-analysis-framework.html"><span class="header-section-number">2</span> Risk Analysis Framework</a></li>
+<li><a class="" href="installation.html"><span class="header-section-number">3</span> Installing RMC-TotalRisk</a></li>
+<li><a class="" href="gui.html"><span class="header-section-number">4</span> Graphical User Interface</a></li>
+<li><a class="" href="create-a-project.html"><span class="header-section-number">5</span> Create a Project</a></li>
+<li><a class="" href="hazard-functions.html"><span class="header-section-number">6</span> Hazard Functions</a></li>
+<li><a class="" href="transform-functions.html"><span class="header-section-number">7</span> Transform Functions</a></li>
+<li><a class="" href="system-response-functions.html"><span class="header-section-number">8</span> System Response Functions</a></li>
+<li><a class="" href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></li>
+<li><a class="active" href="risk-analyses.html"><span class="header-section-number">10</span> Risk Analyses</a></li>
+<li><a class="" href="risk-analysis-results.html"><span class="header-section-number">11</span> Risk Analysis Results</a></li>
+<li><a class="" href="risk-analysis-diagnostics.html"><span class="header-section-number">12</span> Risk Analysis Diagnostics</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a---acronyms.html"><span class="header-section-number">13</span> Appendix A - Acronyms</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="risk-analyses" class="section level1" number="10">
+<h1>
+<span class="header-section-number">10</span> Risk Analyses<a class="anchor" aria-label="anchor" href="#risk-analyses"><i class="fas fa-link"></i></a>
+</h1>
+<p>In RMC-TotalRisk, you can conduct a risk analysis for a system with up to 20 system components. Each component requires three fundamental inputs: a hazard function, a system response function, and a consequence function. Transform functions are optional.</p>
+<p>A risk analysis must include at least one system component. You can use multiple components to represent either different structures within the system or various hazard types affecting a single structure.</p>
+<p>Each system component can include multiple system response functions, commonly referred to as failure modes. These failure modes may lead to different consequences. For example, in a dam scenario, a seepage failure mode might progress slowly, allowing downstream populations more time to evacuate. In contrast, a seismic failure mode could cause rapid failure, providing little evacuation time. At least one failure mode is necessary to calculate excess, failure, and total risks.</p>
+<p>A system component can include only one non-failure mode. This mode does not require a response function but is essential for calculating excess, non-failure, background, and total risks. If a non-failure mode is not provided, the risk calculations assume the non-failure consequences are zero.</p>
+<p>To compute risk, a system component must include either a failure mode or a non-failure mode.</p>
+<p>For more information on the quantitative risk analysis framework in RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<div id="create-new-risk-analysis" class="section level2" number="10.1">
+<h2>
+<span class="header-section-number">10.1</span> Create New Risk Analysis<a class="anchor" aria-label="anchor" href="#create-new-risk-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>To create a risk analysis, right-click on the <strong>Risk Analyses</strong> folder in the Project Explorer (Figure <a href="risk-analyses.html#fig:figure-123">10.1</a>) or navigate to <strong>Project Menu &gt; Risk Analyses</strong> and select <strong>Add Risk Analysis…</strong>. Enter a name for the risk analysis and click <strong>OK</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-123"></span>
+<img src="images/figure123.png" alt="The Add Risk Analysis option under the right-click menu of Risk Analyses on the left, and the Risk Analysis dialog box on the right allowing the user to enter the name of the Risk Analysis."><p class="caption">
+Figure 10.1: Create a new risk analysis.
+</p>
+</div>
+<p>When you create a new risk analysis, it automatically opens in the Tabbed Documents area, and the Properties window displays the risk analysis properties (Figure <a href="risk-analyses.html#fig:figure-124">10.2</a>). In the Properties window, you can configure the name, description, consequence type, and consequence units. The consequence type and units are required, and all consequence functions in the analysis must match the selected consequence type.</p>
+<p>You can access additional risk analysis options through the Options tab in the Properties window (Figure <a href="risk-analyses.html#fig:figure-124">10.2</a>). For most applications, the default risk analysis options provide reasonable results. The following sections explain the available risk analysis options in detail.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-124"></span>
+<img src="images/figure124.png" alt="The General tab window displayed on the left has the Risk Analysis Properties and the Simulations settings section and the Estimate button at the bottom; and the Options tab window displayed on the right has Simulation, Integration, System Component, System, and Risk Measures sections." width="85%"><p class="caption">
+Figure 10.2: Risk analysis properties (general properties at left; risk analysis options at right).
+</p>
+</div>
+</div>
+<div id="simulation-options" class="section level2" number="10.2">
+<h2>
+<span class="header-section-number">10.2</span> Simulation Options<a class="anchor" aria-label="anchor" href="#simulation-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>The simulation options allow you to configure settings for the uncertainty analysis and the loss exceedance curve (LEC) results (Figure <a href="risk-analyses.html#fig:figure-125">10.3</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-125"></span>
+<img src="images/figure125.png" alt="Simulation options display dropdowns to select width of the confidence interval, and the number of Monte Carlo simulation realizations; and text boxes to specify pseudo random number generator seed value, and loss exceedance curve output length."><p class="caption">
+Figure 10.3: Risk analysis simulation options.
+</p>
+</div>
+<ul>
+<li><p><strong>Confidence Interval</strong>: Specifies the width of the confidence interval (CI). For a 90% CI, the value of interest has a 90% probability of falling within the interval. CIs are computed only after simulating risk with full uncertainty. The default CI is 90%.</p></li>
+<li><p><strong>Realizations</strong>: Sets the number of Monte Carlo simulation realizations for simulating risk with full uncertainty. The default is 1,000 realizations, balancing reasonably accurate CIs with shorter runtimes. The maximum allowed number of realizations is 10,000 due to runtime and file size constraints. Running 10,000 realizations is recommended for the most accurate results, although minor sampling errors in mean risk results and percentiles may still occur.</p></li>
+<li><p><strong>PRNG Seed</strong>: Defines the pseudo random number generator (PRNG) seed value for the Monte Carlo simulation. Using the same seed value ensures repeatable results, while changing the seed value alters the sequence of random numbers used in the simulation.</p></li>
+<li><p><strong>LEC Output Length</strong>: Specifies the number of points used to construct the LECs. An LEC displays risk results with consequences on the x-axis and exceedance probability on the y-axis. Using at least 200 points is recommended to enhance the accuracy of the curves.</p></li>
+</ul>
+</div>
+<div id="integration-options" class="section level2" number="10.3">
+<h2>
+<span class="header-section-number">10.3</span> Integration Options<a class="anchor" aria-label="anchor" href="#integration-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>RMC-TotalRisk uses numerical integration to compute risk for each Monte Carlo realization.</p>
+<p>When the risk analysis has a single system component, the <strong>Adaptive Simpson’s Rule (ASR)</strong> performs the numerical integration. Figure <a href="risk-analyses.html#fig:figure-126">10.4</a> shows the available options for the ASR method.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-126"></span>
+<img src="images/figure126.png" alt="Integration options window displaying text boxes to enter values for maximum number of integrand evaluations, maximum recursion depth, and desired tolerance. There is also a check box for using defaults."><p class="caption">
+Figure 10.4: Risk analysis integration options when there is single system component.
+</p>
+</div>
+<ul>
+<li><p><strong>Max Evaluations</strong>: Specifies the maximum number of integrand evaluations allowed during numerical integration. The value must be between <span class="math inline">\(10,000\)</span> and <span class="math inline">\(1,000,000\)</span>, with a default of <span class="math inline">\(1,000,000\)</span>.</p></li>
+<li><p><strong>Max Depth</strong>: Sets the maximum recursion depth for ASR integration. The default is <span class="math inline">\(100\)</span>.</p></li>
+<li><p><strong>Tolerance</strong>: Defines the desired tolerance for the ASR integration. This setting applies to the mean of the total system risk, with a default value of <span class="math inline">\(10^{-8}\)</span>.</p></li>
+</ul>
+<p>When the risk analysis includes two or more system components and the <strong>Joint System Risk Method</strong> is selected, the adaptive importance sampling method <strong>VEGAS</strong> handles numerical integration. Figure <a href="risk-analyses.html#fig:figure-127">10.5</a> shows the available options for the VEGAS method.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-127"></span>
+<img src="images/figure127.png" alt="Integration options window displaying text boxes to enter values for maximum number of integrand evaluations, number of integrand evaluations each warmup cycle, number of warmup cycles, and final number of integrand evaluations. There is also a check box for using defaults."><p class="caption">
+Figure 10.5: Risk analysis integration options when there are multiple system components and the joint system risk method is selected.
+</p>
+</div>
+<ul>
+<li><p><strong>Max Evaluations</strong>: Specifies the maximum number of integrand evaluations allowed during numerical integration. The value must be between <span class="math inline">\(10,000\)</span> and <span class="math inline">\(1,000,000\)</span>, with a default of <span class="math inline">\(1,000,000\)</span>.</p></li>
+<li><p><strong>Warmup Evaluations</strong>: Determines the number of integrand evaluations per warmup cycle. The default is <span class="math inline">\(1,000 \times D\)</span>, where <span class="math inline">\(D\)</span> is the number of integrand dimensions (i.e., system components).</p></li>
+<li><p><strong>Warmup Cycles</strong>: Sets the number of warmup cycles for the adaptive importance sampling method. The default is <span class="math inline">\(5\)</span>.</p></li>
+<li><p><strong>Final Evaluations</strong>: Specifies the number of integrand evaluations performed after completing the warmup phase. The default is <span class="math inline">\(10,000\)</span>.</p></li>
+</ul>
+<p>For more details on the numerical integration methods used by RMC-TotalRisk, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+</div>
+<div id="system-component-options" class="section level2" number="10.4">
+<h2>
+<span class="header-section-number">10.4</span> System Component Options<a class="anchor" aria-label="anchor" href="#system-component-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>Figure <a href="risk-analyses.html#fig:figure-128">10.6</a> shows the system component options.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-128"></span>
+<img src="images/figure128.png" alt="Displays options for selecting system component, name editable by the user, dropdown selections for failure mode method, joint consequences, failure dependency, and profile hazard function, and a text box for entering a hazard threshold value."><p class="caption">
+Figure 10.6: Risk analysis system component options.
+</p>
+</div>
+<ul>
+<li><p><strong>System Component</strong>: A system component consists of three key inputs: the hazard, the system response to that hazard, and the consequences given the response and hazard. By default, the system component is identified and labeled by the selected hazard function, which can only be used once per risk analysis. A single risk analysis is limited to 20 system components due to virtual memory and runtime constraints. Several options are available to customize how the risk analysis computes each system component.</p></li>
+<li><p><strong>Name</strong>: Users can edit the name of the selected system component.</p></li>
+<li>
+<p><strong>Failure Mode Method</strong>: This setting determines how the risk analysis accounts for multiple failure modes. Options include <strong>joint</strong>, <strong>competing</strong>, <strong>common cause</strong>, and <strong>mutually exclusive</strong> failures. Note: The <strong>joint</strong> and <strong>competing</strong> methods are computationally intensive and are limited to 20 failure modes.</p>
+<ul>
+<li><p><strong>Joint</strong> (default): Use this method when multiple failure modes can occur simultaneously during the same event. This method requires selecting a joint consequence rule.</p></li>
+<li><p><strong>Competing</strong>: Use this method when joint failures are not possible because the system component fails when the first of the competing failure modes reaches a failure state. The system response functions’ capacity automatically determines the failure mode order. Ensure that the system response functions increase monotonically.</p></li>
+<li><p><strong>Common Cause</strong>: This method assumes a common cause initiates multiple failure modes, but joint failures are not possible. While included for backward compatibility with existing risk analysis software, use the competing method when feasible.</p></li>
+<li><p><strong>Mutually Exclusive</strong>: Use this method when failure modes are disjoint (have no intersection) and cannot occur simultaneously. During the risk analysis, response probabilities exceeding 1 at a given hazard level are normalized.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Joint Consequences</strong>: This setting applies to the joint failure mode method and determines how joint failure consequences are treated. Options include <strong>additive</strong>, <strong>average</strong>, <strong>maximum</strong> (default), and <strong>minimum</strong>.</p>
+<ul>
+<li><p>Use <strong>additive</strong> when failure modes affect different inundation areas, and the total consequences are best represented by adding consequences for each area.</p></li>
+<li><p>Use <strong>average</strong> when inundation areas are partially overlapping.</p></li>
+<li><p>Use <strong>maximum</strong> when failure modes share the same inundation area to avoid overestimating consequences.</p></li>
+<li><p>Use <strong>minimum</strong> as a sensitivity or to establish a lower bound for risk.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Failure Dependency</strong>: This option sets the statistical dependency between failure modes within the selected system component. It is unavailable for the mutually exclusive method. The dependency influences the joint probability of the response functions. The options include <strong>independent</strong> (default), <strong>perfectly positive</strong>, <strong>perfectly negative</strong>, or a user-defined <strong>correlation matrix</strong>.</p>
+<ul>
+<li>The <strong>Correlation Matrix</strong> option becomes available when you select it as the dependency method. Clicking the button opens a table where you can enter correlation coefficients between failure modes.</li>
+</ul>
+</li>
+<li><p><strong>Profile Hazard</strong>: This option sets the hazard function used to construct risk profiles and estimate the probability of exceeding a hazard threshold. You can select the primary hazard function or any hazard-to-response transform functions. For levee accreditation analyses, use stage or water surface elevation as the profile hazard type.</p></li>
+<li><p><strong>Hazard Threshold</strong>: This setting defines the hazard level for calculating the probability of exceeding that threshold. The default hazard threshold is 0. For levee accreditation analyses, use the top of levee stage or elevation as the hazard threshold.</p></li>
+</ul>
+</div>
+<div id="system-options" class="section level2" number="10.5">
+<h2>
+<span class="header-section-number">10.5</span> System Options<a class="anchor" aria-label="anchor" href="#system-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>The system options define how the system components interact in the risk calculations (Figure <a href="risk-analyses.html#fig:figure-129">10.7</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-129"></span>
+<img src="images/figure129.png" alt="Risk analysis system options window displaying dropdown options for selecting system risk method, joint consequences, and hazard dependency."><p class="caption">
+Figure 10.7: Risk analysis system options.
+</p>
+</div>
+<ul>
+<li>
+<p><strong>System Risk Method</strong>: This option determines how the analysis calculates system risk. The available methods are <strong>additive</strong> and <strong>joint risk</strong>:</p>
+<ul>
+<li><p><strong>Additive Risk Method</strong> (default): Assumes system components are independent, and their consequences can be summed. This method has shorter runtimes but does not generate system-level loss exceedance curves (LECs) and computes fewer system-wide risk measures.</p></li>
+<li><p><strong>Joint Risk Method</strong>: Allows modeling dependencies between components and generates a complete set of system risk outputs, including system-level LECs and more comprehensive risk measures. However, this method typically has longer runtimes.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Joint Consequences</strong>: Defines how the risk analysis handles the consequences of joint events among system components. Options include <strong>additive</strong>, <strong>average</strong>, <strong>maximum</strong> (default), and <strong>minimum</strong>.</p>
+<ul>
+<li><p>Use <strong>additive</strong> when the system components have nonoverlapping inundation areas, where summing consequences is more appropriate.</p></li>
+<li><p>Use <strong>average</strong> when inundation areas partially overlap, and averaging the consequences is appropriate.</p></li>
+<li><p>Use <strong>maximum</strong> when modeling various hazard types affecting a single structure to prevent overestimating the consequences.</p></li>
+<li><p>Use <strong>minimum</strong> as a sensitivity or to establish a lower bound for system risk.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Hazard Dependency</strong>: Specifies the statistical dependency between system component hazards in the risk analysis. This option is only available for the joint risk method. The dependency influences the joint probability of the hazard functions. Options include <strong>independent</strong> (default), <strong>perfectly positive</strong>, <strong>perfectly negative</strong>, or a user-defined <strong>correlation matrix</strong>.</p>
+<ul>
+<li>The <strong>Correlation Matrix</strong> option becomes available when you select it as the dependency method. Clicking the button opens a table where you can enter correlation coefficients between system component hazard functions.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="risk-measure-options" class="section level2" number="10.6">
+<h2>
+<span class="header-section-number">10.6</span> Risk Measure Options<a class="anchor" aria-label="anchor" href="#risk-measure-options"><i class="fas fa-link"></i></a>
+</h2>
+<p>RMC-TotalRisk offers additional risk measures that are valuable for the risk-based design of engineering structures. These measures are calculated for the entire system rather than individual components. Figure <a href="risk-analyses.html#fig:figure-130">10.8</a> displays the risk measure options.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-130"></span>
+<img src="images/figure130.png" alt="Risk measures options window displaying text boxes for entering consequence threshold and alpha values."><p class="caption">
+Figure 10.8: Risk measure options.
+</p>
+</div>
+<ul>
+<li><p><strong>Consequence Threshold</strong>: Specifies the consequence level for calculating the probability of exceeding that threshold. The default consequence threshold is <span class="math inline">\(0\)</span>.</p></li>
+<li><p><strong>Alpha</strong> Sets the exceedance probability used to compute the Value-at-Risk (VaR) and Conditional Value-at-Risk (CVaR). The default exceedance probability is <span class="math inline">\(10^{−2}\)</span>.</p></li>
+</ul>
+<p>For more details about the additional risk measures in RMC-TotalRisk, refer to the technical reference <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+</div>
+<div id="risk-diagram" class="section level2" number="10.7">
+<h2>
+<span class="header-section-number">10.7</span> Risk Diagram<a class="anchor" aria-label="anchor" href="#risk-diagram"><i class="fas fa-link"></i></a>
+</h2>
+<p>RMC-TotalRisk defines a risk analysis using an intuitive diagram, as shown in Figure <a href="risk-analyses.html#fig:figure-131">10.9</a>. This diagram provides a clear way to create and connect the components of the modeled system.</p>
+<p>A risk analysis computes the risk associated with multiple potential failure modes for each system component. Each failure mode combines a hazard, the system’s response to that hazard, and the consequences of the response. Non-failure modes consist of a hazard and the non-failure consequences associated with it.</p>
+<p>Figure <a href="risk-analyses.html#fig:figure-131">10.9</a> illustrates a single system component for a dam safety risk analysis. The diagram includes a non-failure mode, represented by the purple line at the top, connecting the hazard function directly to the non-failure consequences without involving a system response. Many dams experience non-failure consequences. For example, during a major flood event, a dam might activate its emergency spillway to prevent overtopping. While this action protects the dam, it can still result in downstream impacts. The non-failure mode in the diagram represents the risk associated with these non-failure scenarios.</p>
+<p>The diagram also includes two failure modes:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Spillway erosion failure mode (PFM 1)</strong>: This mode, shown in the center of the diagram, connects the hazard function at Dam A to the PFM 1 response function and consequence function.</p></li>
+<li><p><strong>Concentrated leak erosion failure mode (PFM 2)</strong>: This mode, shown at the bottom of the diagram, follows the same structure as PFM 1.</p></li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-131"></span>
+<img src="images/figure131.png" alt="Risk diagram for a single system component showing Stage-Frequency hazard connected with Non-failure consequences, and with response functions for two failure mode and their respective consequence functions."><p class="caption">
+Figure 10.9: RMC-TotalRisk risk diagram.
+</p>
+</div>
+<p>The risk diagram connects input functions from left to right, linking them based on their hazard type (e.g., stage, flow) and units (e.g., ft, cfs). Circular or redundant connections are not allowed, making the risk diagram a type of directed acyclic graph (DAG).</p>
+<p>System components in the diagram are labeled by their selected hazard functions. You can rename system components by right-clicking their names in the diagram or editing their names in the Properties window. Failure modes within each component are labeled by their corresponding response functions.</p>
+<p>RMC-TotalRisk supports an unlimited number of failure modes per component, depending on the selected failure mode method. However, a single system is limited to 20 components due to virtual memory and runtime constraints. For example, you can evaluate the system risk for a watershed with up to 20 dams, each containing multiple failure modes.</p>
+<div id="working-with-the-risk-diagram" class="section level3" number="10.7.1">
+<h3>
+<span class="header-section-number">10.7.1</span> Working with the Risk Diagram<a class="anchor" aria-label="anchor" href="#working-with-the-risk-diagram"><i class="fas fa-link"></i></a>
+</h3>
+<p>First, familiarize yourself with the diagram interface. Pan the diagram surface by left-clicking and dragging on any open area. Zoom in and out using the mouse wheel.</p>
+Nodes in the diagram represent inputs to the risk analysis. Select a node’s input function using the selection box. Move a node by left-clicking and dragging it. A blue circle at the bottom left of a node indicates required inputs, while an orange circle at the lower right shows the node output (Figure <a href="risk-analyses.html#fig:figure-132">10.10</a>).
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-132"></span>
+<img src="images/figure132.png" alt="Response and consequence nodes for PFM 1 are connected using a green line. The node inputs and outputs are shown by a blue-colored circle and an orange-colored circle respectively."><p class="caption">
+Figure 10.10: Risk diagram node inputs and outputs.
+</p>
+</div>
+<div id="adding-nodes" class="section level4 unnumbered">
+<h4>Adding Nodes<a class="anchor" aria-label="anchor" href="#adding-nodes"><i class="fas fa-link"></i></a>
+</h4>
+<p>You can add nodes to the risk diagram in three ways (Figure <a href="risk-analyses.html#fig:figure-133">10.11</a>):</p>
+<ol style="list-style-type: decimal">
+<li><p>Hover over the large plus symbol in the upper-left corner of the diagram, then left-click and drag the node to the desired location.</p></li>
+<li><p>Right-click on any empty space in the diagram to open a selection box and add a node at that location.</p></li>
+<li><p>Left-click on a node output to open a selection box. This option automatically connects the new node to the clicked node output.</p></li>
+</ol>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-133"></span>
+<img src="images/figure133.png" alt="Decorative." width="90%"><p class="caption">
+Figure 10.11: Options to add a new input node to the risk diagram: a) Place the cursor over the plus symbol in the upper left corner of the diagram then move the node to the desired location; b) Right-click on any empty space in the diagram to add at that location; and c) left-click on a node output (this option also connects the nodes).
+</p>
+</div>
+</div>
+<div id="connecting-nodes" class="section level4 unnumbered">
+<h4>Connecting Nodes<a class="anchor" aria-label="anchor" href="#connecting-nodes"><i class="fas fa-link"></i></a>
+</h4>
+<p>To connect two nodes, left-click and hold on a node output, then drag the cursor toward the desired node input. Release the mouse button to create the connection (Figure <a href="risk-analyses.html#fig:figure-134">10.12</a>).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-134"></span>
+<img src="images/figure134.png" alt="Decorative."><p class="caption">
+Figure 10.12: To connect a node to another node, left-click and hold on a node output, drag toward the desired node input, and release the mouse button to finish the connection.
+</p>
+</div>
+</div>
+<div id="deleting-and-disconnecting-nodes" class="section level4 unnumbered">
+<h4>Deleting and Disconnecting Nodes<a class="anchor" aria-label="anchor" href="#deleting-and-disconnecting-nodes"><i class="fas fa-link"></i></a>
+</h4>
+<p>To delete a node, right-click on it and select <strong>Delete</strong>, or click the <strong>X</strong> that appears in the top-right corner when you hover over the node. To disconnect two nodes, left-click and hold the input of the connected node, then drag the cursor to another node’s input or click any open space in the diagram.</p>
+</div>
+<div id="node-types" class="section level4 unnumbered">
+<h4>Node Types<a class="anchor" aria-label="anchor" href="#node-types"><i class="fas fa-link"></i></a>
+</h4>
+<p>The diagram has four fundamental node types:</p>
+<ul>
+<li><p><img src="images/hazardIcon.png" alt="Image"> <strong>Hazard Node</strong>: Describes exceedance probabilities for various hazard levels (e.g., peak flow-frequency or reservoir stage frequency). Hazard nodes define the system component’s identity and can have multiple outputs.</p></li>
+<li><p><img src="images/transformIcon.png" alt="Image"> <strong>Transform Node</strong>: Converts hazard levels from one type to another (e.g., flow to stage). Transform nodes can connect sequentially and have multiple outputs unless linked to a response function. For example, an unregulated flow-frequency function may need to be transformed into regulated flow and then transformed again from flow to stage to assess probability of failure on hydraulic structures downstream.</p></li>
+<li><p><img src="images/responseIcon.png" alt="Image"> <strong>Response Node</strong>: Represents the system’s conditional probability of failure at various hazard levels. Response nodes define failure modes and allow one output connection.</p></li>
+<li><p><img src="images/consequenceIcon.png" alt="Image"> <strong>Consequence Node</strong>: Defines the consequences of failure or non-failure. Non-failure consequences connect directly to the hazard node without a response function.</p></li>
+</ul>
+</div>
+<div id="visual-feedback" class="section level4 unnumbered">
+<h4>Visual Feedback<a class="anchor" aria-label="anchor" href="#visual-feedback"><i class="fas fa-link"></i></a>
+</h4>
+<p>The diagram provides visual feedback for data validation:</p>
+<ul>
+<li><p><img src="images/noInputSelected.png" style="width: 32px; height: 12px"> <strong>No Input Selected</strong>: Red outlines indicate a node with no input defined.</p></li>
+<li><p><img src="images/incompleteConnection.png" style="width: 32px; height: 4px"> <strong>Incomplete Connection</strong>: Black lines indicate valid connections that lack complete failure or non-failure modes. The risk calculations will not include this connection.</p></li>
+<li><p><img src="images/invalidConnection.png" style="width: 32px; height: 4px"> <strong>Invalid Connection</strong>: Red lines indicate mismatched units or undefined inputs. Invalid connections prevent risk analysis.</p></li>
+<li><p><img src="images/validNFModeConnection.png" style="width: 32px; height: 4px"> <strong>Valid Non-Failure Mode Connection</strong>: Purple lines indicate valid non-failure mode connections. A system component with complete non-failure mode connections is included in the risk calculations.</p></li>
+</ul>
+</div>
+<div id="example-levee-risk-diagram" class="section level4 unnumbered">
+<h4>Example Levee Risk Diagram<a class="anchor" aria-label="anchor" href="#example-levee-risk-diagram"><i class="fas fa-link"></i></a>
+</h4>
+<p>Figure <a href="risk-analyses.html#fig:figure-135">10.13</a> illustrates a levee risk analysis. The hazard function is a river peak flow frequency curve, transformed into a peak river stage using a flow-to-stage rating curve from a hydraulic routing model. The diagram includes two failure modes:</p>
+<ul>
+<li><p><strong>Prior OT (Backward Erosion Piping)</strong>: Represents failure before overtopping.</p></li>
+<li><p><strong>OT (Overtopping)</strong>: Represents overtopping-related failure.</p></li>
+</ul>
+<p>The non-failure mode is represented at the top with purple connectors, where non-failure consequences connect directly to the hazard transform function.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-135"></span>
+<img src="images/figure135.png" alt="Decorative."><p class="caption">
+Figure 10.13: Example levee risk diagram.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="risk-simulation" class="section level2" number="10.8">
+<h2>
+<span class="header-section-number">10.8</span> Risk Simulation<a class="anchor" aria-label="anchor" href="#risk-simulation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once you have created a risk analysis and configured the desired options, you can run a risk simulation. Choose between two simulation methods (Figure <a href="risk-analyses.html#fig:figure-riskprop">10.14</a>):</p>
+<ul>
+<li><p><strong>Simulate Mean Risk Only</strong> (default): This method uses the mean result from each input function to compute risk.</p></li>
+<li><p><strong>Simulate Risk with Full Uncertainty</strong>: This method employs Monte Carlo simulation to estimate risk using the full range of uncertainty from each input function</p></li>
+</ul>
+<p>To calculate a risk estimate, click the <strong>Estimate</strong> button.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-riskprop"></span>
+<img src="images/riskproperties.png" alt="Decorative."><p class="caption">
+Figure 10.14: Risk simulation options.
+</p>
+</div>
+<p>Figure <a href="risk-analyses.html#fig:figure-risksim">10.15</a> illustrates the overall risk and Monte Carlo simulation framework used in RMC-TotalRisk. The <strong>Mean Risk Only</strong> method is computationally efficient and can be completed in a single loop, as shown on the left side of the figure. However, this method approximates risk and may not fully capture combinations of low-probability, high-consequence events. Consequently, it can underestimate variance and tail risk.</p>
+<p>For scenarios involving significant uncertainty in extreme events, it is recommended to use the <strong>Simulate Risk with Full Uncertainty</strong> option for a more accurate assessment.</p>
+<p>For a detailed explanation of the risk analysis framework, simulation options, algorithms, and underlying mathematics, refer to the technical reference manual <span class="citation"><a href="#ref-cite-TechRef" role="doc-biblioref">[1]</a></span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:figure-risksim"></span>
+<img src="images/risksimulation.png" alt="Decorative." width="95%"><p class="caption">
+Figure 10.15: Flowchart of the TotalRisk simulation options: (a) Simulate mean risk only, and (b) Simulate risk with full uncertainty.
+</p>
+</div>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body">
+<div id="ref-cite-TechRef" class="csl-entry">
+<div class="csl-left-margin">[1] </div>
+<div class="csl-right-inline">C. H. Smith, D. A. Margo, and W. L. Fields, <em>Draft - RMC-TotalRisk technical reference manual</em>, 1st ed. Lakewood, CO: U.S. Army Corps of Engineers, Risk Management Center, 2025. Available: <a href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk">https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk</a>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="consequence-functions.html"><span class="header-section-number">9</span> Consequence Functions</a></div>
+<div class="next"><a href="risk-analysis-results.html"><span class="header-section-number">11</span> Risk Analysis Results</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#risk-analyses"><span class="header-section-number">10</span> Risk Analyses</a></li>
+<li><a class="nav-link" href="#create-new-risk-analysis"><span class="header-section-number">10.1</span> Create New Risk Analysis</a></li>
+<li><a class="nav-link" href="#simulation-options"><span class="header-section-number">10.2</span> Simulation Options</a></li>
+<li><a class="nav-link" href="#integration-options"><span class="header-section-number">10.3</span> Integration Options</a></li>
+<li><a class="nav-link" href="#system-component-options"><span class="header-section-number">10.4</span> System Component Options</a></li>
+<li><a class="nav-link" href="#system-options"><span class="header-section-number">10.5</span> System Options</a></li>
+<li><a class="nav-link" href="#risk-measure-options"><span class="header-section-number">10.6</span> Risk Measure Options</a></li>
+<li>
+<a class="nav-link" href="#risk-diagram"><span class="header-section-number">10.7</span> Risk Diagram</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#working-with-the-risk-diagram"><span class="header-section-number">10.7.1</span> Working with the Risk Diagram</a></li></ul>
+</li>
+<li><a class="nav-link" href="#risk-simulation"><span class="header-section-number">10.8</span> Risk Simulation</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/blob/main/bookdown/10-risk-analyses.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk-Users-Guide/edit/main/bookdown/10-risk-analyses.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>RMC-TotalRisk User’s Guide</strong>" was written by C. Haden Smith and Woodrow L. Fields. It was last built on Last updated: 2025-01-22.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

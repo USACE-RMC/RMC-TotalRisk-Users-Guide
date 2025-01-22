@@ -12,13 +12,13 @@ Each risk result tab includes options to filter the results. To filter results, 
 knitr::include_graphics("images/figure137.png")
 ```
 
-RMC-TotalRisk reports five types of risk, calculating each for a range of probable hazard events:
+RMC-TotalRisk reports five types of risk:
 
-- **Excess Risk**: Represents the risk of system failure, calculated using the probability of the hazard, the probability of failure, and the excess consequences. Excess consequences refer to the additional losses or damages caused by failure, beyond those that would occur during the same event if the structure did not fail. 
+- **Excess Risk**: Represents the increase in system risk due to failure, calculated using the probability of the hazard, the probability of failure, and the excess consequences. Excess consequences refer to the additional losses or damages caused by failure, beyond those that would occur during the same event if the structure did not fail. 
 
-- **Background Risk**: Represents the risk assuming no structural flaws or vulnerabilities in the system. It reflects the risk from natural hazards alone, without accounting for the potential impacts of structural deficiencies.
+- **Background Risk**: Represents the risk assuming no structural flaws or vulnerabilities in the system. It reflects the risk from hazards alone, assuming there is no possibility of failure.
 
-- **Total Risk**: Represents the overall risk of the system (or component) and is calculated as the sum of failure risk and non-failure risk. Some USACE publications refer to total risk as residual risk (i.e., the risk that remains) [@cite-EM1619] [@cite-ER1156]. Proper estimation considers all potential hazard sources, their likelihoods of occurrence, and their potential consequences. 
+- **Total Risk**: Represents the overall risk of the system (or component) and is calculated as the sum of failure risk and non-failure risk. Some USACE publications refer to total risk as residual risk (i.e., the risk that remains) [@cite-EM1619] [@cite-ER1156]. Proper estimation considers all relevant hazard sources, their likelihoods of occurrence, and their potential consequences. In this context, *total* does not necessarily mean that *all* potential sources of risk have been included. 
 
 - **Failure Risk**: Represents the risk associated with system failure, calculated based on the probability of the hazard, the probability of failure, and the consequences of failure.
 
@@ -62,13 +62,13 @@ The Conditional Loss Plot is available only for failure risk and excess risk, as
 
 Figure \@ref(fig:figure-141) shows a **Conditional Loss Plot** after simulating risk with full uncertainty. Uncertainty is visualized as a scatter cloud, which is thinned to a maximum of 1,000 points per system risk component for clarity. A red diamond indicates the mean excess risk result for the overall system. In this example:
 
-- The **mean annual probability of failure** is $8.7985\times10^{-6}$ 
+- The **mean annual probability of failure** is $8.8\times10^{-6}$ 
 
-- The **conditional mean excess consequence** is $131.5435$. 
+- The **conditional mean excess consequence** is $131.5$. 
 
-Stated differently, the mean annual probability of failure is $8.7985\times10^{-6}$, and if the dam were to fail, the expected excess life loss would be $131.5435$. 
+Stated differently, the mean annual probability of failure is $8.8\times10^{-6}$, and if the system were to fail, the expected excess life loss would be $131.5$. 
 
-The diagonal line on the plot represents the product of the probability of failure and the conditional mean loss, which equals the unconditional excess mean loss, $\mathbb{E}[C]=1.1574\times10^{-3}$. This value plots slightly above the tolerable risk limit of $1\times10^{-3}$. 
+The diagonal line on the plot represents the product of the probability of failure and the conditional mean excess loss, which equals the mean excess loss, $\mathbb{E}[C]=1.2\times10^{-3}$. This value plots slightly above the tolerable risk limit of $1\times10^{-3}$. 
 
 ```{r figure-141, echo=FALSE, fig.cap="Conditional Loss Plot displaying excess risk results as the probability of failure and the conditional mean life loss, showing USACE Tolerable Risk Limits as dotted black lines.", fig.alt="Decorative.", fig.align="center"}
 knitr::include_graphics("images/figure141.png")

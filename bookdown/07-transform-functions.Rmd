@@ -19,7 +19,7 @@ To create a linear transform function, right-click on the **Transforms** folder 
 knitr::include_graphics("images/figure74.png")
 ```
 
-Creating a new linear transform function opens the Tabbed Documents area, and the Properties window displays the transform function properties (Figure \@ref(fig:figure-75)). In the Properties window, you can set the name, description, hazard type, hazard units, transformed hazard, transformed units, and linear transform parameters. Unchecking the **Uncertainty On** checkbox removes the standard error ($\sigma$) parameter, and only the slope ($\beta$) and intercept ($\alpha$) are required.
+Creating a new linear transform function opens the Tabbed Documents area, and the Properties window displays the transform function properties (Figure \@ref(fig:figure-75)). In the Properties window, you can set the name, description, hazard type, hazard units, transformed hazard, transformed units, and linear transform parameters. Unchecking the **Uncertainty On** checkbox removes the standard error ($\sigma$) parameter and the error term ($\varepsilon$), and only the slope ($\beta$) and intercept ($\alpha$) are required.
 
 ```{r figure-75, echo=FALSE, fig.cap="Linear transform function properties.", fig.alt="Properties window displaying name, description, hazard type, hazard units, transformed hazard, and transformed units. There is a check box for including uncertainty and text boxes to specify linear transform parameters.", fig.align="center"}
 knitr::include_graphics("images/figure75.png")
@@ -48,7 +48,7 @@ To create a power transform function, right-click on the **Transforms** folder i
 knitr::include_graphics("images/figure77.png")
 ```
 
-Creating a new power transform function opens the Tabbed Documents area and displays the Properties window with the transform function properties (Figure \@ref(fig:figure-78)). In the Properties window, you can set the name, description, hazard type, hazard units, transformed hazard, transformed units, and power transform parameters. Unchecking the **Uncertainty On** checkbox removes the standard error ($\sigma$) parameter, and only the coefficient ($\alpha$), exponent ($\beta$), and location ($\xi$) are required.
+Creating a new power transform function opens the Tabbed Documents area and displays the Properties window with the transform function properties (Figure \@ref(fig:figure-78)). In the Properties window, you can set the name, description, hazard type, hazard units, transformed hazard, transformed units, and power transform parameters. Unchecking the **Uncertainty On** checkbox removes the standard error ($\sigma$) parameter and the error term ($\varepsilon$), and only the coefficient ($\alpha$), exponent ($\beta$), and location ($\xi$) are required.
 
 ```{r figure-78, echo=FALSE, fig.cap="Power transform function properties.", fig.alt="Properties window displaying name, description, hazard type, hazard units, transformed hazard, and transformed units. There are check boxes for inverse function and including uncertainty, and text boxes to specify power transform parameters.", fig.align="center"}
 knitr::include_graphics("images/figure78.png")

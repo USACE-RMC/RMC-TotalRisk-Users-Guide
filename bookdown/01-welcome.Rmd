@@ -24,7 +24,7 @@ The examples in this document relate to flood risk for dams and levees. However,
 
 - **Seismic Risk Assessment**: Evaluate risks associated with earthquakes, including structural vulnerabilities and potential consequences for infrastructure and populations.
 
-- **Wildfire Risk Management**: Model the spread of wildfires, estimate the probability of occurrence, and assess associated economic, environmental, and human impacts.
+- **Wildfire Risk Management**: Estimate the probability of occurrence, and assess associated economic, environmental, and human impacts.
 
 - **Environmental Risk Analysis**: Analyze risks to ecosystems from natural or anthropogenic hazards, including climate change impacts, pollution, or habitat degradation.
 
