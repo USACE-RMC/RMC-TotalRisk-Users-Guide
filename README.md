@@ -1,7 +1,7 @@
 # RMC-TotalRisk User's Guide
 This repository contains the R Bookdown files for the RMC-TotalRisk User's Guide. 
 
-- [Version 1.0](https://usarmy-corps-of-engineers-rmc.github.io/RMC-TotalRisk-Users-Guide/1_0/)
+- [Version 1.0](https://usace-rmc.github.io/RMC-TotalRisk-Users-Guide/1_0/)
 
 ## Versioning System for Online Book Updates
 To maintain clarity and transparency in the evolution of this online book, we use a structured versioning system that distinguishes between significant updates and smaller changes. The versioning format follows a **Major.Minor** structure:
