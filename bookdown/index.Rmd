@@ -8,10 +8,12 @@ documentclass: book
 bibliography: [book.bib]
 csl: ieee.csl
 link-citations: yes
-github-repo: "USArmy-Corps-of-Engineers-RMC/RMC-TotalRisk"
-url: 'https://www.rmc.usace.army.mil/'
+github-repo: "USACE-RMC/RMC-TotalRisk"
+url: 'https://usace-rmc.github.io/RMC-TotalRisk-Users-Guide/1_0/'
 favicon: "TotalRiskIcon.ico"
 description: "This is a user's guide for working with the quantitative risk analysis software, RMC-TotalRisk."
+keywords: ["RMC-TotalRisk",  "USACE", "Risk Management Center", "Dam and Levee Safety", "life safety", "user's guide", "quantitative risk analysis", "system risk", "uncertainty analysis", "failure modes"]
+robots: "index, follow"
 mathsize: 0.9
 version: "1.0"
 ---

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://usace-rmc.github.io/RMC-TotalRisk-Users-Guide/sitemap.xml
